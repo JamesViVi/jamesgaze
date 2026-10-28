@@ -806,6 +806,7 @@ Desktop 左中右三欄／Mobile 上 1（跨欄）下 2
     opacity:
     .85;
 
+    aspect-ratio: 1 / 1;
 }
 
 .credential-logo--fotosoft{ scale: 97%; }
@@ -928,6 +929,8 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
 
     border-radius:
     4px 0px 0px 4px;
+
+    aspect-ratio: 4 / 5;
 
 }
 

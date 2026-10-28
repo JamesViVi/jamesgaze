@@ -3340,16 +3340,12 @@ Footer Navigation
 }
 
 .footer-mail-icon{
+    width:22px;
+    height:22px;
     display:block;
 
-    color:#999;
-    font-size:31px;
-    line-height:1;
-
-    opacity:.8;
-
-    transform:translateY(-3px); 
-
+    filter:brightness(0) invert(1);
+    opacity:.55;
 
     transition:
         opacity .3s ease,
