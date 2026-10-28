@@ -1,0 +1,1334 @@
+/* =====================================================
+JAMES GAZE
+Case.css — V10
+
+Case01 / Case02 / Case03 共用樣式。
+與 css/style.css 使用同一套 CSS 變數 (:root)，
+不重複宣告字體 / 顏色 / 版寬變數。
+
+命名空間：所有選擇器使用 .cs- 前綴，
+避免與 style.css 中首頁 Case Study 卡片
+(.case-card / .case-title / .case-number 等) 衝突。
+
+RWD 斷點與 style.css 一致：
+  Desktop  : 1000px 以上（1578px 以上再加強）
+  Tablet   : 768px – 999px
+  Mobile   : 767px 以下
+
+頁面結構（三頁共用 DOM，差異只在文案 / 圖片路徑）：
+  1. Hero
+  2. Intro（念起於微 / 尋光而溯 / 解構所見）
+  3. Items（四欄關鍵節點，含一組滑桿前後對比）
+  4. Result（顯現於色 / 循跡而行 / 重構所是）
+  5. Final CTA
+
+===================================================== */
+
+
+
+/* =====================================================
+00. SHARED UTILITIES
+===================================================== */
+
+.cs-main{
+
+    overflow:hidden;
+
+    background:var(--bg-light);
+
+}
+
+
+
+/* Section anchor 對齊 fixed header */
+
+.cs-hero,
+.cs-intro,
+.cs-items,
+.cs-result,
+.cs-final-cta{
+
+    scroll-margin-top:var(--header-height);
+
+}
+
+
+
+/* 一般置中容器（對齊全站 content-width / page-padding） */
+
+.cs-inner{
+
+    width:min(
+        calc(100% - var(--page-padding) * 2),
+        var(--content-width)
+    );
+
+    margin:0 auto;
+
+}
+
+
+
+/* 垂直大字標題（念起於微 / 尋光而溯...） */
+
+.cs-vtitle{
+
+    font-family:"Noto Serif TC",serif;
+
+    writing-mode:vertical-rl;
+
+    text-orientation:mixed;
+
+    font-weight:500;
+
+    letter-spacing:.2em;
+
+}
+
+
+
+/* CTA 按鈕（沿用 LP 的中性灰按鈕語言） */
+
+.cs-btn{
+
+    display: inline-block;
+    padding: 8px 18px;
+    border:
+
+    1px solid #fff;
+
+    border-radius: 3px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .15em;
+    text-align: center;
+    background:transparent;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color:  #fff;
+    transition: background .5s var(--ease), color .5s var(--ease), transform .5s var(--ease);
+}
+
+.cs3-hero-cta{
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+.cs-btn:hover{
+
+    background:transparent;
+
+    color:#111;
+
+    background: #fff;
+
+}
+
+
+
+/* 深底（Hero / Final CTA）用的反轉樣式共用同一顆 .cs-btn，
+   顏色本身已是淺灰，深底 / 淺底皆可讀，不需額外覆寫 */
+
+
+
+/* 進場淡入（搭配 js/Case.js 的 IntersectionObserver） */
+
+.cs-reveal{
+
+    opacity:0;
+
+    transform:translateY(24px);
+
+    transition:
+        opacity .8s var(--ease),
+        transform .8s var(--ease);
+
+    transition-delay:var(--cs-delay,0s);
+
+}
+
+
+
+.cs-reveal.is-visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+@media (prefers-reduced-motion:reduce){
+
+    .cs-reveal{
+        opacity:1;
+        transform:none;
+        transition:none;
+    }
+
+}
+
+
+
+/* =====================================================
+01. HERO
+
+滿版圖 + 疊字，樣式承襲 LP Hero，
+三頁各自的 hero 圖用 .cs1 / .cs2 / .cs3 修飾類別
+控制 object-position（各張圖構圖不同）。
+===================================================== */
+
+.cs-hero{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:2.39 / 1;
+
+    overflow:hidden;
+
+    background:#111;
+
+}
+
+
+
+.cs-hero-media{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+
+
+.cs-hero-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+@media (min-width: 999px){
+    .cs-hero-image{
+        object-position:
+        100% 0px;
+    }   
+
+}
+
+
+.cs-hero-media::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.65) 0%,
+        rgba(0,0,0,.15) 13%,
+        rgba(0,0,0,0) 20%
+    );
+
+}
+
+
+
+.cs-hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+
+.cs-hero-copy{
+
+    position:relative;
+
+    color:#fff;
+
+    max-width:620px;
+
+   margin-left: max(
+        12vw,
+        calc((105% - var(--content-width)) / 2)
+    );
+
+}
+
+
+
+.cs-hero-title{
+
+    margin-top: 1em;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(28px, 1.975vw + 12.83px, 44px);
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: .1em;
+
+}
+
+
+
+.cs-hero-subtitle{
+
+    margin-top: 0.5em;
+    font-size: clamp(17px, 0.37vw + 14.16px, 20px);
+    font-weight: 300;
+    line-height:1.8;
+    letter-spacing: .1em;
+    opacity: .9;
+    padding-left: 0.2em;
+    
+}
+
+
+
+.cs-hero-cta{
+
+    margin-top: 50px;
+    margin-left: 0.5em;
+
+}
+
+
+
+/* =====================================================
+02. INTRO
+
+Desktop / Tablet：左圖出血・中間文字・右側垂直標題
+Mobile   ：上排（左文字・右垂直標題）・下排滿版圖
+===================================================== */
+
+.cs-intro{
+
+    position:relative;
+
+}
+
+
+
+.cs-intro-inner{
+
+    display:grid;
+
+    grid-template-columns:minmax(300px,50%) minmax(0,1fr) clamp(80px, 6.173vw + 32.59px, 130px);
+
+
+
+    align-items:flex-end;
+
+    column-gap:0.1vw;
+
+    width:100%;
+
+    padding-right:max(
+        4vw,
+        calc((100% - var(--content-width)) / 2 + var(--page-padding))
+    );
+
+    padding-left: max(
+        0px,
+        calc((100% - var(--content-width)) / 2 - 30px)
+    )
+
+}
+
+
+
+.cs-intro-image-wrap{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:0 4px 4px 0;
+
+    margin-bottom: 50px;
+
+    margin-top: clamp(120px, -9.877vw + 275.852px, 200px);
+
+
+}
+
+
+
+.cs-intro-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+
+}
+
+
+
+.cs-intro-content{
+
+    padding:0 2vw;
+    margin-bottom: 70px;
+    max-width: 90%;
+}
+
+
+
+.cs-intro-text{
+
+    margin-top: 25px;
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+
+}
+
+
+
+.cs-intro-heading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    height:100%;
+
+    justify-content:flex-start;
+
+    padding-top:6px;
+
+    margin-right: -3vw;
+
+}
+
+
+
+.cs-intro-title{
+    margin-top: 2vw;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(45px, 4.321vw + 11.815px, 80px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+
+}
+
+
+
+.cs-intro-line{
+
+    display:block;
+
+    width:2px;
+
+    height:100%;
+
+    background:#111;
+
+    margin: top 14px;
+
+
+}
+
+
+
+/* =====================================================
+03. ITEMS
+
+Section title 置中。
+Desktop：四欄（1x4）／ Tablet：兩欄（2x2）／ Mobile：單欄（1x4）
+每欄：編號（靠右）→ 圖片（或前後對比滑桿）→ 小標（靠左）→ 內文
+===================================================== */
+
+.cs-items{
+
+    padding-top:70px;
+
+    padding-bottom: 50px;
+
+    background:#cdcdcd;
+
+}
+
+
+
+.cs-items-title{
+
+    text-align: center;
+    margin-bottom: 35px;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(45px, 3.086vw + 21.296px, 70px);
+    font-weight: 700;
+    line-height: 1.2;
+
+}
+
+
+
+.cs-items-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    column-gap:28px;
+
+    row-gap:40px;
+
+}
+
+
+
+.cs-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+.cs-item-media{
+
+    position:relative;
+
+}
+
+
+
+.cs-item-number{
+
+    display:block;
+
+    text-align:right;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:20px;
+
+    opacity: .5;
+
+    margin-bottom:3px;
+
+    padding-right: 8px;
+
+}
+
+
+
+.cs-item-image-wrap{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:4px;
+
+}
+
+.cs-item-image-wrap1,
+.cs-item-image-wrap2{
+
+    aspect-ratio:1 / 1;
+}
+
+.cs-item-image-wrap3{
+
+ aspect-ratio:4 / 5;
+}   
+
+
+
+.cs-item-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+.cs-item-subtitle{
+
+    margin-top: 22px;
+    font-family: "Noto Serif TC", serif;
+    font-size: 
+    clamp(
+        22px,
+        calc(8.36px + 1.364vw),
+        25px
+    );
+    font-weight: 500;
+    padding-left: 0.2em;
+
+}
+
+
+
+.cs-item-content{
+
+   margin-top: 10px;
+
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+    padding-left: 0.4em;
+
+    padding-right: 0.4em;
+
+}
+
+
+
+/* =====================================================
+04. COMPARE SLIDER
+
+前後對比拖曳元件。
+DOM 內兩張圖依「檔名順序」：
+  第一張 → data-compare-base（拖曳前 / 底層，永遠完整顯示）
+  第二張 → data-compare-reveal（拖曳後 / 上層，依滑桿位置被裁切顯示）
+互動邏輯見 js/Case.js。
+===================================================== */
+
+.cs-compare{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    user-select:none;
+
+    touch-action:pan-y;
+
+}
+
+
+
+.cs-compare-base,
+.cs-compare-reveal{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+
+
+.cs-compare-base img,
+.cs-compare-reveal img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    pointer-events:none;
+
+}
+
+
+
+.cs-compare-reveal{
+
+    /* 初始值，JS 會依 range 覆寫成 inline style */
+
+    clip-path:inset(0 50% 0 0);
+
+}
+
+
+
+.cs-compare-divider{
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    left:50%;
+
+    width:2px;
+
+    background:#fff;
+
+    transform:translateX(-50%);
+
+    pointer-events:none;
+
+    box-shadow:0 0 6px rgba(0,0,0,.4);
+
+}
+
+
+
+.cs-compare-handle{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.35);
+
+}
+
+
+
+.cs-compare-handle::before,
+.cs-compare-handle::after{
+
+    content:"";
+
+    display:block;
+
+    width:0;
+
+    height:0;
+
+    border-top:6px solid transparent;
+
+    border-bottom:6px solid transparent;
+
+}
+
+
+
+.cs-compare-handle::before{
+
+    border-right:7px solid #333;
+
+    margin-right:5px;
+
+}
+
+
+
+.cs-compare-handle::after{
+
+    border-left:7px solid #333;
+
+    margin-left:5px;
+
+}
+
+
+
+.cs-compare-range{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    margin:0;
+
+    opacity:0;
+
+    cursor:ew-resize;
+
+    -webkit-appearance:none;
+
+    appearance:none;
+
+}
+
+
+
+.cs-compare-range::-webkit-slider-thumb{
+
+    -webkit-appearance:none;
+
+    width:38px;
+
+    height:38px;
+
+}
+
+
+
+.cs-compare-range::-moz-range-thumb{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    background:transparent;
+
+}
+
+
+
+/* =====================================================
+05. RESULT
+
+Desktop / Tablet：左垂直標題・中文字・右圖出血
+Mobile   ：上排（左垂直標題・右圖出血）・下排文字
+===================================================== */
+
+.cs-result{
+
+    padding:0;
+
+    background:var(--bg-light);
+
+}
+
+
+
+.cs-result-inner{
+
+    display:grid;
+
+    grid-template-columns:
+    60px minmax(160px,1fr) minmax(0,2fr);
+
+    align-items:flex-end;
+
+    column-gap:1vw;
+
+    width:100%;
+
+    padding-left:max(
+        4vw,
+        calc((100% - var(--content-width)) / 2 + var(--page-padding))
+    );
+
+    padding-right: max(
+        0px,
+        calc((100% - var(--content-width)) / 2 - 30px)
+    )
+
+}
+
+
+
+.cs-result-heading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    height:100%;
+
+    justify-content:flex-start;
+
+
+}
+
+
+.cs-result-title{
+
+    margin-top: 7vw;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(45px, 4.321vw + 11.815px, 80px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+
+}
+
+
+
+.cs-result-line{
+    display:block;
+
+    width:2px;
+
+    height:100%;
+
+    background:#111;
+
+    margin-top:14px;
+
+}
+
+
+
+.cs-result-caption{
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    letter-spacing:.1em;
+
+    color:#555555;
+
+    font-weight:300;
+
+    text-align: right;
+
+    margin-bottom: 70px;
+}
+
+
+
+.cs-result-image-wrap{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:4px 0 0 4px;
+
+    margin-bottom: 50px;
+
+    margin-top: clamp(120px, -9.877vw + 275.852px, 200px);
+
+
+}
+
+
+
+.cs-result-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+/* =====================================================
+06. FINAL CTA
+
+深底置中收尾區塊，樣式承襲首頁 .final-cta。
+===================================================== */
+
+.cs-final-cta{
+
+    background:#555555;
+
+    color:#eeeeee;
+
+    padding:70px 0px;
+
+    text-align:center;
+
+}
+
+
+
+.cs-final-cta-title{
+
+    font-family:"Noto Serif TC",serif;
+
+    font-size: clamp(25px, 0.617vw + 20.26px, 30px);
+
+    font-weight: 500;
+
+    letter-spacing: .08em;
+
+    opacity: .8;
+
+}
+
+
+
+.cs-final-cta-content{
+
+   margin-top:
+    20px;
+
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(17px, 0.37vw + 14.16px, 20px);
+
+    letter-spacing:
+    .1em;
+
+    opacity:
+    .7;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+/* =====================================================
+V10 Desktop
+
+>1578px
+===================================================== */
+
+@media (min-width: 1578px){
+
+    .cs-intro-image-wrap{
+
+        border-radius:4px 4px 4px 4px;
+
+    }
+
+    .cs-result-image-wrap{
+
+        border-radius:4px 4px 4px 4px;
+
+    }
+
+
+}
+
+
+
+
+
+/* =====================================================
+V10 TABLET
+
+768px – 999px
+===================================================== */
+
+@media (min-width:768px) and (max-width:999px){
+
+    .cs-btn{
+        padding: 7px 14px;
+
+        font-size: 12px;
+
+    }
+
+
+
+
+    /* ---------- Hero ---------- */
+
+    .cs-hero{
+        aspect-ratio:1.6 / 1;
+    }
+
+
+    /* ---------- Items ---------- */
+
+
+    .cs-items-grid{
+        grid-template-columns:repeat(2,1fr);
+        row-gap:40px;
+    }
+
+
+
+
+}
+
+
+
+/* =====================================================
+V10 MOBILE
+
+<=767px
+===================================================== */
+
+@media (max-width:767px){
+
+
+    /* ---------- Hero ---------- */
+
+    .cs-hero{
+        aspect-ratio:2 / 3;
+    }
+
+    .cs2-hero-image{
+
+      object-position:
+        55% 0px;
+    }
+
+
+    .cs-hero-copy{
+        max-width:100%;
+        width:100%;
+        margin-left:0;
+        text-align:center;
+    }
+
+    .cs-hero-title{
+        margin-top: 5em;
+        font-size: clamp(24px, 4.348vw + 11.654px, 45px);
+        letter-spacing: .05em;
+        text-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    .cs-hero-subtitle{
+        margin-top: 2em;
+
+        font-size: clamp(15px, 0.458vw + 13.49px, 17px);
+        line-height: 1.6;
+        text-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    .cs-btn{
+        padding: 7px 14px;
+
+        font-size: 12px;
+    }
+
+    .cs-hero-cta{
+        margin-top: 37vw;
+    }
+
+    /* ---------- Intro ---------- */
+
+
+    .cs-intro-inner{
+        display:grid;
+        grid-template-columns:1fr 60px;
+        column-gap:16px;
+        width:calc(100% - 60px);
+        margin:0 auto;
+        padding-right:0;
+        align-items:flex-end;
+
+    }
+
+    .cs-intro-content{
+        order:1;
+        grid-column:1 / 2;
+        padding:0;
+        margin-bottom: 5vw;
+}
+
+
+    .cs-intro-heading{
+        order:2;
+        grid-column:2 / 3;
+        align-items:center;
+        min-height: 350px;
+        height:80vw;
+        padding-top:0;
+        margin-top: 6vw;
+        margin-right: clamp(-40px, 9.132vw - 70.137px, 0px);
+
+    }
+
+    .cs-intro-title{
+        font-size: clamp(45px, 3.432vw + 33.673px, 60px);
+    }
+
+
+
+    .cs-intro-image-wrap{
+        order:3;
+        grid-column:1 / 3;
+        width:calc(100% + 60px);
+        margin-left:-30px;
+        margin-top:0px;
+        margin-bottom: 0px;
+        border-radius:0;
+    }
+
+
+    /* ---------- Items ---------- */
+
+    .cs-items{
+        padding-top: 40px 0;
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .cs-items-title{
+        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+        padding: 0 5vw;
+        margin-bottom: 30px;
+    }
+
+    .cs-items-grid{
+        grid-template-columns:1fr;
+        row-gap:60px;
+    }
+
+    .cs-item{
+
+
+        border-bottom:
+
+        1px solid rgba(0, 0, 0, .15);
+
+        padding-bottom: 50px;
+
+        margin-bottom: 0px;
+
+    }
+
+
+
+    .cs-item:last-child{
+
+        border-bottom: none;
+
+        padding-bottom: 0px;
+
+    }
+
+
+    /* ---------- Result ---------- */
+
+
+    .cs-result-inner{
+        display:grid;
+        grid-template-columns:0px 1fr;
+        align-items:start;
+        width:calc(100% - 48px);
+        margin:0 auto;
+        padding-left:0;
+        column-gap:25vw;
+    }
+
+    .cs-result-heading{
+        order:1;
+        grid-column:1 / 2;
+        margin-left: 5vw;
+    }
+
+    .cs-result-title{
+        font-size: clamp(45px, 3.432vw + 33.673px, 60px);
+    }
+
+    .cs-result-line{
+
+        height:100%;
+
+        margin-bottom: -45px;
+    }
+
+    .cs-result-image-wrap{
+        order:2;
+        grid-column:2 / 3;
+        width:calc(100% + 24px);
+        margin-right:-24px;
+        margin-top: clamp(120px, 15.982vw + 67.26px, 190px);
+        margin-bottom: 10px;
+    }
+
+    .cs-result-caption br{
+        display: none;
+    }
+
+    .cs-result-caption{
+        order:3;
+        grid-column:1 / 3;
+        font-size: 10px;
+        margin-bottom: 30px;
+        margin-right: -20px;
+    }
+
+
+    /* ---------- Final CTA ---------- */
+
+    .cs-final-cta{
+        padding: 50px 0;
+    }
+
+
+.cs-final-cta-title{
+
+    font-size: clamp(17px, 1.831vw + 10.959px, 25px);
+    margin-bottom: 20px;
+
+}
+
+
+
+.cs-final-cta-content{
+
+    font-size: clamp(12px, 0.686vw + 9.734px, 15px);
+    max-width:90%;
+    margin:0 auto;
+    margin-bottom: 40px;
+
+}
+
+}

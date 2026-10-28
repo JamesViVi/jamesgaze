@@ -1,0 +1,1629 @@
+/* =====================================================
+V8
+JAMES GAZE
+ABOUT.CSS
+
+依賴 css/style.css 提供：
+reset、字體變數、:root 變數、
+header / footer / final-cta 共用元件
+
+斷點與 style.css 一致：
+Base（約 1000–1577px, 對應 1280 版型）
+Tablet 768px–999px（對應 768 版型）
+Mobile <=767px（對應 390 版型）
+===================================================== */
+
+
+
+/* =====================================================
+00. SCOPED VARIABLES
+僅在 About 頁面生效，不污染全站
+===================================================== */
+
+
+.about-page{
+
+    /* 內文閱讀寬度（單欄文字） */
+
+    --about-prose-width:
+
+    720px;
+
+
+    /* 多欄／圖文區塊寬度 */
+
+    --about-content-width:
+
+    1578px;
+
+
+    /* 區塊垂直間距 */
+
+    --about-section-gap:
+
+    clamp(
+        60px,
+        8vw,
+        140px
+    );
+
+}
+
+
+
+/* =====================================================
+01. TYPOGRAPHY
+新增類別的字體指定（style.css 既有的字體對應表未涵蓋此頁新 class）
+===================================================== */
+
+
+.about-hero-title,
+.about-section-title,
+.method-keyword,
+.about-cta-attribution{
+
+    font-family:
+    "Noto Serif TC",
+    serif;
+
+}
+
+
+
+.about-hero-subtitle,
+.credential-caption,
+.about-gaze-credit{
+
+    font-family:
+    "Inter",
+    "Noto Sans TC",
+    sans-serif;
+
+}
+
+
+
+/* =====================================================
+02. HERO
+滿版形象圖，文字疊加左下
+===================================================== */
+
+
+.about-hero{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:
+    2.39 / 1;
+
+    overflow:hidden;
+
+}
+
+
+
+.about-hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:
+    center 20%;
+
+}
+
+
+
+.about-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.65) 0%,
+        rgba(0,0,0,.15) 13%,
+        rgba(0,0,0,0) 20%
+    );
+
+}
+
+
+
+.about-hero-content{
+
+    position:absolute;
+
+    left:7vw;
+
+    right:0;
+
+    bottom:11vw;
+
+    z-index:1;
+
+    padding:
+    0
+    max(
+        24px,
+        calc((100% - var(--content-width)) / 2 + 24px)
+    )
+    clamp(28px, 4vw, 64px);
+
+    color:
+    var(--text-light);
+
+}
+
+
+
+.about-hero-title{
+
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(28px, 1.975vw + 12.83px, 44px);
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: .1em;
+}
+
+
+
+.about-hero-subtitle{
+
+    margin-top:
+    1.5em;
+
+    margin-left: 4.2em;
+
+
+    font-size: clamp(17px, 0.37vw + 14.16px, 20px);
+    font-weight: 300;
+    line-height:1.8;
+    letter-spacing: .1em;
+    opacity: .9;
+
+}
+
+
+
+/* =====================================================
+03. SECTION BASE
+單欄 / 雙欄 / 三欄 共用容器
+===================================================== */
+
+
+.about-section{
+
+    width:
+    min(
+        calc(100% - var(--page-padding) * 2),
+        var(--about-content-width)
+    );
+
+    margin:
+    var(--about-section-gap) auto;
+
+}
+
+
+
+/* -----------------
+
+
+
+ch1 單欄置中（開場、經歷）
+
+
+
+----------------- */
+
+
+.about-section--intro .about-section-inner{
+
+    max-width:
+    900px;
+
+    padding-left: 50px;
+    padding-right: 50px;
+
+    margin:0 auto;
+
+}
+
+
+
+.about-section--intro p + p{
+
+    margin-top:
+    1.5em;
+
+}
+
+
+
+.about-section--intro p{
+
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+    margin-bottom: 70px;
+
+}
+
+
+
+
+/* -----------------
+
+
+
+Ch2雙欄左文右文（感受）
+
+
+
+----------------- */
+
+
+.about-section--split{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:
+    3vw;
+
+    padding: 0 3vw;
+
+    align-items: center;
+
+    margin-top: 50px;
+
+}
+
+
+
+.about-section--split p{
+
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+}
+
+
+
+/* -----------------
+
+
+
+ch3 三欄（方法：知／直覺／覺知）
+
+
+
+----------------- */
+
+
+.about-section--triple{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3, 1fr);
+
+    gap:
+    clamp(32px, 4vw, 64px);
+
+    padding-top:
+    30px;
+
+    padding-bottom:
+    40px;
+
+    padding-left: clamp(
+     2vw,
+    calc(17.585vw - 119.69px),
+    10vw
+    );
+
+    padding-right: clamp(
+    2vw,
+    calc(17.585vw - 119.69px),
+    10vw
+    );
+
+    border-top:
+    1px solid rgba(17,17,17,.12);
+
+    border-bottom:
+    1px solid rgba(17,17,17,.12);
+
+
+
+}
+
+
+
+.method-item{
+
+    text-align:center;
+
+}
+
+
+
+.method-keyword{
+
+    font-size:
+    clamp(
+        32px,
+        2.4vw,
+        45px
+    );
+
+    font-weight:
+    400;
+
+    margin-bottom:
+    .6em;
+ 
+    color: #999;
+
+}
+
+
+
+.method-item p{
+
+    font-size:
+    17px;
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align: justify;
+}
+
+
+
+/* =====================================================
+
+
+
+04. SECTION TITLES
+新增各段落標題，樣式共用，對齊方式與間距依區塊各自搭配
+（多行標題以 <br> 斷行給 Mobile 用，Desktop 預設隱藏 <br>，
+讓文字依欄寬自然換行）
+
+
+
+===================================================== */
+
+
+.about-section-title{
+    
+    font-family: "Noto Serif TC", serif;
+
+    font-size: clamp(40px, 1.3148rem + 2.4691vw, 60px);
+
+    font-weight: 600;
+    
+    line-height: 1.2;
+
+}
+
+
+
+
+/* 單欄置中（開場1、方法、經歷） */
+
+.about-section-title--center{
+
+    margin:
+    0 auto 0.8em;
+
+    text-align:
+    center;
+
+}
+
+.about-section-title--center br{
+
+display: none;
+}
+
+.about-section-title-triple{
+
+    margin-top: 100px;
+}
+
+/* 雙欄標題欄靠右（開場2） */
+
+.about-section-title--align-right{
+
+    text-align:
+    right;
+
+}
+
+.about-section-title--align-right br:nth-of-type(1) {
+  display: none;
+}
+
+
+/* 雙欄標題欄靠左 / 圖文欄內靠左（感受、人像、凝視） */
+
+.about-section-title--align-left{
+
+    text-align:
+    left;
+
+}
+
+
+
+/* Gaze標題 */
+
+.about-section-title-gaze{
+
+    padding-left: 2vw;
+
+    margin-top: 170px;
+
+}
+
+.about-section-title-gaze br{
+
+    display: none;
+}
+
+/* 開場2、人像、凝視：標題與其後內文的間距 */
+
+.about-section-col--title .about-section-title,
+.about-section-title-gaze,
+.about-portrait-text .about-section-title,
+.about-gaze-text .about-section-title{
+
+    margin-bottom:
+    .8em;
+
+}
+
+
+
+/* =====================================================
+
+
+
+05. STORY BLOCK
+案例／教學小故事，左側加粗縮排線條
+命名為 story-block，避免與首頁 .case-study 衝突
+
+
+
+===================================================== */
+
+
+.story-block{
+
+    max-width:
+    var(--about-prose-width);
+
+    margin:
+    2.5em auto;
+
+    padding-left:
+    clamp(20px, 3vw, 32px);
+
+    border-left:
+    5px solid #777;
+
+}
+
+.story-block1{ max-width: clamp(640px, calc(32.099vw + 393.086px), 900px);}
+
+.story-block p{
+
+    font-family: "Noto sants TC", sans-serif;
+    font-style: italic;
+
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+}
+
+
+
+.story-block p + p{
+
+    margin-top:
+    0em;
+
+}
+
+
+
+/* 巢狀於 Section 4 文字欄內的 story-block 不再額外置中 */
+
+.about-portrait-text .story-block{
+
+    margin-left:0;
+
+    margin-right:0;
+
+    max-width:none;
+
+}
+
+
+
+/* =====================================================
+
+
+
+06. SECTION 4 — 人像
+Desktop 雙欄左圖右文／Mobile 上圖下文
+
+
+
+===================================================== */
+
+
+.about-section--portrait{
+
+    display:grid;
+
+    grid-template-columns:
+    minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: clamp(30px, calc(2.469vw + 11.037px), 50px);
+
+    align-items:start;
+
+    margin-top: 170px;
+
+}
+
+
+
+.about-portrait-figure{
+
+    position:relative;
+
+
+    overflow:hidden;
+
+    margin:0;
+
+    margin-left: -35px;
+
+
+}
+
+
+
+.about-portrait-image{
+
+    width:100%;
+
+    height:100%;
+
+    max-height: 900px;
+
+    object-fit:cover;
+
+    border-radius:
+    0px 4px 4px 0px;
+
+}
+
+
+
+.about-portrait-text p{
+
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+    padding-right: 2vw;
+
+}
+
+
+
+.about-portrait-text p + p,
+.about-portrait-text p + .story-block,
+.about-portrait-text .story-block + p{
+
+    margin-top:
+    1.5em;
+
+}
+
+/* =====================================================
+07. SECTION 6 — 資歷 LOGO
+Desktop 左中右三欄／Mobile 上 1（跨欄）下 2
+以 grid-template-areas 控制排列，不依賴 DOM 順序
+===================================================== */
+
+.about-section--intro{
+
+    margin-top: 70px;
+
+    margin-bottom: 40px;
+
+}
+
+.about-section--intro2{
+
+    margin-top: 150px;
+}
+
+.credentials{
+
+    max-width: clamp(650px, calc(30.864vw + 412.963px), 900px);
+    
+    margin: auto;
+
+    padding-top:
+    50px;
+
+    padding-bottom:
+    50px;
+
+    border-top:
+    1px solid rgba(17,17,17,.12);
+
+    border-bottom:
+    1px solid rgba(17,17,17,.12);
+
+
+}
+
+
+
+.credentials-list{
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(3, 1fr);
+
+    grid-template-areas:
+    "a b c";
+
+}
+
+
+
+.credential{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+
+.credential:nth-child(1){ grid-area:a; }
+.credential:nth-child(2){ grid-area:b; }
+.credential:nth-child(3){ grid-area:c; }
+
+
+
+.credential-logo{
+
+    height:
+    100px;
+
+    width:auto;
+
+    object-fit:contain;
+
+    filter:
+    grayscale(1);
+
+    opacity:
+    .85;
+
+}
+
+.credential-logo--fotosoft{ scale: 97%; }
+.credential-logo--ipa{ scale: 105%; }
+.credential-logo--px3{ scale: 78%; }
+.credential-logo--company{ scale: 75%; }
+
+.credential-logo-group{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:
+    clamp(40px, calc(2.469vw + 21.037px), 60px);
+}
+
+
+
+.credential-caption{
+
+    font-size:
+        clamp(
+        14px,
+        1vw,
+        17px
+    );
+
+    letter-spacing:
+    .1em;
+
+    color: #333;
+
+    font-weight: 300;
+
+    margin-top: 5px;
+
+}
+
+
+
+/* =====================================================
+08. SECTION 7 — Gaze 凝視／潛像
+Desktop 雙欄左文右圖／Mobile 上圖下文
+===================================================== */
+
+
+.about-gaze-content{
+
+    display:grid;
+
+    grid-template-columns:
+    minmax(0, 1.8fr) minmax(0, 1fr);
+
+    gap: clamp(30px, calc(2.469vw + 11.037px), 50px);
+
+    align-items:start;
+
+}
+
+
+
+.about-gaze-text p{
+
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+    padding-left: 2vw;
+
+}
+
+
+
+.about-gaze-text p + p{
+
+    margin-top:
+    1.5em;
+
+}
+
+
+
+.about-gaze-figure{
+
+    position:relative;
+
+    margin: 0;
+
+    margin-right: -33px;
+
+}
+
+
+
+.about-gaze-image{
+
+    width:100%;
+
+    height:auto;
+
+    object-fit:cover;
+
+    margin-bottom: 30px;
+
+    border-radius:
+    4px 0px 0px 4px;
+
+}
+
+
+
+.about-gaze-credit{
+
+    display:block;
+
+    margin-top:
+    5px;
+
+    font-size:
+    7px;
+
+    font-weight: 100;
+
+    line-height:
+    1.1;
+
+    text-align:right;
+
+    margin-right: 5px;
+
+    color:#999
+
+}
+
+
+.about-gaze-credit{
+
+    display: none;
+}
+
+/* =====================================================
+09. FINAL CTA — 補充樣式
+主要樣式沿用 style.css 既有的
+.final-cta / .final-cta-inner / .quote-mark / .final-cta-link
+這裡只補上 About 頁專屬的作者署名
+===================================================== */
+
+
+
+.final-cta-quote br{
+
+    display: none;
+}
+
+.final-cta-quote{
+
+    margin: 0;
+
+    margin-top: 50px;
+
+    font-size: clamp(20px, calc(1.852vw + 5.778px), 35px);
+
+}
+
+.quote-mark{
+    display:inline-block;
+    font-size: clamp(40px, calc(3.704vw + 11.556px), 70px);
+    opacity:.7;
+    transform: translateY(clamp(15px, calc(1.852vw + 0.778px), 30px));
+}
+
+.about-cta-attribution{
+
+    display:block;
+
+    margin-top:
+    20px;
+
+    font-size: clamp(15px, calc(0.494vw + 9.207px), 19px);
+
+    letter-spacing:
+    .1em;
+
+    opacity:
+    .7;
+
+    margin-bottom: 30px;
+}
+
+/* 底線 */
+.final-cta-link::after {
+
+    width: 63px;
+
+}
+
+
+
+
+
+@media (min-width:1660px) {
+
+.about-gaze-image,
+.about-portrait-image{
+
+    border-radius:
+    4px 4px 4px 4px;
+
+}
+
+
+
+}
+
+/* =====================================================
+
+
+
+
+
+10. TABLET
+768px - 999px
+
+
+
+
+
+===================================================== */
+
+
+@media (min-width:768px) and (max-width:999px){
+
+
+    .about-hero{
+
+        aspect-ratio:
+        1.6 / 1;
+
+    }
+
+
+    .about-hero-content{
+
+        bottom:23vw;
+
+    }
+
+
+
+    .about-portrait-figure{
+
+    overflow:visible;
+    }
+
+
+
+    .about-portrait-image {
+    
+        --portrait-scale: 
+        clamp(
+        1.1,
+        calc(1.8 - (100vw - 768px) / 330px),
+        1.8
+        );
+    
+        transform: scale(var(--portrait-scale));
+    
+        transform-origin: right top;
+    }
+
+.final-cta-quote br{
+
+    display: block;
+}
+
+.final-cta-quote{
+
+    margin: 0;
+
+    margin-top: 70px;
+
+    font-family:"Noto Serif TC",serif;
+
+    font-size: clamp(25px, 0.617vw + 20.26px, 30px);
+
+    font-weight: 500;
+
+    letter-spacing: .08em;
+
+    opacity: .8;
+
+    line-height: 1;
+
+    text-align: center;
+
+
+}
+
+.about-cta-attribution{
+
+    margin-top:
+    30px;
+
+}
+
+
+}
+
+
+
+/* =====================================================
+
+
+
+
+
+11. MOBILE
+<=767px
+
+
+
+
+
+===================================================== */
+
+
+@media (max-width:767px){
+
+
+    .about-page{
+
+        --about-section-gap:
+        56px;
+
+    }
+
+
+    /* -----------------
+    Hero：MOBILE
+    ----------------- */
+
+    .about-hero{
+
+        aspect-ratio:
+        2 / 3;
+
+    }
+
+    .about-hero-image{
+
+        object-position:
+        73% 50%;
+
+    }
+
+    .about-hero-content{
+
+        padding: 0;
+
+        top: 62vw;
+        
+        text-align: center;
+        
+    }
+
+
+    .about-hero-title{
+
+        font-size: clamp(20px, calc(5.0343vw + 1.3877px), 40px);
+
+    }
+
+
+
+    .about-hero-subtitle{
+
+        margin-left: 0; 
+
+        font-size: clamp(15px, 0.458vw + 13.49px, 17px);
+
+    }
+
+
+    /* -----------------
+    單欄／雙欄／三欄 一律改為單欄堆疊 MOBILE
+    ----------------- */
+
+.about-section--intro .about-section-inner{
+
+    padding: 0 3vw;
+
+}
+
+
+
+
+    .about-section--split{
+
+        grid-template-columns:
+        1fr;
+
+        gap:
+        20px;
+
+
+    }
+
+
+    .about-section--triple{
+
+        grid-template-columns:
+        1fr;
+
+        gap:
+        50px;
+
+
+        padding-top:
+        35px;
+
+        padding-bottom:
+        40px;
+
+        width:70%;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .method-item{
+
+        text-align:center;
+
+
+    }
+
+
+    /* -----------------
+    Section Title：一律置中，還原 <br> 斷行 MOBILE
+    ----------------- */
+
+    .about-section-title{
+
+        margin:
+        0 auto .8em;
+
+        text-align:
+        center;
+
+    }
+
+    .about-section-title br{
+
+        display:block;
+
+    }
+
+    /* 感受：Mobile 標題移到內文之上 */
+
+    #feeling .about-section-col--title{
+
+        order:-1;
+
+    }
+
+
+
+    /* -----------------
+    案例1 story-block1 MOBILE
+    ----------------- */
+
+
+    .story-block1{ 
+     
+        margin:0;
+        margin-left: 10vw;
+        margin-right: 12vw;
+        margin-bottom: 10vw;
+    
+    }
+
+
+    /* -----------------
+    Portrait MOBILE
+    ----------------- */
+
+    .about-section--portrait{
+
+        grid-template-columns:
+        1fr;
+
+        gap:50px;
+
+        padding:0;
+        margin:0;
+
+
+    
+    }
+
+
+    .about-portrait-figure{
+
+        aspect-ratio:
+        4 / 5;
+
+        padding:0;
+        margin:0;
+
+        margin-right: -4vw;
+
+
+
+    }
+
+.about-portrait-image{
+
+    border-radius: 0px;
+
+}
+
+    .about-portrait-text p{
+
+        padding:0;
+        margin:0;
+        margin-left: 7vw;
+        margin-right: 3vw;
+
+    }
+
+    .about-portrait-text .story-block{
+
+        margin-left:9vw;
+
+        padding-left:0vw;
+        padding-right:5vw;
+
+    }
+
+
+.about-section--intro2{
+
+    margin-top: 70px;
+}
+
+    /* -----------------
+    credential MOBILE
+    ----------------- */
+
+    .credentials{
+
+        width: clamp(
+        330px,
+        calc(12.357vw + 289.223px),
+        384px
+        );
+
+        padding-top: 25px;
+
+        padding-bottom: 40px;
+
+    }
+
+    .credentials-list{
+
+        grid-template-columns:
+        repeat(2, 1fr);
+
+        grid-template-areas:
+        "b b"
+        "a c";
+
+        gap:
+        28px 16px;
+
+    }
+
+    .credential-logo-group{
+
+        gap: clamp(
+        60px,
+        calc(4.5662vw + 44.9315px),
+        80px
+        );
+
+    }
+
+    .credential-caption{
+
+        margin-top: 0px;
+
+    }
+
+
+    /* -----------------
+    Gaze MOBILE
+    ----------------- */
+
+
+    .about-gaze-content{
+
+        grid-template-columns:
+        1fr;
+
+        gap:
+        40px;
+
+        padding:0;
+        margin: 0;
+    
+    }
+
+    .about-gaze-text p{
+
+        margin-left: 3vw;
+        margin-right: 4vw;
+
+    }
+
+
+    .about-gaze-image{
+
+        width:70%;
+
+        margin-left: auto;
+        margin-right: 0px;
+
+    }
+
+    .about-gaze-credit{
+
+        margin-bottom:
+        50px;
+    
+    }
+
+
+/* -----------------
+Final CTA MOBILE
+----------------- */
+
+
+.final-cta{
+
+    padding:
+
+    1vw 0px 8vw 0px;
+
+    text-align: center;
+
+}
+
+
+.final-cta-inner{
+
+    text-align: center;
+
+}
+
+.final-cta-quote br{
+
+    display:block
+}
+
+
+.final-cta-quote{
+
+    font-size: 
+    clamp(16px, calc(6.45px + 2.288vw), 30px);
+
+    line-height: 1.6em;
+
+    text-align: center;
+}
+
+
+.quote-mark{
+
+    font-size: 
+    clamp(20px, calc(-2.65px + 6.865vw), 50px);
+
+    transform: 
+    translateY(clamp(5px, calc(-6.33px + 3.432vw), 20px));
+}
+
+.quote-line {
+    display: inline;
+}
+
+.quote-line-2 {
+    position: relative;
+    left: 25px;
+}
+
+.quote-mark-right {
+    position: relative;
+    left: 20px;
+}
+
+
+.about-cta-attribution{
+
+    margin-top:
+    10px;
+
+    font-size: clamp(15px, calc(1.3724vw + 6.4714px), 15px);
+
+    margin-bottom: 30px;
+}
+
+
+
+.final-cta-link{
+
+    margin-top:0px;
+
+
+    font-size: 
+    clamp(14px, calc(6.982px + 0.9153vw), 14px);
+
+}
+
+
+/* 底線 */
+.final-cta-link::after {
+    width: clamp(65px, calc(4.5767vw + 29.9027px), 65px);
+
+}
+
+
+
+
+
+}
+
+
+/* =====================================================
+SCROLL REVEAL
+About 頁專用滾動淡入，跟首頁 script.js 裡
+.jg-text-reveal / .jg-image-reveal 是同一套視覺語言
+（淡入 + 輕微位移 / 縮放），獨立定義成 about- 前綴的
+class，避免依賴 script.js 內部注入的樣式細節。
+由 js/about.js 用 IntersectionObserver 進場時
+加上 .jg-reveal-visible。
+
+三種強度：
+- about-reveal-text  ：一般文字區塊
+- about-reveal-image ：圖片（淡入 + 輕微縮小）
+- about-reveal-fade  ：只淡入不位移，給結尾 final-cta 用，
+                       避免收尾時動態感搶戲
+===================================================== */
+
+.about-reveal-text{
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition:
+        opacity 600ms cubic-bezier(.22,.61,.36,1),
+        transform 650ms cubic-bezier(.22,.61,.36,1);
+    transition-delay: var(--about-reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.about-reveal-text.jg-reveal-visible{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.about-reveal-image{
+    opacity: 0;
+    transform: scale(1.04);
+    transition:
+        opacity 900ms cubic-bezier(.22,.61,.36,1),
+        transform 1150ms cubic-bezier(.22,.61,.36,1);
+    will-change: opacity, transform;
+}
+
+.about-reveal-image.jg-reveal-visible{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.about-reveal-fade{
+    opacity: 0;
+    transition: opacity 900ms cubic-bezier(.22,.61,.36,1);
+    will-change: opacity;
+}
+
+.about-reveal-fade.jg-reveal-visible{
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .about-reveal-text,
+    .about-reveal-image,
+    .about-reveal-fade{
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+}

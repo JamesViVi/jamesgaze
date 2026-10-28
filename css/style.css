@@ -1,0 +1,5563 @@
+/* =====================================================
+V7
+JAMES GAZE
+STYLE.CSS
+===================================================== */
+
+
+
+/* =====================================================
+01. RESET
+===================================================== */
+
+
+    *,
+    *::before,
+    *::after{
+
+    box-sizing:border-box;
+
+    }
+
+
+
+    html{
+
+    scroll-behavior:smooth;
+
+    }
+
+
+
+    body{
+
+    margin:0;
+
+    padding:0;
+
+    background:#eeeeee;
+
+    color:#111;
+
+    font-family:
+    "Inter",
+    "Noto Sans TC",
+    sans-serif;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    }
+
+
+
+    img{
+
+    display:block;
+
+    max-width:100%;
+
+    }
+
+
+
+    a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+    }
+
+
+
+    button{
+
+    font-family:inherit;
+
+    }
+
+
+
+    ul,
+    ol{
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+    }
+
+
+
+    h1,
+    h2,
+    h3,
+    p{
+
+    margin:0;
+
+    }
+
+
+
+/* =====================================================
+TYPOGRAPHY SYSTEM
+全站字體管理
+===================================================== */
+
+
+/* =====================================================
+Base
+
+中文內文預設
+===================================================== */
+
+body{
+
+    font-family:
+    "Noto Sans TC",
+    sans-serif;
+
+}
+
+
+
+/* =====================================================
+Chinese Heading
+
+中文標題
+===================================================== */
+
+.site-logo-cn,
+.hero-title,
+.course-title,
+.case-title,
+.about-james-role,
+.final-cta-quote,
+.footer-logo-cn{
+
+    font-family:
+    "Noto Serif TC",
+    serif;
+
+}
+
+
+
+/* =====================================================
+English Brand / Display
+
+英文品牌與展示文字
+===================================================== */
+
+.section-title-vertical,
+.learning-path-title,
+.case-study-title,
+.about-james-title,
+.site-logo-en,
+.footer-logo-en,
+.course-number{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+}
+
+
+
+/* =====================================================
+UI / Navigation / Button
+
+功能性文字
+===================================================== */
+
+.primary-navigation a,
+.case-number,
+.footer-navigation a,
+.footer-copyright{
+
+    font-family:
+    "Inter",
+    sans-serif;
+
+}
+
+
+/* =====================================================
+03. ROOT VARIABLES
+
+===================================================== */
+
+
+:root{
+
+
+    /* Color */
+
+    --bg-light:
+
+    #eeeeee;
+
+
+    --bg-dark:
+
+    #333333;
+
+
+    --bg-footer:
+
+    #333333;
+
+
+    --text-dark:
+
+    #111111;
+
+
+    --text-light:
+
+    #eeeeee;
+
+
+    --text-gray:
+
+    #808080;
+
+
+
+    /* Layout */
+
+
+    --content-width:
+
+    1500px;
+
+
+
+    --page-padding:
+
+    2vw;
+
+
+
+    /* Header */
+
+
+    --header-height:
+
+    72px;
+
+
+
+    /* Transition */
+
+
+    --ease:
+
+    cubic-bezier(
+        .4,
+        0,
+        .2,
+        1
+    );
+
+
+}
+
+
+
+
+
+/* =====================================================
+04. GLOBAL LAYOUT
+
+===================================================== */
+
+
+
+main{
+
+    overflow:hidden;
+
+}
+
+
+
+.selected-works,
+.learning-path,
+.case-study,
+.about-james,
+.final-cta{
+
+    scroll-margin-top:
+
+    var(--header-height);
+
+}
+
+
+
+.section-title{
+
+
+    font-size:
+
+    clamp(
+        42px,
+        4vw,
+        64px
+    );
+
+
+    line-height:
+
+    .95;
+
+
+    font-weight:
+
+    400;
+
+
+}
+
+
+
+
+/* =====================================================
+05. HEADER
+===================================================== */
+
+
+
+.site-header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+
+    color:#ffffff;
+
+    background:transparent;
+
+
+    
+}
+
+.site-header.scrolled{
+
+    background:
+    rgba(41,41,41,1);
+
+
+    backdrop-filter:
+    blur(10px);
+
+
+    -webkit-backdrop-filter:
+    blur(10px);
+
+}
+
+.header-inner{
+
+
+    width:
+
+    min(
+        calc(100% - var(--page-padding) * 2),
+        var(--content-width)
+    );
+
+
+    margin:
+
+    0 auto;
+
+
+
+    height:
+
+    var(--header-height);
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:space-between;
+
+
+}
+
+
+
+/* -----------------
+Logo
+----------------- */
+
+
+.site-logo{
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1;
+
+
+}
+
+
+
+.site-logo-cn{
+
+    font-weight: 400;
+
+    font-size:
+
+    20px;
+
+
+    letter-spacing:
+
+    .15em;
+
+    color:white
+
+}
+
+
+
+.site-logo-en{
+
+
+    margin-top:
+
+    4px;
+
+    font-weight:400;
+
+    font-size:
+
+    9px;
+
+
+    letter-spacing:
+
+    .47em;
+
+
+    color:white
+
+
+}
+
+
+
+
+
+/* -----------------
+Navigation
+----------------- */
+
+
+.primary-navigation{
+    position:fixed;
+    top:0;
+    left:50%;
+
+    height:var(--header-height);
+
+    display:flex;
+    align-items:center;
+
+    transform:translateX(-50%);
+
+    z-index:1001;
+}
+
+
+
+.primary-navigation ul{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:
+
+    42px;
+
+
+}
+
+
+
+.primary-navigation a{
+
+
+    font-size:
+
+    11px;
+
+
+    letter-spacing:
+
+    .25em;
+
+
+    white-space:nowrap;
+
+    color: #ffffff;
+
+    transition:
+
+    opacity .3s var(--ease);
+
+
+}
+
+
+
+.primary-navigation a:hover{
+
+
+    opacity:.55;
+
+
+}
+
+
+/* -----------------
+Nav Dropdown
+(Learning Path / Case Study)
+
+Desktop / Tablet (>=768px)：
+hover 或鍵盤 focus 展開。
+限定 min-width，避免與
+Mobile 版型（全部展開）互相干擾。
+----------------- */
+
+.nav-item{
+
+    position:relative;
+
+}
+
+
+@media (min-width:768px){
+
+    .nav-dropdown{
+
+        position:absolute;
+
+        top:100%;
+        left:50%;
+
+        transform:translate(-50%, 8px);
+
+        min-width:150px;
+
+        padding:20px 0;
+
+        display:flex;
+        flex-direction:column;
+
+        background:rgba(41,41,41,1);
+        backdrop-filter:blur(10px);
+        -webkit-backdrop-filter:blur(10px);
+
+        border-radius:4px;
+        
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+
+        transition:
+            opacity .35s var(--ease),
+            transform .35s var(--ease),
+            visibility 0s linear .35s;
+
+    }
+
+
+    .nav-item.has-dropdown:hover .nav-dropdown,
+    .nav-item.has-dropdown:focus-within .nav-dropdown{
+
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+
+        transform:translate(-50%, 0);
+
+        transition:
+            opacity .35s var(--ease),
+            transform .35s var(--ease),
+            visibility 0s linear;
+
+    }
+
+
+    .nav-dropdown a{
+
+        padding:8px 24px;
+
+        font-size:12px;
+        letter-spacing:.08em;
+        white-space:nowrap;
+
+        color:rgba(255, 255, 255, .8);
+
+        transition:
+            color .3s var(--ease),
+            background .3s var(--ease);
+
+    }
+
+
+    .nav-dropdown a:hover{
+
+        opacity:0.5;
+        color:#ffffff;
+
+    }
+
+}
+
+
+
+
+
+/* -----------------
+Course CTA
+----------------- */
+
+
+.header-course-cta{
+
+    border:
+    1px solid rgba(
+        255,
+        255,
+        255,
+        .6
+    );
+
+    border-radius: 3px;
+
+    padding: 8px 18px;
+
+    letter-spacing: .15em;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 300;
+
+    transition:
+
+    background .5s var(--ease),
+    color .5s var(--ease);
+
+}
+
+
+
+.header-course-cta:hover{
+
+
+    background:#fff;
+
+
+    color:#111;
+
+
+}
+
+
+
+/* -----------------
+Mobile Menu
+
+Desktop hidden
+
+----------------- */
+
+
+.mobile-menu-toggle{
+
+
+    display:none;
+
+
+}
+
+
+
+
+
+/* =====================================================
+06. HERO
+===================================================== */
+
+/* =====================================================
+HERO DESKTOP 1280+
+
+Clean structure
+Image: cover only
+Position: object-position only
+No transform zoom
+===================================================== */
+
+
+/* -----------------
+Hero Container
+----------------- */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:
+    2.39 / 1;
+
+    overflow:hidden;
+
+
+}
+
+
+
+.hero-media{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+
+
+
+.hero-image{
+
+    width:100%;
+
+    height:110%;
+
+    object-fit:cover;
+
+    object-position:
+    90% center;
+
+   transform:
+    scale(1.2);
+
+    transform-origin:
+    8% center;
+
+
+}
+
+
+
+
+
+.hero-media::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.65) 0%,
+        rgba(0,0,0,.15) 13%,
+        rgba(0,0,0,0) 20%
+    );
+
+}
+
+
+
+/* -----------------
+Hero Overlay
+----------------- */
+
+
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+
+    
+}
+
+
+
+
+/* -----------------
+Hero Copy
+----------------- */
+
+.hero-copy{
+
+    margin-left:
+    8vw;
+
+    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+/* -----------------
+Hero Title
+
+括號由 pseudo 製作
+
+----------------- */
+
+
+.hero-title{
+
+
+    position:relative;
+
+
+    display:inline-block;
+
+
+    font-size:
+
+    clamp(
+        25px,
+        2.5vw,
+        42px
+    );
+
+
+    line-height:
+
+    1.6;
+
+
+    letter-spacing:
+
+    .05em;
+
+
+    font-weight:
+
+    500;
+
+
+}
+
+
+.hero-title-bracket{
+    position:absolute !important;
+
+    display:block !important;
+
+    width:30px !important;
+    height:30px !important;
+
+    box-sizing:border-box !important;
+
+    /* 不讓原本的「」顯示 */
+    text-indent:-9999px !important;
+    overflow:hidden !important;
+
+    /* 確保元素本身存在 */
+    opacity:0.7 !important;
+
+    pointer-events:none !important;
+
+    transform-origin:center center;
+    will-change:transform;
+    
+}
+
+
+/* =========================
+   左上角 L
+   ========================= */
+
+.hero-title-bracket-left{
+    left:-35px !important;
+    top:-15px !important;
+
+    border-top:1px solid #fff !important;
+    border-left:1px solid #fff !important;
+
+    border-right:none !important;
+    border-bottom:none !important;
+
+}
+
+
+/* =========================
+   右下角 L
+   ========================= */
+
+.hero-title-bracket-right{
+    right:-35px !important;
+    bottom:-15px !important;
+
+    border-right:1px solid #fff !important;
+    border-bottom:1px solid #fff !important;
+
+    border-left:none !important;
+    border-top:none !important;
+}
+
+
+
+.hero-subtitle br{
+
+display: none
+
+}
+
+
+
+.hero-subtitle{
+
+    margin-top:
+    3em;
+
+
+    font-size: clamp(17px, 0.37vw + 14.16px, 20px);
+
+
+    font-weight:
+    300;
+
+
+    line-height:
+    1.8;
+
+
+    letter-spacing:
+    0.18em;
+
+
+    opacity:
+    .9;
+
+}
+
+
+
+/* -----------------
+Scroll Arrow
+V Shape
+Animation only
+----------------- */
+
+
+.hero-scroll-indicator{
+
+    position:absolute;
+
+    bottom:
+    42px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+}
+
+
+
+
+.hero-scroll-arrow{
+
+    display:block;
+
+
+    width:
+    18px;
+
+
+    height:
+    18px;
+
+
+    border-right:
+    2px solid #fff;
+
+
+    border-bottom:
+    2px solid #fff;
+
+
+    transform:
+    rotate(45deg);
+
+
+    opacity:
+    .7;
+
+
+    animation:
+    heroArrowMove 2s infinite;
+
+}
+
+
+
+
+
+@keyframes heroArrowMove{
+
+
+    0%,
+    100%{
+
+
+        transform:
+        translateY(0)
+        rotate(45deg);
+
+
+        opacity:
+        .2;
+
+
+    }
+
+
+
+    50%{
+
+
+        transform:
+        translateY(5px)
+        rotate(45deg);
+
+
+        opacity:
+        0.5;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+V7
+JAMES GAZE
+STYLE.CSS
+
+PART 2 / 4
+
+SELECTED WORKS
+LEARNING PATH
+
+===================================================== */
+
+
+
+/* =====================================================
+07. SELECTED WORKS
+===================================================== */
+
+
+.selected-works{
+
+    background:
+
+    #eeeeee;
+
+   padding: 20px 0;
+
+}
+
+
+
+.selected-works-inner{
+
+
+    width:
+
+    min(
+        calc(100% - var(--page-padding) * 2),
+        var(--content-width)
+    );
+
+
+    margin:
+
+    0 auto;
+
+    margin-top: 20px;
+
+
+}
+
+
+
+/* =====================================================
+SECTION HEADING
+
+Desktop
+
+title / intro / collage
+
+===================================================== */
+
+
+.selected-works-heading{
+
+    position:
+
+    relative;
+
+
+    min-height:
+    clamp(
+        620px,
+        55vw,
+        670px
+    );
+
+
+}
+
+
+
+/* -----------------
+Vertical Title
+----------------- */
+
+
+.selected-works-title-wrap{
+
+
+    position:
+
+    absolute;
+
+
+    left:
+
+    5vw;
+
+
+    top:
+
+    30px;
+
+
+}
+
+
+
+.section-title-vertical{
+
+
+    font-size:
+    clamp(
+        70px,
+        calc(1.818px + 6.818vw),
+        85px
+    );
+
+    writing-mode:
+
+    vertical-rl;
+
+
+    text-orientation:
+
+    mixed;
+
+
+    letter-spacing:
+
+    .05em;
+
+    font-weight: 500;
+
+}
+
+
+
+.section-title-line{
+
+
+    display:block;
+
+
+    width:
+
+    2px;
+
+
+    height:370px;
+
+
+    background:
+
+    #111;
+
+
+    margin-top:
+    -60px;
+
+    margin-left: 25px;
+
+}
+
+
+
+
+.selected-works-intro{
+
+
+    position:
+
+    absolute;
+
+
+    left:
+
+    9vw;
+
+
+    bottom:
+
+    120px;
+
+
+    font-size:
+
+    15px;
+
+
+    line-height:
+
+    1.8;
+
+
+    letter-spacing:
+
+    .1em;
+
+    color:#555555;
+
+    font-weight: 300;
+
+}
+
+
+
+
+
+/* =====================================================
+WORK COLLAGE
+
+Desktop 1280
+
+Magazine layout
+
+修正：
+1. absolute 改為相對 selected-works-inner 定位
+2. 不再跑到 hero
+3. 保留之後 JS 換圖邏輯
+===================================================== */
+
+
+/* 建立定位基準 */
+
+.selected-works-inner{
+
+    position:relative;
+
+
+}
+
+
+
+/* collage container */
+
+.works-grid{
+
+    position:absolute;
+
+    top:20px;
+
+        right:auto;
+
+        left:calc(
+            50% - 300px
+        );
+
+        transform:none;
+
+    width:900px;
+
+    height:630px;
+
+    transform:
+    scale(
+        clamp(
+            .8,
+            calc(0.091 * (100vw / 100px) - 0.109),
+            1
+        )
+    );
+
+
+
+}
+
+
+
+/* 每張圖片 */
+
+.work-item{
+
+    position:absolute;
+
+}
+
+
+
+/* image wrapper */
+
+.work-image-wrap{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:
+    4px;
+
+}
+
+
+
+/* image */
+
+.work-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .6s var(--ease);
+
+}
+
+
+
+/* hover scale */
+
+.work-link .work-image{
+
+    transform:scale(1);
+
+}
+
+
+
+
+/* =====================================================
+Desktop Image Position
+
+01 02 03
+04 05 06
+
+非規則 collage
+
+===================================================== */
+
+
+
+.work-item-01{
+
+
+    width:
+
+    233px;
+
+
+    height:
+
+    291px;
+
+
+    left:
+
+    135px;
+
+
+    top:
+
+    40px;
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+.work-item-02{
+
+
+    width:
+
+    303px;
+
+
+    height:
+
+    379px;
+
+
+    left:
+
+    350px;
+
+
+    top:
+
+    0;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+.work-item-03{
+
+
+    width:
+
+    202px;
+
+
+    height:
+
+    253px;
+
+
+    right:
+
+    45px;
+
+
+    top:
+
+    65px;
+
+
+    z-index:3;
+
+
+}
+
+
+
+
+
+.work-item-04{
+
+
+    width:
+
+    233px;
+
+
+    height:
+
+    326px;
+
+
+    left:
+
+    45px;
+
+
+    bottom:
+
+    0px;
+
+
+    z-index:4;
+
+
+}
+
+
+
+
+.work-item-05{
+
+
+    width:
+
+    192px;
+
+
+    height:
+
+    240px;
+
+
+    left:
+
+    310px;
+
+
+    bottom:
+
+    60px;
+
+
+    z-index:5;
+
+
+}
+
+
+
+
+
+.work-item-06{
+
+
+    width:
+
+    221px;
+
+
+    height:
+
+    276px;
+
+
+    right:
+
+    130px;
+
+
+    bottom:
+
+    25px;
+
+
+    z-index:6;
+
+
+}
+
+
+
+
+
+/* =====================================================
+Hover Viewing Text
+
+是觀看方式文字
+
+===================================================== */
+
+
+.work-hover{
+
+
+    position:
+
+    absolute;
+
+
+    inset:
+
+    0;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    padding:
+
+    24px;
+
+
+    opacity:
+
+    0;
+
+
+    transition:
+
+    opacity .8s var(--ease);
+
+
+}
+
+
+
+
+
+.work-hover-text{
+
+
+    color:
+
+    #fff;
+
+
+
+    font-size:
+
+    14px;
+
+
+    line-height:
+
+    1.5;
+
+    font-weight: 300;
+
+    text-align:center;
+
+
+    letter-spacing:
+
+    .1em;
+
+    width: 90%;
+
+
+    text-shadow:
+        0 1px 1px rgba(0,0,0,.9),
+        0 0 6px rgba(0,0,0,.65);
+
+}
+
+
+
+.work-link:hover .work-hover{
+
+
+    opacity:
+
+    1;
+
+
+}
+
+
+
+
+/* =====================================================
+08. LEARNING PATH
+
+===================================================== */
+
+
+/* =====================================================
+Section
+===================================================== */
+
+.learning-path{
+
+    background:#eeeeee;
+
+    padding:
+    20px 0;
+
+    width:
+
+    min(
+        calc(100% - var(--page-padding) * 2),
+        var(--content-width)
+    );
+
+
+    margin:
+
+    0 auto;
+
+}
+
+
+
+/* =====================================================
+Panel
+
+Desktop:
+
+┌─────────────────────────────┐
+│ Title        Card Card Card  │
+│ intro        Card Card Card  │
+└─────────────────────────────┘
+
+===================================================== */
+
+
+.learning-path-panel{
+
+    margin-left: -1vw;
+    margin-right: -1vw;
+
+
+    background:#333;
+
+    border-radius:
+    8px;
+
+
+    padding:
+    3vw 1vw;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    22vw 1fr;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+/* =====================================================
+Header
+
+Left column
+
+===================================================== */
+
+
+.learning-path-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.learning-path-title{
+
+    color:#fff;
+
+
+font-size:
+    clamp(
+        55px,
+        calc(-13.18px + 6.818vw),
+        70px
+    );
+
+    line-height:
+
+    1.1;
+
+    font-weight:
+
+    300;
+
+
+
+    width:max-content;
+
+    text-align:left;
+
+}
+
+
+
+
+
+.learning-path-line{
+
+    display:none;
+
+}
+
+
+
+
+
+.learning-path-description{
+
+    margin-top:
+
+    25px;
+
+
+    color:
+
+    rgba(
+        255,
+        255,
+        255,
+        .4
+    );
+
+
+
+    font-size:
+
+    15px;
+
+
+    line-height:
+
+    1.8;
+
+
+    letter-spacing:
+
+    .1em;
+
+
+    font-weight: 300;
+
+    width:max-content;
+
+    text-align:left;
+
+
+
+}
+
+
+
+
+
+
+/* =====================================================
+Course Cards
+
+Right column
+
+===================================================== */
+
+
+.learning-path-courses{
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(
+        3,
+        1fr
+    );
+
+
+    gap:
+
+    0px;
+
+
+}
+
+
+
+
+
+
+.course-card{
+
+    color:#fff;
+
+    border-right:
+
+    1px solid rgba(
+        255,
+        255,
+        255,
+        .2
+    );
+
+}
+
+
+
+.course-card:last-child{
+
+    border-right:none;
+
+}
+
+
+
+
+.course-card-inner{
+
+    padding:
+
+    0 18px;
+
+}
+
+
+
+
+
+/* =====================================================
+Course Heading
+
+===================================================== */
+
+
+.course-heading{
+
+    display:flex;
+
+
+    align-items:center;
+
+    margin-bottom:
+
+    0px;
+
+}
+
+
+
+
+
+.course-keyword{
+
+    color:
+
+    rgba(
+        255,
+        255,
+        255,
+        .3
+    );
+
+
+font-size: clamp(
+    50px,
+    calc(4.545px + 4.545vw),
+    60px
+);
+
+
+    line-height:
+
+    1;
+
+
+    font-weight: 100;
+
+}
+
+
+
+
+
+.course-number{
+
+    transform:translateY(-0.5em);
+
+    font-size: clamp(
+    50px,
+    calc(4.545px + 4.545vw),
+    60px
+    );
+
+    font-style:
+
+    italic;
+
+    opacity: .7;
+
+}
+
+
+
+
+
+
+/* =====================================================
+Image
+
+===================================================== */
+
+
+.course-image-link{
+
+    display:block;
+
+        transition:
+
+    transform 1.2s cubic-bezier(.2, .8, .2, 1),
+        filter .8s ease;
+
+}
+
+
+.course-image-link:hover{
+
+    transform:
+
+    scale(1.05);
+
+}
+
+
+
+.course-image{
+
+    width:
+
+    100%;
+
+
+    aspect-ratio:
+
+    1 / 1;
+
+
+    object-fit:
+
+    cover;
+
+    border-radius:
+    4px;
+
+
+}
+
+
+
+
+
+/* =====================================================
+Content
+
+===================================================== */
+
+
+.course-title{
+
+    margin-top:
+
+    22px;
+
+    font-size: 
+    clamp(
+        22px,
+        calc(8.36px + 1.364vw),
+        25px
+    );
+
+
+    font-weight:
+
+    400;
+
+
+
+}
+
+
+
+
+
+.course-description{
+
+    margin-top:
+
+    10px;
+
+
+    min-height:
+
+    55px;
+
+
+    font-size:
+
+    15px;
+
+
+    line-height:
+
+    1.8;
+
+
+    color:
+
+    rgba(
+        255,
+        255,
+        255,
+        .7
+    );
+
+    font-weight: 300;
+
+    padding-left: 0.1em;
+
+}
+
+
+
+
+
+.course-price{
+
+    margin-top:
+
+    18px;
+
+
+    text-align:right;
+
+    margin-right: 15px;
+
+    font-size:
+
+    17px;
+
+    font-weight: 300;
+
+}
+
+
+
+
+
+.course-cta{
+
+    display:block;
+
+
+    margin-top:
+
+    20px;
+
+
+    padding:
+
+    8px;
+
+
+    text-align:center;
+
+
+    background:
+
+    rgba(
+        255,
+        255,
+        255,
+        .15
+    );
+
+    border-radius:
+    4px;
+
+    color:#fff;
+
+
+    font-size:
+
+    14px;
+
+    font-weight: 300;
+
+    letter-spacing:
+
+    .1em;
+
+
+    transition:
+
+    background .3s var(--ease);
+
+}
+
+
+
+
+
+.course-cta:hover{
+
+    background:
+
+    rgba(
+        255,
+        255,
+        255,
+        .3
+    );
+
+}
+
+
+
+#learning-path {
+    scroll-margin-top: 270px;
+}
+
+
+
+/* =====================================================
+V7
+JAMES GAZE
+STYLE.CSS
+
+===================================================== */
+
+
+
+/* =====================================================
+09. CASE STUDY
+===================================================== */
+
+
+.case-study{
+
+    background:#eeeeee;
+
+    padding:
+    20px 0;
+
+
+    height: auto;
+}
+
+
+
+
+.case-study-inner{
+
+    width:
+    min(
+        calc(100% - var(--page-padding) * 2),
+        var(--content-width)
+    );
+
+
+    margin:
+    0 auto;
+    
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    24vw 1fr;
+
+
+    column-gap:
+
+    0px;
+
+
+   align-items:stretch;
+
+
+}
+
+
+
+/* =====================================================
+Case Heading
+
+LEFT COLUMN
+
+Title
++
+Intro below
+
+===================================================== */
+
+
+.case-study-heading{
+
+       display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+
+
+.case-study-heading-line{
+
+    display:none;
+
+}
+
+
+
+.case-study-heading-content{
+
+    width:max-content;
+    margin:0;
+
+}
+
+
+
+.case-study-title{
+
+    font-size: 
+
+    clamp(
+        55px,
+        calc(-13.18px + 6.818vw),
+        70px
+    );
+
+
+    line-height:
+
+    1.1;
+
+
+    font-weight:
+
+    500;
+
+
+    margin:
+
+    0 0 40px;
+
+    max-width: 100px;
+
+}
+
+
+
+.case-study-intro{
+
+
+
+    font-size:
+
+    15px;
+
+
+    line-height:
+
+    1.8;
+
+
+    letter-spacing:
+
+    .1em;
+
+    color: #555;
+
+    font-weight: 300;
+
+
+
+}
+
+
+
+
+
+/* =====================================================
+Case Cards
+
+RIGHT COLUMN
+
+===================================================== */
+
+
+.case-study-scroller{
+
+    grid-column:
+
+    2;
+
+
+    grid-row:
+
+    1;
+
+
+    overflow:hidden;
+
+}
+
+
+
+
+.case-study-dots {
+    display: none;
+}
+
+
+
+.case-study-track{
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(
+        3,
+        1fr
+    );
+
+
+    gap:
+
+    10px;
+
+}
+
+
+
+.case-card{
+
+    position:
+
+    relative;
+
+
+}
+
+
+
+.case-link{
+
+    display:block;
+
+}
+
+
+
+
+.case-image-wrap{
+
+    position:
+
+    relative;
+
+
+    overflow:hidden;
+
+    border-radius:
+    4px;
+
+}
+
+
+
+.case-image{
+
+    width:
+
+    100%;
+
+
+    aspect-ratio:
+
+    4 / 5;
+
+
+    object-fit:
+
+    cover;
+
+
+    transition:
+
+    transform 1.2s cubic-bezier(.2, .8, .2, 1),
+        filter .8s ease;
+}
+
+
+
+.case-link:hover .case-image{
+
+    transform:
+
+    scale(1.05);
+
+}
+
+
+
+
+
+/* =====================================================
+Case Overlay
+===================================================== */
+
+
+.case-overlay{
+
+    position:
+
+    absolute;
+
+
+    inset:
+
+    0;
+
+
+    padding:
+
+    15px;
+
+
+    display:flex;
+
+
+    flex-direction:
+
+    column;
+
+
+    justify-content:
+
+    flex-end;
+
+
+    color:
+
+    #fff;
+
+
+
+    background:
+
+    linear-gradient(
+
+        transparent 55%,
+
+        rgba(
+            0,
+            0,
+            0,
+            .75
+        )
+
+    );
+
+}
+
+
+
+
+
+.case-number{
+
+
+
+    font-size:
+
+    11px;
+
+
+    letter-spacing:
+
+    0.1em;
+
+
+    margin-bottom:
+
+    20px;
+
+}
+
+
+
+.case-title{
+
+
+    font-size: 
+    clamp(
+        22px,
+        calc(8.36px + 1.364vw),
+        25px
+    );
+
+
+    line-height:
+
+    1.4;
+
+
+    font-weight:
+
+    400;
+
+}
+
+
+.case-description{
+
+    margin-top:
+
+    10px;
+
+
+    font-size:
+
+    15px;
+
+
+    line-height:
+
+    1.7;
+
+
+    opacity:
+
+    .85;
+
+    padding-left: 0.1em;
+
+}
+
+
+/* =====================================================
+Case CTA
+
+「觀看案例>」常駐顯示，
+hover 時底線由左至右展開
+（做法同 About James CTA）。
+===================================================== */
+
+.case-cta{
+
+    position:relative;
+    display:inline-block;
+
+    margin-top:16px;
+
+    font-size:12px;
+    font-family:"Inter", sans-serif;
+    letter-spacing:.15em;
+
+    opacity:.85;
+
+    text-align: right;
+
+}
+
+
+.case-cta::after{
+
+    content:"";
+    position:absolute;
+
+    right:10px;
+    bottom:-4px;
+
+    width:55px;
+    height:1px;
+
+    background:currentColor;
+
+    transform:scaleX(0);
+    transform-origin:left center;
+
+    transition:transform .45s var(--ease);
+
+}
+
+
+.case-link:hover .case-cta::after{
+
+    transform:scaleX(1);
+
+}
+
+
+
+
+/* =====================================================
+10. ABOUT JAMES
+===================================================== */
+
+
+.about-james{
+
+
+    background:
+
+    #eeeeee;
+
+
+    padding-top: 20px;
+
+}
+
+
+
+
+
+.about-james-inner{
+
+
+    width:
+
+    min(
+        calc(100% - var(--page-padding) * 2),
+        var(--content-width)
+    );
+
+
+    margin:
+
+    0 auto;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1fr 120px 1fr;
+
+
+    align-items:flex-end;
+
+
+
+}
+
+
+
+
+/* -----------------
+Portrait
+----------------- */
+
+
+.about-james-image{
+
+
+    position:relative;
+
+
+
+}
+
+
+
+.about-james-image img{
+
+    border-radius:
+     0 4px 0 0;
+
+    width:
+
+    100%;
+
+
+    aspect-ratio:
+
+    1 / 1;
+
+
+    object-fit:
+
+    cover;
+
+    margin-left: -2vw;
+
+    margin-bottom: 0px;
+}
+
+
+
+
+
+/* -----------------
+Vertical Heading
+----------------- */
+
+
+.about-james-heading{
+
+    height:
+
+    100%;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    justify-content:flex-start;
+
+    margin-left: 20px;
+
+}
+
+
+
+
+
+.about-james-title{
+
+    writing-mode:
+
+    vertical-rl;
+
+
+    text-orientation:
+
+    mixed;
+
+
+    font-size:
+
+    70px;
+
+    margin-top: 50px;
+
+}
+
+
+
+
+
+.about-james-line{
+
+
+    width:
+
+    2px;
+
+
+    height:
+
+    100%;
+
+    background:
+
+    #111;
+
+
+    margin-top:
+
+    10px;
+
+    margin-left: -75px;
+
+}
+
+
+
+
+
+/* -----------------
+Content
+----------------- */
+
+
+.about-james-content{
+
+
+    padding-left:
+
+    50px;
+
+    padding-right: 30px;
+
+}
+
+
+
+
+.about-james-role{
+
+    font-weight: 500;
+
+    font-size: clamp(17px, 0.5859375vw + 12.5px, 20px);
+
+    margin-bottom:
+
+    20px;
+
+    margin-top: 50px;
+
+}
+
+
+
+
+
+.about-james-copy p{
+
+
+    font-size: clamp(15px, 0.39vw + 11.99px, 17px);
+
+
+    line-height:
+
+    1.8;
+
+
+    color:
+
+    #555;
+
+    font-weight: 300;
+
+}
+
+
+
+
+
+.about-james-cta {
+    margin-top: 35px;
+    font-size: 14px;
+    letter-spacing: .1em;
+    transition: color .5s var(--ease);
+
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+    color: #555;
+
+    position: relative;
+    text-decoration: none;
+    margin-bottom: 3.5em;
+}
+
+
+
+.about-james-cta::after {
+    content: "";
+    position: absolute;
+
+    right: 21px;
+    bottom: -2px;
+
+    width: 65px;
+    height: 1px;
+
+
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition: transform .45s var(--ease);
+}
+
+
+
+    .about-james-cta:hover{
+    color:#808080;
+
+    }
+
+
+    /* 滑入：左 → 右 */
+    .about-james-cta:hover::after{
+    transform: scaleX(1);
+
+    }
+
+
+/* =====================================================
+11. FINAL CTA
+===================================================== */
+
+
+.final-cta{
+
+
+    background:
+
+    #555555;
+
+
+    color:#eeeeee;
+
+
+    padding:
+
+    50px 20px 90px 20px;
+
+}
+
+
+
+.final-cta-inner{
+
+
+    text-align:center;
+
+
+}
+
+
+
+.final-cta-quote{
+
+
+    font-size:
+
+    clamp(
+        25px,
+        2.4vw,
+        35px
+    );
+
+
+    font-weight:
+
+    500;
+
+    letter-spacing:
+
+    .08em;
+
+    opacity:
+
+    .8;
+
+
+}
+
+
+
+.quote-mark{
+    display:inline-block;
+    font-size:70px;
+    opacity:.7;
+    transform:translateY(30px);
+}
+
+
+.final-cta-link {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 14px;
+    letter-spacing: .15em;
+
+    transition:
+        color .5s var(--ease);
+
+    position: relative;
+    text-decoration: none;
+}
+
+.final-cta-link:hover {
+    color: #aaa;
+}
+
+/* 底線 */
+.final-cta-link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+
+    width: 95px;
+    height: 1px;
+
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition:
+        transform .45s var(--ease);
+}
+
+.final-cta-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* =====================================================
+12. FOOTER
+===================================================== */
+
+
+.site-footer{
+
+
+    background:
+
+    #292929;
+
+
+    color:
+
+    rgba(
+        255,
+        255,
+        255,
+        .75
+    );
+
+
+    padding:
+
+    20px 10px;
+
+}
+
+
+
+
+.footer-inner{
+
+
+    width:
+
+    min(
+        calc(100% - var(--page-padding) * 2),
+        var(--content-width)
+    );
+
+
+    margin:
+
+    0 auto;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1fr auto;
+
+
+    grid-template-rows:
+
+    auto auto;
+
+
+    row-gap:
+
+    25px;
+
+
+}
+
+
+
+
+/* -----------------
+Footer Logo
+----------------- */
+
+
+.footer-logo{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+.footer-logo-cn{
+
+
+    font-weight: 400;
+
+    font-size:
+
+    18px;
+
+
+    letter-spacing:
+
+    .15em;
+
+
+    opacity:
+
+    .5;
+
+}
+
+
+
+
+.footer-logo-en{
+
+
+    margin-top:
+
+    -4px;
+
+    font-size:
+
+    9px;
+
+
+    letter-spacing:
+
+    .37em;
+
+
+    opacity:
+
+    .5;
+
+
+}
+
+
+
+
+/* -----------------
+Footer Navigation
+----------------- */
+
+
+.footer-navigation ul{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.footer-navigation a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.footer-social-icon{
+    width:17px;
+    height:17px;
+    display:block;
+
+    filter:brightness(0) invert(1);
+    opacity:.55;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.footer-mail-icon{
+    display:block;
+
+    color:#999;
+    font-size:31px;
+    line-height:1;
+
+    opacity:.8;
+
+    transform:translateY(-3px); 
+
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+    
+}
+
+.footer-social-link:hover .footer-social-icon,
+.footer-social-link:hover{
+    opacity:1;
+    transform:translateY(-2px);
+}
+
+.footer-mail-icon:hover{
+    color: #fff;
+    opacity:1;
+    transform:translateY(-4px);
+}
+
+
+/* -----------------
+Copyright
+----------------- */
+
+
+.footer-copyright{
+
+
+    grid-column:
+
+    1 / -1;
+
+
+    font-size:
+
+    11px;
+
+
+    text-align:right;
+
+
+    opacity:
+
+    .6;
+
+
+}
+
+
+
+
+/* =====================================================
+END PART 3
+===================================================== */
+/* =====================================================
+V7
+JAMES GAZE
+STYLE.CSS
+
+
+RESPONSIVE SYSTEM
+
+DESKTOP
+TABLET
+MOBILE
+
+===================================================== */
+
+/*=========================
+
+1578 DESKTOP RWD
+
+==========================*/
+
+
+
+@media (min-width:1578px){
+
+
+/*=========================
+
+HERO 1578 DESKTOP RWD
+
+==========================*/
+
+
+
+.hero-copy{
+    margin-left:
+    max(
+        8vw,
+        calc((100% - var(--content-width)) / 2)
+    );
+
+    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+/*=========================
+
+LEARNING PATH 1578 DESKTOP RWD
+
+==========================*/
+
+
+    .learning-path-panel{
+
+        margin-left: -1vw;
+        margin-right: -1vw;
+
+        width:
+        var(--content-width);
+
+        margin-left:auto;
+        margin-right:auto;
+
+        padding:
+        48px 20px;
+
+        grid-template-columns:
+        330px 1fr;
+
+        gap:
+        10px;
+
+        box-sizing:border-box;
+
+    }
+
+
+
+/*=========================
+
+CASE STUDY 1578 DESKTOP RWD
+
+==========================*/
+
+
+    .case-study-inner{
+
+        width:
+        var(--content-width);
+
+        margin:
+        0 auto;
+
+        display:grid;
+
+        grid-template-columns:
+        360px 1fr;
+
+        column-gap:
+        0;
+
+       align-items:stretch;
+
+    }
+
+
+/*=========================
+
+CASE STUDY 1578 DESKTOP RWD
+
+==========================*/
+
+.about-james-image img{
+
+    border-radius:
+     4px 4px 0 0;
+
+}
+
+
+
+
+}
+
+
+
+
+
+/* =====================================================
+13. TABLET
+
+768px - 999px
+
+依照 768-6 設計
+
+===================================================== */
+
+
+@media (min-width:768px) and (max-width:999px){
+
+
+
+
+
+/* =====================================================
+HEADER TABLET
+===================================================== */
+
+
+:root{
+
+
+    --page-padding:
+
+    26px;
+
+
+}
+
+
+
+.header-inner{
+
+
+    height:
+
+    64px;
+
+
+}
+
+
+
+.primary-navigation ul{
+
+
+    gap:
+
+    17px;
+
+
+}
+
+
+
+.primary-navigation a{
+
+
+    font-size:
+
+    10px;
+
+
+}
+
+
+
+.header-course-cta{
+
+
+    padding:
+
+    7px 14px;
+
+
+    font-size:
+
+    12px;
+
+
+}
+
+
+
+
+
+
+/* =====================================================
+HERO TABLET
+===================================================== */
+
+
+.hero{
+
+
+    aspect-ratio:
+
+    1.6 / 1;
+
+
+}
+
+
+.hero-image{
+
+    height:90%;
+
+    transform:scale(1.25);
+
+}
+
+
+
+
+
+
+.hero-title{
+
+font-size:
+clamp(
+    22px,
+    calc(5.37px + 2.165vw),
+    27px
+);
+
+}
+
+.hero-subtitle br{
+
+display:inline-block
+
+}
+
+
+.hero-subtitle{
+
+    margin-top:
+    3em;
+
+}
+
+
+
+
+
+/* =====================================================
+SELECTED WORKS TABLET
+
+圖片左
+標題右
+
+===================================================== */
+
+
+.selected-works-inner{
+
+
+    width:
+
+    calc(
+        100% - 100px
+    );
+
+
+}
+
+
+
+
+.selected-works-heading{
+
+
+    min-height:
+
+    600px;
+
+
+}
+
+
+
+
+.selected-works-title-wrap{
+
+
+    left:auto;
+
+
+    right:
+
+    -30px;
+
+
+    top:5px;
+
+
+}
+
+
+
+
+
+.section-title-vertical{
+
+
+    font-size:
+
+    60px;
+    
+    white-space:nowrap;
+
+}
+
+
+.section-title-vertical br{
+    display:none;
+}
+
+
+
+
+.section-title-line{
+
+
+    margin-left:
+
+    auto;
+
+    margin-right: 30px;
+
+    margin-top: 10px;
+
+    height: 130px;
+
+}
+
+
+
+.selected-works-intro{
+
+    display:none;
+
+}
+
+
+
+
+
+.works-grid{
+
+   scale:.81 ;
+
+    left:
+    calc(50% - 110px);
+
+    top:37%;
+
+    right:auto;
+
+    transform:
+    translate(-50%,-50%);
+
+}
+
+
+
+
+
+
+/* =====================================================\
+LEARNING PATH TABLET 768-999
+
+Title outside panel
+
+Panel only contains cards
+
+\===================================================== \*/
+
+
+.learning-path-panel{
+
+    margin-left: -20px;
+    margin-right:-20px;
+
+    padding:
+    3vw 1vw;
+
+    margin-top:
+    70px;
+
+    display:block;
+
+}
+
+
+
+
+
+
+/* hide description */
+
+.learning-path-description{
+
+    display:none;
+
+}
+
+
+
+.learning-path-title br{
+
+    display:none;
+
+}
+
+.learning-path-title{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    width:100%;
+
+    gap:30px;
+
+    font-size:50px;
+
+    color:#111;
+
+    white-space:nowrap;
+
+    margin-top:-150px;
+
+    margin-bottom:30px;
+
+    margin-left: 50px;
+
+    font-weight: 500;
+
+}
+
+
+.learning-path-title::after{
+
+    content:"";
+
+    display:block;
+
+    height:2px;
+
+    background:#111;
+
+    flex:1;
+
+    margin-left: -15px;
+
+}
+
+.course-keyword{
+
+
+    font-size:
+    clamp(
+        50px,
+        calc(16.75px + 4.329vw),
+        60px
+    );
+
+}
+
+
+
+
+
+.course-number{
+
+    font-size:
+    clamp(
+        50px,
+        calc(16.75px + 4.329vw),
+        60px
+    );
+
+
+}
+
+
+
+#learning-path {
+    scroll-margin-top: 190px;
+}
+
+
+
+
+
+
+
+/* =====================================================
+ CASE STUDY TABLET 768-999
+
+Title top
+Cards below
+
+===================================================== */
+
+
+.case-study-inner{
+
+    display:block;
+
+    margin-top: 20px;
+}
+
+
+
+
+.case-study-heading{
+
+    width:
+    calc(100% + var(--page-padding));
+
+
+
+    justify-content:flex-end;
+
+    box-sizing:border-box;
+
+}
+
+
+
+.case-study-heading-line{
+
+    display:block;
+
+
+    width:
+
+    100%;
+
+
+    height:
+
+    2px;
+
+
+    background:#111;
+
+
+    margin:
+
+    0px 15px 25px -30px;
+
+}
+
+
+.case-study-scroller{
+
+    width:
+    calc(100% + var(--page-padding));
+
+
+}
+
+
+.case-study-heading-content{
+
+    display:block;
+
+
+    text-align:left;
+
+    margin-right:
+    200px;
+
+}
+
+
+.case-study-title br{
+
+     display:none;
+
+}
+
+.case-study-title{
+
+    font-size:
+
+    60px;
+
+    white-space:nowrap;
+
+}
+
+
+
+.case-study-intro{
+
+    display:none;
+
+}
+
+
+.case-study-scroller{
+
+    margin-top: -10px;
+
+}
+
+
+.case-study-track{
+
+    gap:
+
+    12px;
+
+}
+
+.case-card:nth-child(3) .case-image-wrap{
+
+    border-radius:
+    4px 0 0 4px;
+
+}
+
+
+/* =====================================================
+ABOUT TABLET
+
+title -> text -> image
+
+===================================================== */
+
+
+.about-james-inner{
+
+
+    grid-template-columns:
+
+    60px 1fr 350px;
+
+    margin-top: 40px;
+}
+
+
+
+.about-james-image{
+
+    order:3;
+
+    width:
+    calc(100% + var(--page-padding));
+
+    margin-right:
+    calc(var(--page-padding) * -1);
+
+}
+
+
+.about-james-image img{
+
+    width:100%;
+
+    margin-left:0;
+
+    margin-top: 50px;
+
+    margin-bottom: 50px;
+
+    border-radius:
+    4px 0 0 4px;
+}
+
+
+
+
+.about-james-content{
+
+    margin-top: 30px;
+
+    padding: 40px;
+
+    padding-top: 0px;
+
+    padding-bottom: 0px;
+
+    margin-left: -20px;
+
+}
+
+
+.about-james-cta{
+
+    margin-top:
+
+    20px;
+
+}
+
+
+.about-james-title br{
+    display:none;
+
+}
+
+
+
+.about-james-title{
+
+    font-size:
+
+    50px;
+
+    white-space:nowrap;
+
+    margin-left: -10px;
+    
+    margin-top: -30px;
+
+
+}
+
+.about-james-line{
+
+    margin-left: -18px;
+
+    margin-top: 15px;
+
+}
+
+/* =============================================
+
+FINAL CTA TABLET
+
+============================================*/
+
+
+
+.final-cta{
+
+
+    padding-top: 5px
+
+
+}
+
+.final-cta-link{
+
+    margin-top:
+
+    20px;
+
+}
+
+
+}
+
+
+/* =====================================================
+14. MOBILE
+
+<=767px
+
+390-6
+
+===================================================== */
+
+
+
+@media
+(max-width:767px){
+
+
+
+/* =====================================================
+HEADER MOBILE
+
+logo center
+menu left
+CTA right
+
+===================================================== */
+
+
+.site-header{
+
+
+    position:fixed;
+
+
+}
+
+
+
+.header-inner{
+
+
+    height:
+
+    64px;
+
+
+    justify-content:center;
+
+
+}
+
+
+
+
+.site-logo{
+
+
+    align-items:center;
+
+    scale: 80%;
+
+}
+
+
+
+
+
+.mobile-menu-toggle{
+
+
+    display:flex;
+
+
+    position:absolute;
+
+
+    left:
+
+    20px;
+
+
+    top:
+
+    22px;
+
+
+    width:
+
+    22px;
+
+
+    height:
+
+    18px;
+
+
+    flex-direction:column;
+
+
+    justify-content:space-between;
+
+
+    background:none;
+
+
+    border:0;
+
+
+    padding:0;
+
+
+}
+
+
+
+.mobile-menu-toggle span{
+
+
+    width:
+
+    100%;
+
+
+    height:
+
+    1px;
+
+
+    background:#fff;
+
+
+}
+
+
+
+/* =====================================================
+   MOBILE MENU
+   ===================================================== */
+
+.primary-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    z-index: 999;
+
+    background: rgba(41, 41, 41, 1);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    transform: translate3d(-100%, 0, 0);
+
+    transition:
+        transform .4s var(--ease);
+
+    overflow-y: auto;
+}
+
+.primary-navigation.active {
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* -----------------
+   Menu Navigation
+   ----------------- */
+
+.primary-navigation ul {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* -----------------
+   Menu Links
+   ----------------- */
+
+.primary-navigation a {
+    display: block;
+
+    color: #ffffff;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    letter-spacing: .25em;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    transition:
+        opacity .3s var(--ease);
+}
+
+.primary-navigation a:hover {
+    opacity: .55;
+}
+
+
+/* -----------------
+   Nav Dropdown
+   (Learning Path / Case Study)
+
+   Mobile：不做手風琴，
+   子選單直接全部展開顯示，
+   用字級 / 字距 / 顏色 / 間距
+   做出與主選單的層級區分。
+   ----------------- */
+
+.nav-item.has-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 16px;
+}
+
+.nav-dropdown a {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .12em;
+
+    color: rgba(255, 255, 255, .55);
+}
+
+.nav-dropdown a:hover {
+    opacity: 1;
+    color: rgba(255, 255, 255, .85);
+}
+
+
+/* -----------------
+   Mobile Menu Button
+   漢堡 → X
+   ----------------- */
+
+.mobile-menu-toggle {
+    display: flex;
+
+    position: absolute;
+
+    left: 20px;
+    top: 22px;
+
+    width: 22px;
+    height: 18px;
+
+    z-index: 1001;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 0;
+
+    background: none;
+    border: 0;
+
+    cursor: pointer;
+}
+
+
+.mobile-menu-toggle span {
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background: #ffffff;
+
+    transition:
+        transform .3s var(--ease),
+        opacity .2s ease;
+}
+
+
+/* -----------------
+   X 狀態
+   ----------------- */
+
+.mobile-menu-toggle.is-active span:nth-child(1) {
+    transform:
+        translateY(8.5px)
+        rotate(45deg);
+}
+
+.mobile-menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.is-active span:nth-child(3) {
+    transform:
+        translateY(-8.5px)
+        rotate(-45deg);
+}
+
+
+/* -----------------
+   Explore Course
+   Header CTA
+   ----------------- */
+
+.header-course-cta {
+    position: absolute;
+
+    right: 17px;
+
+    padding: 5px 10px;
+
+    font-size: 12px;
+    font-weight: 100;
+
+    color: #ffffff;
+}
+
+
+/* -----------------
+   防止 Menu 開啟時
+   背景頁面滾動
+   ----------------- */
+
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+/* -----------------
+   Menu 中Nav
+   強制置中對齊
+   ----------------- */
+
+
+.primary-navigation ul {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.primary-navigation li {
+    width: 100%;
+    text-align: center;
+}
+
+.primary-navigation a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* =====================================================
+HERO MOBILE
+
+Vertical image
+
+===================================================== */
+
+.hero{
+
+
+    aspect-ratio:
+
+    2 / 3;
+
+
+}
+
+.hero-image{
+
+    height:90%;
+
+   transform:
+    scale(1.38);
+
+}
+
+
+.hero-copy{
+
+
+    margin:
+
+    0 auto;
+
+
+    padding:
+
+    20px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+.hero-title{
+
+
+    font-size:
+       clamp(
+        17px,
+        calc(-1.11px + 4.317vw),
+        32px
+    );
+
+    line-height:
+
+    1.8;
+
+
+}
+
+
+
+
+
+.hero-title-bracket-left{
+
+
+    left:
+
+    -1.5em;
+
+
+}
+
+
+
+.hero-title-bracket-right{
+
+
+    right:
+
+    -1.5em;
+
+
+}
+
+.hero-subtitle br{
+
+display:unset
+
+}
+
+
+
+
+.hero-subtitle{
+
+
+    margin-top:
+    3em;
+
+    font-size: clamp(15px, 0.458vw + 13.49px, 17px);
+
+}
+
+
+
+
+
+
+/* =====================================================
+SELECTED WORKS MOBILE
+
+2 x 3 collage
+
+title right
+
+===================================================== */
+
+
+
+.selected-works-heading{
+
+
+    min-height:
+
+    185vw;
+
+
+}
+
+
+.selected-works-title-wrap{
+
+
+    left:
+
+    auto;
+
+    right: 0;
+
+    top:
+
+    0;
+
+
+}
+
+
+
+.selected-works-title-wrap .section-title{
+
+
+    font-size:
+
+    50px;
+
+    margin-top: 10px;
+
+}
+
+
+
+
+.selected-works-intro{
+
+
+    display:none;
+
+
+}
+
+
+.section-title-vertical{
+
+
+    white-space:nowrap;
+}
+
+
+.section-title-vertical br{
+    display:none;
+}
+
+.section-title-line{
+
+
+    margin-left:
+
+    auto;
+
+    margin-right: 30px;
+
+    margin-top: 10px;
+
+    height: 
+    clamp(130px, calc(-451.6px + 176.2vw), 900px);
+
+
+}
+
+.works-grid{
+
+
+    width:
+
+    105%;
+
+    height: 100%;
+
+    top: -30px;
+
+    left: -30px;
+
+
+}
+
+
+.work-item-01{
+
+
+    width:
+
+    50%;
+
+
+    left:
+
+    0%;
+
+
+    top:
+
+    0%;
+
+
+}
+
+
+
+.work-item-02{
+
+
+    width:
+
+    55.42%;
+
+
+
+    left:
+
+    44%;
+
+
+    top:
+
+    4%;
+
+
+}
+
+
+
+
+
+.work-item-03{
+
+
+    width:
+
+    39.49%;
+
+
+
+    left:
+
+    50%;
+
+
+    top:
+
+    33%;
+
+
+}
+
+
+
+
+
+.work-item-04{
+
+
+    width:
+
+    48.42%;
+
+
+    left:
+
+    4%;
+
+
+    top:
+
+    31%;
+
+
+}
+
+
+
+
+.work-item-05{
+
+
+    width:
+
+    43.01%;
+
+
+    left:
+
+    0;
+
+
+    top:
+
+    65%;
+
+
+}
+
+
+
+
+
+.work-item-06{
+
+
+    width:
+
+    56.05%;
+
+
+
+    left:
+
+    42%;
+
+
+    top:
+    
+    58.5%
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+LEARNING PATH MOBILE
+
+重要區域
+
+三卡垂直展開
+
+===================================================== */
+
+
+.learning-path-panel{
+
+    padding:
+
+    0px 10px;
+
+    display:block;
+
+    margin-left: 5px;
+
+    margin-right: 5px;
+
+    margin-top: -30px;
+
+}
+
+
+.learning-path-description{
+
+    display:none;
+
+}
+
+
+
+
+.learning-path-title br{
+
+    display:none;
+
+}
+
+
+
+.learning-path-title{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    width:100%;
+
+    gap:30px;
+
+    font-size:45px;
+
+    color:#111;
+
+    white-space:nowrap;
+
+    margin-top:-100px;
+
+    font-weight: 500;
+
+}
+
+
+.learning-path-title::after{
+
+    content:"";
+
+    display:block;
+
+    height:2px;
+
+    background:#111;
+
+    flex:1;
+
+    margin-left: -15px;
+
+    margin-right: -40px;
+
+    width: 100%;
+
+}
+
+
+.learning-path-courses{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    margin-top:
+    30px;
+
+}
+
+
+
+
+
+.course-card{
+
+
+    border-right:
+
+    none;
+
+
+    border-bottom:
+
+    1px solid rgba(
+        255,
+        255,
+        255,
+        .25
+    );
+
+
+    padding-bottom:
+
+    50px;
+
+
+    margin-bottom:
+
+    30px;
+
+
+}
+
+
+
+.course-card:last-child{
+
+
+    border-bottom:
+
+    none;
+
+    padding-bottom: 20px;
+
+}
+
+.course-keyword{
+
+    font-size:
+    60px
+
+}
+
+
+
+
+
+.course-number{
+
+    font-size:
+    60px
+
+
+}
+
+.course-title{
+
+    font-size: 
+        25px
+ 
+}
+
+
+
+#learning-path {
+    scroll-margin-top: 150px;
+}
+
+
+
+
+/* =====================================================
+CASE STUDY MOBILE
+
+Horizontal scroll
+
+IG style
+
+===================================================== */
+
+.case-study-inner{
+
+    display:block;
+
+}
+
+
+.case-study-heading{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+.case-study-heading-content{
+
+    display:block;
+
+
+    text-align:left;
+
+    margin-right:
+    135px;
+
+}
+
+
+.case-study-heading-line{
+
+    
+    display:block;
+
+
+    width:
+
+    100%;
+
+
+    height:
+
+    2px;
+
+
+    background:#111;
+
+
+    margin:
+
+    0 15px 25px -20px;
+
+}
+
+
+
+.case-study-title br{
+
+     display:none;
+
+}
+
+
+.case-study-title{
+
+   font-size: 50px;
+   
+    white-space:nowrap;
+
+
+}
+
+.case-study-intro{
+
+    display:none;
+
+}
+
+
+.case-study-scroller::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+    .case-study-scroller{
+        width:calc(100% + 20px);
+        margin-left:-10px;
+
+        overflow-x:auto;
+        overflow-y:hidden;
+
+        scrollbar-width:none;
+        scroll-snap-type:x mandatory;
+    }
+
+    .case-study-track{
+        display:flex;
+        gap:5px;
+        width:max-content;
+        padding-left:0;
+        padding-right:0;
+    }
+
+    /* 左側 20px 空間，同時作為第一個 snap target */
+    .case-study-track::before{
+        content:"";
+        flex:0 0 20px;
+        scroll-snap-align:start;
+    }
+
+    /* 右側 20px 空間，同時作為最後一個 snap target */
+    .case-study-track::after{
+        content:"";
+        flex:0 0 20px;
+        scroll-snap-align:end;
+    }
+
+    .case-card{
+        flex:0 0 calc(100vw - 55px);
+        scroll-snap-stop:always;
+    }
+
+    /* 第一張：不自己吸附 */
+    .case-card:nth-child(1){
+        scroll-snap-align:none;
+    }
+
+    /* 第二張：維持目前正確的置中吸附 */
+    .case-card:nth-child(2){
+        scroll-snap-align:center;
+    }
+
+    /* 第三張：不自己吸附 */
+    .case-card:nth-child(3){
+        scroll-snap-align:none;
+    }
+
+
+
+
+ .case-study-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        margin-top: 15px;
+    }
+
+    .case-study-dot {
+        width: 6px;
+        height: 6px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #999;
+        opacity: .45;
+        cursor: pointer;
+        transition:
+            transform .25s ease,
+            opacity .25s ease;
+    }
+
+    .case-study-dot.is-active {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+
+
+
+
+
+
+.case-overlay{
+
+    padding:
+
+    25px;
+}
+
+
+
+.case-title{
+
+    font-size: 
+    25px
+
+}
+
+
+
+/* =====================================================
+ABOUT MOBILE 390
+
+Title left
+Content right
+Image bottom left
+
+===================================================== */
+
+
+.about-james-inner{
+
+    width:
+    calc(100% - 48px);
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+    60px 1fr;
+
+    align-items:start;
+
+}
+
+
+
+/* -----------------
+Heading
+----------------- */
+
+
+.about-james-heading{
+
+    order:1;
+
+    align-self:start;
+
+    align-items:flex-start;
+
+    justify-content:flex-start;
+
+    margin: 0;
+
+}
+
+
+
+.about-james-title br{
+    display:none;
+}
+
+
+.about-james-title{
+
+    font-size:
+
+    50px;
+
+    white-space:nowrap;
+
+    margin-left: 0px;
+    
+    margin-top: 0px;
+
+}
+
+.about-james-line{
+
+    margin-left: 18px;
+
+    margin-top: 15px;
+
+}
+
+
+
+/* -----------------
+Content
+----------------- */
+
+
+.about-james-content{
+
+    order:2;
+
+    padding:
+
+    5px;
+
+    padding-top: 40px;
+
+    text-align:left;
+
+    margin-left: 10px;
+
+}
+
+
+.about-james-role{
+
+    font-size:
+    18px;
+
+}
+
+
+.about-james-copy p{
+
+    font-size:
+
+    16px;
+
+}
+
+
+.about-james-cta{
+
+    margin-top:
+
+    20px;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+
+/* -----------------
+Image
+
+跨兩欄，下一排
+----------------- */
+
+
+.about-james-image{
+
+    order:3;
+
+    grid-column:
+
+    1 / 3;
+
+    width:
+
+    90%;
+
+    margin-left:
+
+    -16px;
+
+    margin-top:
+
+    0px;
+
+    margin-bottom: 5vw;
+
+}
+
+.about-james-image img{
+
+    border-radius:
+    0 4px 4px 0;
+}
+
+
+/* =====================================================
+FINAL CTA MOBILE
+
+===================================================== */
+
+
+.final-cta{
+
+    padding: 50px 0;
+
+}
+
+
+.final-cta-quote{
+
+
+    font-size: 
+    clamp(14px, calc(6.45px + 2.288vw), 24px);
+
+}
+
+
+
+.quote-mark{
+
+    font-size: 
+    clamp(20px, calc(-2.65px + 6.865vw), 50px);
+
+    transform: 
+    translateY(clamp(5px, calc(-6.33px + 3.432vw), 20px));
+}
+
+
+.final-cta-link{
+
+    margin-top:
+
+    20px;
+
+}
+
+
+/* 底線 */
+.final-cta-link::after {
+    width: 95px;
+
+}
+
+
+
+}
+

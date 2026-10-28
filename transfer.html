@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex"
+    >
+
+    <meta
+        name="referrer"
+        content="no-referrer"
+    >
+
+    <title>
+        接受名額轉讓｜凝視潛像 JAMES GAZE
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400&family=Noto+Sans+TC:wght@100;300;400&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/LP.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
+
+</head>
+
+
+<body class="reg-page">
+
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="header-inner">
+
+        <a
+            class="site-logo"
+            href="index.html"
+            aria-label="凝視潛像 James Gaze 首頁"
+        >
+
+            <span class="site-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="site-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="開啟網站選單"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a
+            class="header-course-cta"
+            href="index.html#learning-path"
+        >
+            探索課程
+        </a>
+
+    </div>
+
+</header>
+
+
+<nav
+    class="primary-navigation"
+    id="primary-navigation"
+    aria-label="主要網站導覽"
+>
+
+    <ul>
+
+        <li>
+            <a href="index.html#selected-works">
+                SELECTED WORKS
+            </a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#learning-path"
+                class="nav-item-link"
+            >
+                LEARNING PATH
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="LP1.html">
+                    人像創作體驗課
+                </a>
+
+                <a href="LP2.html">
+                    棚內肖像打光工作坊
+                </a>
+
+                <a href="LP3.html">
+                    人像風格美學工作坊
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#case-study"
+                class="nav-item-link"
+            >
+                CASE STUDY
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="Case01.html">
+                    人像創作規劃案例
+                </a>
+
+                <a href="Case02.html">
+                    光線逆向拆解案例
+                </a>
+
+                <a href="Case03.html">
+                    視覺元素分析案例
+                </a>
+
+            </div>
+
+        </li>
+
+        <li>
+            <a href="about.html">
+                ABOUT JAMES
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="reg-main">
+
+    <div class="reg-inner">
+
+        <p class="lp-eyebrow">
+            轉讓
+        </p>
+
+        <h1
+            class="reg-title"
+            id="tf-title"
+        >
+            接受名額轉讓
+        </h1>
+
+        <p
+            class="reg-lead"
+            id="tf-lead"
+        >
+            有人把這一梯的名額轉讓給您。請確認內容、填寫資料並同意契約，<br class="cx-br">
+            送出後，這個名額就歸您所有。
+        </p>
+
+        <a
+            class="reg-back"
+            href="index.html#learning-path"
+        >
+            ← 返回課程頁
+        </a>
+
+
+        <!-- 載入中 -->
+
+        <p
+            class="reg-status"
+            id="tf-loading"
+            role="status"
+        >
+            讀取中…
+        </p>
+
+
+        <!-- 連結無效、邀請作廢或逾期、系統無法使用 -->
+
+        <div
+            class="reg-fallback"
+            id="tf-invalid"
+            hidden
+        >
+
+            <p id="tf-invalid-text"></p>
+
+            <p>
+                <a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a>
+            </p>
+
+        </div>
+
+
+        <!-- 受讓表單 -->
+
+        <form
+            id="tf-form"
+            class="reg-form"
+            novalidate
+            hidden
+        >
+
+            <!-- 1. 轉讓內容 -->
+
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">1</span>
+                    轉讓內容
+                </legend>
+
+                <dl
+                    class="reg-summary"
+                    id="tf-summary"
+                ></dl>
+
+                <p class="reg-note reg-note-plain">
+                    這一梯的報名款項，已由轉讓人付給甲方；轉讓成立後由您承接，<strong>您不需要再向甲方付款</strong>。您與轉讓人之間的款項，須由你們自行結算。
+                </p>
+
+            </fieldset>
+
+
+            <!-- 2. 基本資料 -->
+
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">2</span>
+                    您的基本資料
+                </legend>
+
+                <div class="reg-field">
+                    <label for="tf-name">姓名</label>
+                    <input
+                        id="tf-name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        maxlength="40"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="name" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="tf-phone">手機</label>
+                    <input
+                        id="tf-phone"
+                        name="phone"
+                        type="tel"
+                        inputmode="numeric"
+                        autocomplete="tel"
+                        maxlength="12"
+                        placeholder="例如 0912345678"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="phone" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="tf-line">LINE ID（選填）</label>
+                    <input
+                        id="tf-line"
+                        name="line"
+                        type="text"
+                        autocomplete="off"
+                        maxlength="50"
+                    >
+                </div>
+
+                <p
+                    class="reg-hint"
+                    id="tf-email-hint"
+                ></p>
+
+            </fieldset>
+
+
+            <!-- 3. 退款帳戶 -->
+
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">3</span>
+                    您的退款帳戶
+                </legend>
+
+                <p class="reg-hint reg-hint-lead">
+                    日後若您取消報名，退費會匯入這個帳戶。請填寫您自己的帳戶。
+                </p>
+
+                <div class="reg-field">
+                    <label for="tf-bankCode">銀行代碼</label>
+                    <input
+                        id="tf-bankCode"
+                        name="bankCode"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        maxlength="7"
+                        placeholder="例如 822"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="bankCode" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="tf-account">帳號</label>
+                    <input
+                        id="tf-account"
+                        name="account"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        maxlength="20"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="account" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="tf-accountName">戶名</label>
+                    <input
+                        id="tf-accountName"
+                        name="accountName"
+                        type="text"
+                        autocomplete="off"
+                        maxlength="40"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="accountName" role="alert"></p>
+                </div>
+
+            </fieldset>
+
+
+            <!-- 4. 契約與同意 -->
+
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">4</span>
+                    課程服務契約
+                </legend>
+
+                <div
+                    class="reg-contract"
+                    id="tf-contract"
+                    tabindex="0"
+                    role="region"
+                    aria-label="課程服務契約全文，可捲動閱讀"
+                >
+                    <p>契約載入中…</p>
+                </div>
+
+                <div class="reg-check">
+                    <input
+                        id="tf-ageOk"
+                        name="ageOk"
+                        type="checkbox"
+                    >
+                    <label for="tf-ageOk">
+                        我已年滿 18 歲
+                    </label>
+                </div>
+                <p class="reg-error" data-error-for="ageOk" role="alert"></p>
+
+                <div class="reg-check">
+                    <input
+                        id="tf-portraitOk"
+                        name="portraitOk"
+                        type="checkbox"
+                    >
+                    <label for="tf-portraitOk">
+                        同意本人肖像用於的課程幕後花絮宣傳及教材製作
+                    </label>
+                </div>
+
+                <div class="reg-check">
+                    <input
+                        id="tf-agreed"
+                        name="agreed"
+                        type="checkbox"
+                    >
+                    <label for="tf-agreed">
+                        我已閱讀並同意上方《課程服務契約》與《隱私權政策》
+                    </label>
+                </div>
+                <p class="reg-error" data-error-for="agreed" role="alert"></p>
+
+                <div class="reg-check">
+                    <input
+                        id="tf-settleOk"
+                        name="settleOk"
+                        type="checkbox"
+                    >
+                    <label for="tf-settleOk">
+                        我已知悉並同意：轉讓的相關款項由我自行與轉讓人結算，甲方不經手、不保證，也不負任何責任。
+                    </label>
+                </div>
+                <p class="reg-error" data-error-for="settleOk" role="alert"></p>
+
+            </fieldset>
+
+
+            <!-- 蜜罐：真人看不到，請勿填寫 -->
+
+            <div
+                class="reg-hp"
+                aria-hidden="true"
+            >
+                <input
+                    id="tf-hp"
+                    name="hp_contact"
+                    type="text"
+                    tabindex="-1"
+                    autocomplete="off"
+                    data-lpignore="true"
+                    data-1p-ignore
+                    aria-hidden="true"
+                >
+            </div>
+
+
+            <p
+                class="reg-error reg-error-form"
+                id="tf-form-error"
+                role="alert"
+            ></p>
+
+            <button
+                class="reg-submit"
+                id="tf-submit"
+                type="submit"
+                disabled
+            >
+                確認受讓
+            </button>
+
+            <p class="reg-hint reg-hint-center">
+                勾選同意契約、年滿 18 歲與自行結算聲明後，才能送出。
+            </p>
+
+        </form>
+
+
+        <!-- 完成 -->
+
+        <section
+            class="reg-result"
+            id="tf-done"
+            aria-labelledby="tf-done-title"
+            hidden
+        >
+
+            <p class="lp-eyebrow">
+                轉讓完成
+            </p>
+
+            <h2
+                class="reg-result-title"
+                id="tf-done-title"
+                tabindex="-1"
+            >
+                您已承接這一梯的名額
+            </h2>
+
+            <dl
+                class="reg-summary"
+                id="tf-done-summary"
+            ></dl>
+
+            <ul
+                class="reg-result-notes"
+                id="tf-done-notes"
+            ></ul>
+
+            <a
+                class="reg-back"
+                href="index.html#learning-path"
+            >
+                返回課程頁
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer
+    class="site-footer"
+>
+
+    <div class="footer-inner">
+
+        <a
+            class="footer-logo"
+            href="index.html"
+            aria-label="返回首頁"
+        >
+
+            <span class="footer-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="footer-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <nav
+            class="footer-navigation"
+            aria-label="Footer 社群連結"
+        >
+            <ul>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="mailto:jamesgaze.tw@gmail.com"
+                        aria-label="Email"
+                    >
+                        <span
+                            class="footer-mail-icon"
+                            aria-hidden="true"
+                        >✉</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <p class="footer-copyright">
+
+            © James Gaze. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/transfer.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex"
+    >
+
+    <title>
+        Model 招募｜凝視潛像 JAMES GAZE
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400&family=Noto+Sans+TC:wght@100;300;400&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/LP.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/model-join.css"
+    >
+
+</head>
+
+
+<body class="reg-page">
+
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="header-inner">
+
+        <a
+            class="site-logo"
+            href="index.html"
+            aria-label="凝視潛像 James Gaze 首頁"
+        >
+
+            <span class="site-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="site-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="開啟網站選單"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a
+            class="header-course-cta"
+            href="index.html#learning-path"
+        >
+            探索課程
+        </a>
+
+    </div>
+
+</header>
+
+
+<nav
+    class="primary-navigation"
+    id="primary-navigation"
+    aria-label="主要網站導覽"
+>
+
+    <ul>
+
+        <li>
+            <a href="index.html#selected-works">
+                SELECTED WORKS
+            </a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#learning-path"
+                class="nav-item-link"
+            >
+                LEARNING PATH
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="LP1.html">
+                    人像創作體驗課
+                </a>
+
+                <a href="LP2.html">
+                    棚內肖像打光工作坊
+                </a>
+
+                <a href="LP3.html">
+                    人像風格美學工作坊
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#case-study"
+                class="nav-item-link"
+            >
+                CASE STUDY
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="Case01.html">
+                    人像創作規劃案例
+                </a>
+
+                <a href="Case02.html">
+                    光線逆向拆解案例
+                </a>
+
+                <a href="Case03.html">
+                    視覺元素分析案例
+                </a>
+
+            </div>
+
+        </li>
+
+        <li>
+            <a href="about.html">
+                ABOUT JAMES
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="reg-main">
+
+    <div class="reg-inner">
+
+        <p class="lp-eyebrow">
+            招募
+        </p>
+
+        <h1 class="reg-title">
+            攝影課程 Model 招募
+        </h1>
+
+        <p class="reg-lead">
+            填寫資料加入 Model 名單。<br>
+            審核通過後，有合適的場次我會以 IG 或 Email 與您聯絡。
+        </p>
+
+        <!-- 招募表 -->
+        <form
+            id="mj-form"
+            class="reg-form"
+            novalidate
+        >
+
+            <!-- 1. 基本資料 -->
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">1</span>
+                    基本資料
+                </legend>
+
+                <div class="reg-field">
+                    <label for="f-name">姓名</label>
+                    <input id="f-name" name="name" type="text" autocomplete="name" maxlength="40" required>
+                    <p class="reg-error" data-error-for="name" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-nickname">暱稱 <span class="reg-optional">（選填）</span></label>
+                    <input id="f-nickname" name="nickname" type="text" autocomplete="nickname" maxlength="30">
+                    <p class="reg-hint">合作時的稱呼；公開作品時可用此標註。未填則使用姓名。</p>
+                    <p class="reg-error" data-error-for="nickname" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-gender">性別</label>
+                    <select id="f-gender" name="gender" required>
+                        <option value="">請選擇</option>
+                        <option value="女">女</option>
+                        <option value="男">男</option>
+                        <option value="其他／不透露">其他／不透露</option>
+                    </select>
+                    <p class="reg-error" data-error-for="gender" role="alert"></p>
+                </div>
+
+                <div class="reg-check">
+                    <input id="f-ageOk" name="ageOk" type="checkbox">
+                    <label for="f-ageOk">我聲明年滿 18 歲（本次招募限年滿 18 歲者報名）</label>
+                </div>
+                <p class="reg-error" data-error-for="ageOk" role="alert"></p>
+
+                <div class="reg-field">
+                    <label for="f-email">Email</label>
+                    <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="100" required>
+                    <p class="reg-hint">合作聯絡與簽署連結會寄到這個信箱，請確認填寫正確。</p>
+                    <p class="reg-error" data-error-for="email" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-ig">IG 帳號</label>
+                    <input id="f-ig" name="ig" type="text" autocomplete="off" maxlength="100" placeholder="@jamesgaze" required>
+                    <p class="reg-error" data-error-for="ig" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-portfolio">作品集或 Model Card 網址 <span class="reg-optional">（選填）</span></label>
+                    <input id="f-portfolio" name="portfolio" type="url" autocomplete="off" inputmode="url" maxlength="300" placeholder="https://">
+                    <p class="reg-hint">IG 精選動態、個人網站、雲端相簿皆可，請確認可公開瀏覽。</p>
+                    <p class="reg-error" data-error-for="portfolio" role="alert"></p>
+                </div>
+
+            </fieldset>
+
+
+            <!-- 2. 合作意願 -->
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">2</span>
+                    合作意願
+                </legend>
+
+                <div class="reg-field">
+                    <label for="f-time">可配合時間</label>
+                    <select id="f-time" name="time" required>
+                        <option value="">請選擇</option>
+                        <option value="平日">平日</option>
+                        <option value="假日">假日</option>
+                        <option value="都可">都可</option>
+                    </select>
+                    <p class="reg-error" data-error-for="time" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-mode">合作形式</label>
+                    <select id="f-mode" name="mode" required>
+                        <option value="">請選擇</option>
+                        <option value="付費">付費</option>
+                        <option value="互惠">互惠</option>
+                        <option value="都可">都可</option>
+                    </select>
+                    <p class="reg-error" data-error-for="mode" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-area">可配合地點</label>
+                    <select id="f-area" name="area" required>
+                        <option value="">請選擇</option>
+                        <option value="台北">台北</option>
+                        <option value="桃園">桃園</option>
+                        <option value="都可">都可</option>
+                    </select>
+                    <p class="reg-error" data-error-for="area" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-place">可配合場域</label>
+                    <select id="f-place" name="place" required>
+                        <option value="">請選擇</option>
+                        <option value="室內">室內</option>
+                        <option value="戶外">戶外</option>
+                        <option value="都可">都可</option>
+                    </select>
+                    <p class="reg-error" data-error-for="place" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <span class="mj-label" id="mj-themes-label">可接受的拍攝主題（可複選）</span>
+                    <div class="mj-checks" role="group" aria-labelledby="mj-themes-label">
+                        <div class="reg-check">
+                            <input id="f-theme-1" name="themes" type="checkbox" value="時裝" checked>
+                            <label for="f-theme-1">時裝</label>
+                        </div>
+                        <div class="reg-check">
+                            <input id="f-theme-2" name="themes" type="checkbox" value="泳裝內衣">
+                            <label for="f-theme-2">泳裝內衣</label>
+                        </div>
+                        <div class="reg-check">
+                            <input id="f-theme-3" name="themes" type="checkbox" value="人體">
+                            <label for="f-theme-3">人體</label>
+                        </div>
+                    </div>
+                    <p class="reg-hint">未勾選的類型，不會收到該類型的邀約。實際拍攝前仍會另行簽署授權書，並於現場核對證件。</p>
+                    <p class="reg-error" data-error-for="themes" role="alert"></p>
+                </div>
+
+            </fieldset>
+
+
+            <!-- 3. 個人資料告知 -->
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">3</span>
+                    個人資料告知
+                </legend>
+
+                <div class="mj-notice">
+                    <p>甲方（王書駿，以「凝視潛像 JAMES GAZE」名義）蒐集上述資料，用於 Model 招募審核、拍攝邀約與聯絡、簽署授權書及報酬支付。</p>
+                    <p>資料僅供甲方使用，不對外公開；您得隨時來信要求停止處理及利用。未滿 18 歲者不接受報名；審核未通過者，不另行通知。</p>
+                    <p>完整內容請見<a href="privacy.html" target="_blank" rel="noopener">《隱私權政策》</a>中有關 Model 招募及合作資料之規定。</p>
+                </div>
+
+                <div class="reg-check">
+                    <input id="f-consent" name="consent" type="checkbox">
+                    <label for="f-consent">我已閱讀並同意上述個人資料告知事項</label>
+                </div>
+                <p class="reg-error" data-error-for="consent" role="alert"></p>
+
+            </fieldset>
+
+
+            <!-- 蜜罐：真人看不到，請勿填寫 -->
+            <div class="reg-hp" aria-hidden="true">
+                <input id="f-hp" name="hp_contact" type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore aria-hidden="true">
+            </div>
+
+            <p class="reg-error reg-error-form" id="mj-form-error" role="alert"></p>
+
+            <button class="reg-submit" id="mj-submit" type="submit" disabled>
+                送出申請
+            </button>
+
+            <p class="reg-hint reg-hint-center">
+                勾選同意個人資料告知事項後，才能送出。
+            </p>
+
+        </form>
+
+
+        <!-- 送出成功 -->
+        <section
+            class="reg-result"
+            id="mj-result"
+            aria-labelledby="mj-result-title"
+            hidden
+        >
+
+            <p class="lp-eyebrow">
+                申請已送出
+            </p>
+
+            <h2 class="reg-result-title" id="mj-result-title" tabindex="-1">
+                謝謝您，資料已收到
+            </h2>
+
+            <ul class="reg-result-notes">
+                <li>我會查看您的作品集與資料，審核通過者會加入 Model 名單。</li>
+                <li>有合適的場次時，會以 IG 私訊或 Email 與您聯絡；審核未通過者不另行通知。</li>
+                <li>如需更正資料，請重新填寫一次（以 Email 或 IG 帳號比對），或來信 <a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a>。</li>
+            </ul>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer
+    class="site-footer"
+>
+
+    <div class="footer-inner">
+
+        <a
+            class="footer-logo"
+            href="index.html"
+            aria-label="返回首頁"
+        >
+
+            <span class="footer-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="footer-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <nav
+            class="footer-navigation"
+            aria-label="Footer 社群連結"
+        >
+            <ul>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="mailto:jamesgaze.tw@gmail.com"
+                        aria-label="Email"
+                    >
+                        <span
+                            class="footer-mail-icon"
+                            aria-hidden="true"
+                        >✉</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <p class="footer-copyright">
+
+            © James Gaze. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/model-join.js"></script>
+
+</body>
+
+</html>

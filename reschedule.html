@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex"
+    >
+
+    <meta
+        name="referrer"
+        content="no-referrer"
+    >
+
+    <title>
+        改期｜凝視潛像 JAMES GAZE
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400&family=Noto+Sans+TC:wght@100;300;400&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/LP.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
+
+</head>
+
+
+<body class="reg-page">
+
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="header-inner">
+
+        <a
+            class="site-logo"
+            href="index.html"
+            aria-label="凝視潛像 James Gaze 首頁"
+        >
+
+            <span class="site-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="site-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="開啟網站選單"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a
+            class="header-course-cta"
+            href="index.html#learning-path"
+        >
+            探索課程
+        </a>
+
+    </div>
+
+</header>
+
+
+<nav
+    class="primary-navigation"
+    id="primary-navigation"
+    aria-label="主要網站導覽"
+>
+
+    <ul>
+
+        <li>
+            <a href="index.html#selected-works">
+                SELECTED WORKS
+            </a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#learning-path"
+                class="nav-item-link"
+            >
+                LEARNING PATH
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="LP1.html">
+                    人像創作體驗課
+                </a>
+
+                <a href="LP2.html">
+                    棚內肖像打光工作坊
+                </a>
+
+                <a href="LP3.html">
+                    人像風格美學工作坊
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#case-study"
+                class="nav-item-link"
+            >
+                CASE STUDY
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="Case01.html">
+                    人像創作規劃案例
+                </a>
+
+                <a href="Case02.html">
+                    光線逆向拆解案例
+                </a>
+
+                <a href="Case03.html">
+                    視覺元素分析案例
+                </a>
+
+            </div>
+
+        </li>
+
+        <li>
+            <a href="about.html">
+                ABOUT JAMES
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="reg-main">
+
+    <div class="reg-inner">
+
+        <p class="lp-eyebrow">
+            改期
+        </p>
+
+        <h1
+            class="reg-title"
+            id="rs-title"
+        >
+            改期到下一梯
+        </h1>
+
+        <p
+            class="reg-lead"
+            id="rs-lead"
+        >
+            請確認下方的改期內容，<br class="cx-br">
+            您按下最後確認後，改期才會生效。
+        </p>
+
+        <a
+            class="reg-back"
+            href="index.html#learning-path"
+        >
+            ← 返回課程頁
+        </a>
+
+
+        <!-- 載入中 -->
+
+        <p
+            class="reg-status"
+            id="rs-loading"
+            role="status"
+        >
+            讀取中…
+        </p>
+
+
+        <!-- 連結無效、沒有連結、系統無法使用 -->
+
+        <div
+            class="reg-fallback"
+            id="rs-invalid"
+            hidden
+        >
+
+            <p id="rs-invalid-text"></p>
+
+            <p>
+                <a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a>
+            </p>
+
+        </div>
+
+
+        <!-- 確認 -->
+
+        <section
+            id="rs-review"
+            aria-labelledby="rs-review-title"
+            hidden
+        >
+
+            <h2
+                class="reg-result-title"
+                id="rs-review-title"
+                tabindex="-1"
+            >
+                請確認改期內容
+            </h2>
+
+            <dl
+                class="reg-summary"
+                id="rs-summary"
+            ></dl>
+
+            <p
+                class="reg-note reg-note-plain"
+                id="rs-message"
+                hidden
+            ></p>
+
+            <p
+                class="reg-note reg-note-plain"
+                id="rs-warning"
+            >
+                按下「確認改期」後，您的報名會立即轉到下一梯，<strong>無法更改</strong>，也不能再選擇全額退費。
+            </p>
+
+            <p
+                class="reg-note reg-note-plain"
+                id="rs-warning-active"
+                hidden
+            >
+                按下「確認改期」後，您的報名會立即轉到下一梯，<strong>無法更改</strong>；原本那梯的座位會釋出。改期次數合計有上限，請見下方「改期次數」。
+            </p>
+
+            <p
+                class="reg-error reg-error-form"
+                id="rs-review-error"
+                role="alert"
+            ></p>
+
+            <div class="cx-actions">
+
+                <button
+                    class="reg-submit"
+                    id="rs-confirm-btn"
+                    type="button"
+                >
+                    確認改期
+                </button>
+
+                <a
+                    class="reg-submit cx-ghost cx-link"
+                    id="rs-refund-link"
+                    href="#"
+                    hidden
+                >
+                    我想改選全額退費
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- 完成 -->
+
+        <section
+            class="reg-result"
+            id="rs-done"
+            aria-labelledby="rs-done-title"
+            hidden
+        >
+
+            <p class="lp-eyebrow">
+                已改期
+            </p>
+
+            <h2
+                class="reg-result-title"
+                id="rs-done-title"
+                tabindex="-1"
+            >
+                您的改期已完成
+            </h2>
+
+            <dl
+                class="reg-summary"
+                id="rs-done-summary"
+            ></dl>
+
+            <ul
+                class="reg-result-notes"
+                id="rs-done-notes"
+            ></ul>
+
+            <a
+                class="reg-back"
+                href="index.html#learning-path"
+            >
+                返回課程頁
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer
+    class="site-footer"
+>
+
+    <div class="footer-inner">
+
+        <a
+            class="footer-logo"
+            href="index.html"
+            aria-label="返回首頁"
+        >
+
+            <span class="footer-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="footer-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <nav
+            class="footer-navigation"
+            aria-label="Footer 社群連結"
+        >
+            <ul>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="mailto:jamesgaze.tw@gmail.com"
+                        aria-label="Email"
+                    >
+                        <span
+                            class="footer-mail-icon"
+                            aria-hidden="true"
+                        >✉</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <p class="footer-copyright">
+
+            © James Gaze. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/reschedule.js"></script>
+
+</body>
+
+</html>

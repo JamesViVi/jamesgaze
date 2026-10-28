@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <meta
+        name="referrer"
+        content="no-referrer"
+    >
+
+    <title>
+        拍攝合作簽署｜凝視潛像 JAMES GAZE
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400&family=Noto+Sans+TC:wght@100;300;400&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/LP.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/model-sign.css"
+    >
+
+</head>
+
+
+<body class="reg-page">
+
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="header-inner">
+
+        <a
+            class="site-logo"
+            href="index.html"
+            aria-label="凝視潛像 James Gaze 首頁"
+        >
+
+            <span class="site-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="site-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="開啟網站選單"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a
+            class="header-course-cta"
+            href="index.html#learning-path"
+        >
+            探索課程
+        </a>
+
+    </div>
+
+</header>
+
+
+<nav
+    class="primary-navigation"
+    id="primary-navigation"
+    aria-label="主要網站導覽"
+>
+
+    <ul>
+
+        <li>
+            <a href="index.html#selected-works">
+                SELECTED WORKS
+            </a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#learning-path"
+                class="nav-item-link"
+            >
+                LEARNING PATH
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="LP1.html">
+                    人像創作體驗課
+                </a>
+
+                <a href="LP2.html">
+                    棚內肖像打光工作坊
+                </a>
+
+                <a href="LP3.html">
+                    人像風格美學工作坊
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#case-study"
+                class="nav-item-link"
+            >
+                CASE STUDY
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="Case01.html">
+                    人像創作規劃案例
+                </a>
+
+                <a href="Case02.html">
+                    光線逆向拆解案例
+                </a>
+
+                <a href="Case03.html">
+                    視覺元素分析案例
+                </a>
+
+            </div>
+
+        </li>
+
+        <li>
+            <a href="about.html">
+                ABOUT JAMES
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="reg-main">
+
+    <div class="reg-inner">
+
+        <p class="lp-eyebrow">
+            拍攝合作
+        </p>
+
+        <h1 class="reg-title" id="ms-title">
+            拍攝合作授權書
+        </h1>
+
+        <p class="reg-lead" id="ms-lead"></p>
+
+        <p class="reg-status" id="ms-loading" role="status">
+            載入中…
+        </p>
+
+        <!-- 連結無效、系統錯誤、場次已結束 -->
+        <div class="reg-fallback" id="ms-closed" hidden>
+            <p id="ms-closed-text"></p>
+            <p><a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a></p>
+        </div>
+
+        <!-- 場次資訊（各狀態共用） -->
+        <dl class="reg-summary" id="ms-summary" hidden></dl>
+
+
+        <!-- 簽署表單（尚未簽署時） -->
+        <form id="ms-form" class="reg-form" novalidate hidden>
+
+            <fieldset class="reg-fieldset">
+                <legend>
+                    <span class="reg-step">1</span>
+                    授權書內容
+                </legend>
+                <div
+                    class="reg-contract"
+                    id="ms-terms"
+                    tabindex="0"
+                    role="region"
+                    aria-label="拍攝合作授權書全文，可捲動閱讀"
+                ></div>
+                <p class="reg-hint" id="ms-version"></p>
+            </fieldset>
+
+            <fieldset class="reg-fieldset">
+                <legend>
+                    <span class="reg-step">2</span>
+                    您的資料
+                </legend>
+
+                <p class="reg-hint reg-hint-lead" id="ms-identity"></p>
+
+                <div class="reg-field">
+                    <label for="f-phone">手機號碼</label>
+                    <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="14" placeholder="0912345678" required>
+                    <p class="reg-error" data-error-for="phone" role="alert"></p>
+                </div>
+
+                <div id="ms-bank" hidden>
+                    <p class="reg-hint reg-hint-lead">報酬將於拍攝日當天匯入下列帳戶，僅供支付報酬使用。</p>
+
+                    <div class="reg-field">
+                        <label for="f-bankCode">銀行代碼</label>
+                        <input id="f-bankCode" name="bankCode" type="text" inputmode="numeric" autocomplete="off" maxlength="7" placeholder="例如 004">
+                        <p class="reg-error" data-error-for="bankCode" role="alert"></p>
+                    </div>
+
+                    <div class="reg-field">
+                        <label for="f-account">匯款帳號</label>
+                        <input id="f-account" name="account" type="text" inputmode="numeric" autocomplete="off" maxlength="20">
+                        <p class="reg-error" data-error-for="account" role="alert"></p>
+                    </div>
+
+                    <div class="reg-field">
+                        <label for="f-accountName">戶名</label>
+                        <input id="f-accountName" name="accountName" type="text" autocomplete="off" maxlength="40">
+                        <p class="reg-error" data-error-for="accountName" role="alert"></p>
+                    </div>
+                </div>
+
+                <div class="reg-field">
+                    <span class="ms-label" id="ms-tag-label">公開作品時的標註方式</span>
+                    <div class="ms-radios" role="radiogroup" aria-labelledby="ms-tag-label">
+                        <div class="reg-check">
+                            <input id="f-tag-1" name="tag" type="radio" value="標註IG">
+                            <label for="f-tag-1" id="ms-tag-ig-label">標註我的 Instagram 帳號</label>
+                        </div>
+                        <div class="reg-check">
+                            <input id="f-tag-2" name="tag" type="radio" value="僅暱稱">
+                            <label for="f-tag-2" id="ms-tag-nick-label">僅標註我的暱稱</label>
+                        </div>
+                        <div class="reg-check">
+                            <input id="f-tag-3" name="tag" type="radio" value="不標註">
+                            <label for="f-tag-3">不標註</label>
+                        </div>
+                    </div>
+                    <p class="reg-error" data-error-for="tag" role="alert"></p>
+                </div>
+            </fieldset>
+
+            <fieldset class="reg-fieldset">
+                <legend>
+                    <span class="reg-step">3</span>
+                    同意與簽名
+                </legend>
+
+                <div class="reg-check">
+                    <input id="f-agreed" name="agreed" type="checkbox">
+                    <label for="f-agreed">我已閱讀並同意上方《拍攝合作授權書》，並聲明我年滿 18 歲、所填資料屬實</label>
+                </div>
+                <p class="reg-error" data-error-for="agreed" role="alert"></p>
+
+                <div id="ms-sensitive" hidden>
+                    <div class="reg-check">
+                        <input id="f-sensitiveOk" name="sensitiveOk" type="checkbox">
+                        <label for="f-sensitiveOk" id="ms-sensitive-label"></label>
+                    </div>
+                    <p class="reg-error" data-error-for="sensitiveOk" role="alert"></p>
+                </div>
+
+                <div class="ms-sign">
+                    <span class="ms-label">請在下方框內手寫簽名</span>
+                    <canvas id="ms-canvas" width="720" height="240" aria-label="簽名欄"></canvas>
+                    <button type="button" class="reg-linkbtn" id="ms-clear">清除重簽</button>
+                    <p class="reg-error" data-error-for="signature" role="alert"></p>
+                </div>
+            </fieldset>
+
+            <div class="reg-hp" aria-hidden="true">
+                <input id="f-hp" name="hp_contact" type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore aria-hidden="true">
+            </div>
+
+            <p class="reg-error reg-error-form" id="ms-form-error" role="alert"></p>
+
+            <button class="reg-submit" id="ms-submit" type="submit">
+                簽署並送出
+            </button>
+
+            <p class="reg-hint reg-hint-center">
+                送出後，授權書 PDF 會寄到您的 Email。
+            </p>
+        </form>
+
+
+        <!-- 已簽署：出席確認與取消 -->
+        <section id="ms-signed" hidden>
+
+            <p class="reg-error" id="ms-signed-note" hidden></p>
+
+            <p class="ms-attend" id="ms-attend" role="status"></p>
+
+            <div class="cx-actions">
+                <button class="reg-submit" id="ms-confirm" type="button">確認出席</button>
+                <button class="reg-submit cx-ghost" id="ms-cancel" type="button">無法出席，取消這個場次</button>
+            </div>
+
+            <p class="reg-hint" id="ms-cancel-hint"></p>
+            <p class="reg-error reg-error-form" id="ms-signed-error" role="alert"></p>
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer
+    class="site-footer"
+>
+
+    <div class="footer-inner">
+
+        <a
+            class="footer-logo"
+            href="index.html"
+            aria-label="返回首頁"
+        >
+
+            <span class="footer-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="footer-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <nav
+            class="footer-navigation"
+            aria-label="Footer 社群連結"
+        >
+            <ul>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="mailto:jamesgaze.tw@gmail.com"
+                        aria-label="Email"
+                    >
+                        <span
+                            class="footer-mail-icon"
+                            aria-hidden="true"
+                        >✉</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <p class="footer-copyright">
+
+            © James Gaze. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/model-sign.js"></script>
+
+</body>
+
+</html>

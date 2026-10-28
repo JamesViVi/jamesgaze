@@ -1,0 +1,116 @@
+/* =====================================================
+JAMES GAZE
+model-join.css — Model 招募頁
+
+沿用 register.css 的版型；這裡只補它沒有的欄位樣式
+（下拉選單、日期、網址、複選群組、告知方塊）。
+===================================================== */
+
+.reg-field select,
+.reg-field input[type="date"],
+.reg-field input[type="url"]{
+    display: block;
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background: #f7f7f7;
+    color: #111;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 16px;            /* 16px 以上，iPhone 不會自動放大頁面 */
+    font-weight: 300;
+    line-height: 1.4;
+    transition: border-color .4s var(--ease, ease), background .4s var(--ease, ease);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.reg-field select{
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23111' stroke-width='1.4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    cursor: pointer;
+}
+
+.reg-field select:focus,
+.reg-field input[type="date"]:focus,
+.reg-field input[type="url"]:focus{
+    border-color: #111;
+    background-color: #fff;
+}
+
+.reg-field select:focus-visible,
+.reg-field input[type="date"]:focus-visible,
+.reg-field input[type="url"]:focus-visible{
+    outline: 2px solid #111;
+    outline-offset: 2px;
+}
+
+.reg-field select[aria-invalid="true"],
+.reg-field select[aria-invalid="true"]:focus,
+.reg-field input[type="date"][aria-invalid="true"],
+.reg-field input[type="date"][aria-invalid="true"]:focus,
+.reg-field input[type="url"][aria-invalid="true"],
+.reg-field input[type="url"][aria-invalid="true"]:focus{
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 12px;
+    border: 3px solid #ff0d00;
+    background-color: #fff;
+}
+
+.reg-field input[type="date"]{
+    min-height: 50px;
+}
+
+.mj-label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .06em;
+}
+
+.mj-checks .reg-check{
+    margin-top: 12px;
+}
+
+.mj-checks .reg-check:first-child{
+    margin-top: 0;
+}
+
+.mj-notice{
+    margin: 0 0 4px;
+    padding: 18px 20px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background: #f7f7f7;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+.mj-notice p{
+    margin: 0;
+}
+
+.mj-notice p + p{
+    margin-top: 8px;
+}
+
+.mj-notice a{
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .reg-field select,
+    .reg-field input[type="date"],
+    .reg-field input[type="url"]{
+        transition: none;
+    }
+
+}

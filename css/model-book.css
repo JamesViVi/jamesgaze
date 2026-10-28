@@ -1,0 +1,116 @@
+/* =====================================================
+JAMES GAZE
+model-book.css — Model 檔期頁
+
+沿用 register.css 與 model-sign.css；這裡只補檔期卡片。
+===================================================== */
+
+.mb-h{
+    margin: 32px 0 12px;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .08em;
+}
+
+.mb-notice{
+    margin: 0 0 8px;
+    padding: 16px 18px;
+    border-left: 4px solid #111;
+    background: #f7f7f7;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.mb-notice p{
+    margin: 0;
+}
+
+.mb-mine{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mb-mine li{
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.mb-mine a{
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.mb-group{
+    margin: 22px 0 8px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .06em;
+    color: #555;
+}
+
+.mb-slot{
+    display: block;
+    margin: 0 0 10px;
+    padding: 14px 16px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.mb-slot.is-selected{
+    border: 3px solid #111;
+    padding: 12px 14px;
+    background: #f7f7f7;
+}
+
+.mb-slot.is-disabled{
+    opacity: .5;
+    cursor: not-allowed;
+    background: #f1f1f1;
+}
+
+.mb-slot .reg-check{
+    margin: 0;
+}
+
+.mb-slot-body{
+    display: block;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.mb-slot-title{
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.mb-slot-meta{
+    display: block;
+    color: #555;
+    font-size: 14px;
+}
+
+.mb-slot-note{
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    color: #111;
+}
+
+.mb-slot.is-disabled .mb-slot-note{
+    color: #ff0d00;
+}
+
+#mb-step1[hidden],
+#mb-bank[hidden],
+#mb-sensitive[hidden],
+#mb-mine[hidden],
+#mb-done[hidden]{
+    display: none;
+}

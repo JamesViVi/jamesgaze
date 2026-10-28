@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex"
+    >
+
+    <meta
+        name="referrer"
+        content="no-referrer"
+    >
+
+    <title>
+        取消報名｜凝視潛像 JAMES GAZE
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400&family=Noto+Sans+TC:wght@100;300;400&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/LP.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
+
+</head>
+
+
+<body class="reg-page">
+
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="header-inner">
+
+        <a
+            class="site-logo"
+            href="index.html"
+            aria-label="凝視潛像 James Gaze 首頁"
+        >
+
+            <span class="site-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="site-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="開啟網站選單"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a
+            class="header-course-cta"
+            href="index.html#learning-path"
+        >
+            探索課程
+        </a>
+
+    </div>
+
+</header>
+
+
+<nav
+    class="primary-navigation"
+    id="primary-navigation"
+    aria-label="主要網站導覽"
+>
+
+    <ul>
+
+        <li>
+            <a href="index.html#selected-works">
+                SELECTED WORKS
+            </a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#learning-path"
+                class="nav-item-link"
+            >
+                LEARNING PATH
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="LP1.html">
+                    人像創作體驗課
+                </a>
+
+                <a href="LP2.html">
+                    棚內肖像打光工作坊
+                </a>
+
+                <a href="LP3.html">
+                    人像風格美學工作坊
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#case-study"
+                class="nav-item-link"
+            >
+                CASE STUDY
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="Case01.html">
+                    人像創作規劃案例
+                </a>
+
+                <a href="Case02.html">
+                    光線逆向拆解案例
+                </a>
+
+                <a href="Case03.html">
+                    視覺元素分析案例
+                </a>
+
+            </div>
+
+        </li>
+
+        <li>
+            <a href="about.html">
+                ABOUT JAMES
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="reg-main">
+
+    <div class="reg-inner">
+
+        <p class="lp-eyebrow">
+            取消
+        </p>
+
+        <h1
+            class="reg-title"
+            id="cx-title"
+        >
+            取消報名
+        </h1>
+
+        <p
+            class="reg-lead"
+            id="cx-lead"
+        >
+            請確認下方的報名內容與應退金額，<br class="cx-br">
+            您按下最後確認後，取消才會生效。
+        </p>
+
+        <a
+            class="reg-back"
+            href="index.html#learning-path"
+        >
+            ← 返回課程頁
+        </a>
+
+
+        <!-- 載入中 -->
+
+        <p
+            class="reg-status"
+            id="cx-loading"
+            role="status"
+        >
+            讀取中…
+        </p>
+
+
+        <!-- 連結無效、沒有連結、系統無法使用 -->
+
+        <div
+            class="reg-fallback"
+            id="cx-invalid"
+            hidden
+        >
+
+            <p id="cx-invalid-text"></p>
+
+            <p>
+                <a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a>
+            </p>
+
+        </div>
+
+
+        <!-- 確認 -->
+
+        <section
+            id="cx-review"
+            aria-labelledby="cx-review-title"
+            hidden
+        >
+
+            <h2
+                class="reg-result-title"
+                id="cx-review-title"
+                tabindex="-1"
+            >
+                請確認取消內容
+            </h2>
+
+            <dl
+                class="reg-summary"
+                id="cx-summary"
+            ></dl>
+
+            <p
+                class="reg-note reg-note-plain"
+                id="cx-message"
+                hidden
+            ></p>
+
+            
+            <p
+                class="reg-note reg-note-plain"
+                id="cx-partial-note"
+                hidden
+            >
+                報名截止後，我已依本梯次人數完成場地、器材、模特兒（如有）及行政安排，這些安排不因個別學員退出而減少，因此適用上述退費規則。
+            </p>
+
+            <p
+                class="reg-note reg-note-plain"
+                id="cx-transfer-pending"
+                hidden
+            ></p>
+
+            <p
+                class="reg-note reg-note-plain"
+                id="cx-warning"
+            >
+                按下「確認取消」後，座位會立即釋出，退費金額以按下的當下判定，且<strong>無法還原</strong>。
+            </p>
+
+            <p
+                class="reg-error reg-error-form"
+                id="cx-review-error"
+                role="alert"
+            ></p>
+
+            <div class="cx-actions">
+
+                <button
+                    class="reg-submit cx-danger"
+                    id="cx-confirm-btn"
+                    type="button"
+                >
+                    確認取消
+                </button>
+
+                <a
+                    class="reg-submit cx-ghost cx-link"
+                    id="cx-reschedule-link"
+                    href="#"
+                    hidden
+                >
+                    先不取消，改報下一梯
+                </a>
+
+                <button
+                    class="reg-submit cx-ghost"
+                    id="cx-transfer-btn"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="cx-transfer"
+                    hidden
+                >
+                    轉讓名額
+                </button>
+
+                <a
+                    class="reg-submit cx-ghost cx-link"
+                    id="cx-keep-link"
+                    href="index.html#learning-path"
+                >
+                    先不取消，離開
+                </a>
+
+            </div>
+            
+            <div
+                class="reg-note"
+                id="cx-transfer"
+                hidden
+            >
+
+                <p class="reg-note-title">
+                    轉讓名額
+                </p>
+
+                <ul class="reg-result-notes">
+                    <li>轉讓限一次；受讓人不得再轉讓。</li>
+                    <li>請填寫受讓人的電子郵件，我會寄專屬連結給他。他須在 <strong id="cx-transfer-deadline"></strong> 前完成填寫並勾選同意；未完成者，轉讓作廢，名額仍屬於您。</li>
+                    <li>轉讓成立後，受讓人取代您，您不再享有這一梯的任何權利，我不退費給您。</li>
+                    <li>您與受讓人之間的款項，由你們自行結算；我不經手、不保證，也不負任何責任。</li>
+                </ul>
+
+                <div class="reg-field">
+                    <label for="cx-tf-email">受讓人的電子郵件</label>
+                    <input
+                        id="cx-tf-email"
+                        type="email"
+                        inputmode="email"
+                        autocomplete="off"
+                        maxlength="100"
+                    >
+                </div>
+
+                <div class="reg-field">
+                    <label for="cx-tf-email2">再輸入一次（避免寄錯人）</label>
+                    <input
+                        id="cx-tf-email2"
+                        type="email"
+                        inputmode="email"
+                        autocomplete="off"
+                        maxlength="100"
+                    >
+                </div>
+
+                <div class="reg-check">
+                    <input
+                        id="cx-tf-settle"
+                        type="checkbox"
+                    >
+                    <label for="cx-tf-settle">
+                        我已閱讀上述說明，並同意自行與受讓人結算，甲方不負責。
+                    </label>
+                </div>
+
+                <p
+                    class="reg-error"
+                    id="cx-tf-error"
+                    role="alert"
+                ></p>
+
+                <button
+                    class="reg-submit"
+                    id="cx-tf-send"
+                    type="button"
+                >
+                    寄出轉讓邀請
+                </button>
+
+            </div>
+
+            <p
+                class="reg-note reg-note-plain"
+                id="cx-transfer-sent"
+                hidden
+            ></p>
+
+        </section>
+
+
+        <!-- 完成 -->
+
+        <section
+            class="reg-result"
+            id="cx-done"
+            aria-labelledby="cx-done-title"
+            hidden
+        >
+
+            <p class="lp-eyebrow">
+                已取消
+            </p>
+
+            <h2
+                class="reg-result-title"
+                id="cx-done-title"
+                tabindex="-1"
+            >
+                您的取消已完成
+            </h2>
+
+            <dl
+                class="reg-summary"
+                id="cx-done-summary"
+            ></dl>
+
+            <ul
+                class="reg-result-notes"
+                id="cx-done-notes"
+            ></ul>
+
+            <a
+                class="reg-back"
+                href="index.html#learning-path"
+            >
+                返回課程頁
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer
+    class="site-footer"
+>
+
+    <div class="footer-inner">
+
+        <a
+            class="footer-logo"
+            href="index.html"
+            aria-label="返回首頁"
+        >
+
+            <span class="footer-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="footer-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <nav
+            class="footer-navigation"
+            aria-label="Footer 社群連結"
+        >
+            <ul>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="mailto:jamesgaze.tw@gmail.com"
+                        aria-label="Email"
+                    >
+                        <span
+                            class="footer-mail-icon"
+                            aria-hidden="true"
+                        >✉</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <p class="footer-copyright">
+
+            © James Gaze. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/cancel.js"></script>
+
+</body>
+
+</html>

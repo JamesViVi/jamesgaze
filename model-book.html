@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <meta
+        name="referrer"
+        content="no-referrer"
+    >
+
+    <title>
+        Model 檔期｜凝視潛像 JAMES GAZE
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400&family=Noto+Sans+TC:wght@100;300;400&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/LP.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/model-sign.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/model-book.css"
+    >
+
+</head>
+
+
+<body class="reg-page">
+
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="header-inner">
+
+        <a
+            class="site-logo"
+            href="index.html"
+            aria-label="凝視潛像 James Gaze 首頁"
+        >
+
+            <span class="site-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="site-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="開啟網站選單"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a
+            class="header-course-cta"
+            href="index.html#learning-path"
+        >
+            探索課程
+        </a>
+
+    </div>
+
+</header>
+
+
+<nav
+    class="primary-navigation"
+    id="primary-navigation"
+    aria-label="主要網站導覽"
+>
+
+    <ul>
+
+        <li>
+            <a href="index.html#selected-works">
+                SELECTED WORKS
+            </a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#learning-path"
+                class="nav-item-link"
+            >
+                LEARNING PATH
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="LP1.html">
+                    人像創作體驗課
+                </a>
+
+                <a href="LP2.html">
+                    棚內肖像打光工作坊
+                </a>
+
+                <a href="LP3.html">
+                    人像風格美學工作坊
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#case-study"
+                class="nav-item-link"
+            >
+                CASE STUDY
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="Case01.html">
+                    人像創作規劃案例
+                </a>
+
+                <a href="Case02.html">
+                    光線逆向拆解案例
+                </a>
+
+                <a href="Case03.html">
+                    視覺元素分析案例
+                </a>
+
+            </div>
+
+        </li>
+
+        <li>
+            <a href="about.html">
+                ABOUT JAMES
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="reg-main">
+
+    <div class="reg-inner">
+
+        <p class="lp-eyebrow">
+            Model 檔期
+        </p>
+
+        <h1 class="reg-title" id="mb-title">
+            選擇拍攝檔期
+        </h1>
+
+        <p class="reg-lead" id="mb-lead"></p>
+
+        <p class="reg-status" id="mb-loading" role="status">
+            載入中…
+        </p>
+
+        <div class="reg-fallback" id="mb-closed" hidden>
+            <p id="mb-closed-text"></p>
+            <p><a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a></p>
+        </div>
+
+
+        <!-- 第一步：選擇檔期 -->
+        <section id="mb-step1" hidden>
+
+            <div class="mb-notice">
+                <p>若該梯課程最後沒有成立，檔期會取消，系統會寄信通知您，不會有任何費用；改期我會另外與您聯繫。</p>
+            </div>
+
+            <div id="mb-mine" hidden>
+                <h2 class="mb-h">您目前的場次</h2>
+                <ul class="mb-mine" id="mb-mine-list"></ul>
+            </div>
+
+            <h2 class="mb-h">1　選擇合作形式</h2>
+            <div class="ms-radios" role="radiogroup" aria-label="合作形式">
+                <div class="reg-check">
+                    <input id="f-mode-1" name="mode" type="radio" value="付費">
+                    <label for="f-mode-1" id="mb-pay-label">付費</label>
+                </div>
+                <div class="reg-check">
+                    <input id="f-mode-2" name="mode" type="radio" value="互惠">
+                    <label for="f-mode-2" id="mb-deal-label">互惠</label>
+                </div>
+            </div>
+
+            <h2 class="mb-h">2　選擇檔期</h2>
+            <p class="reg-hint" id="mb-allow"></p>
+            <div id="mb-slots"></div>
+            <p class="reg-empty" id="mb-empty" hidden>目前沒有可以選擇的檔期。有新課程釋出時，我會寄信通知您。</p>
+
+            <p class="reg-error reg-error-form" id="mb-step1-error" role="alert"></p>
+            <button class="reg-submit" id="mb-next" type="button" disabled>
+                下一步：閱讀授權書
+            </button>
+        </section>
+
+
+        <!-- 第二步：授權書與簽名 -->
+        <form id="mb-form" class="reg-form" novalidate hidden>
+
+            <fieldset class="reg-fieldset">
+                <legend>
+                    <span class="reg-step">3</span>
+                    您選的檔期與授權書
+                </legend>
+                <dl class="reg-summary" id="mb-summary"></dl>
+                <div
+                    class="reg-contract"
+                    id="mb-terms"
+                    tabindex="0"
+                    role="region"
+                    aria-label="拍攝合作授權書全文，可捲動閱讀"
+                ></div>
+                <p class="reg-hint" id="mb-version"></p>
+            </fieldset>
+
+            <fieldset class="reg-fieldset">
+                <legend>
+                    <span class="reg-step">4</span>
+                    您的資料
+                </legend>
+
+                <p class="reg-hint reg-hint-lead" id="mb-identity"></p>
+
+                <div class="reg-field">
+                    <label for="f-phone">手機號碼</label>
+                    <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="14" placeholder="0912345678" required>
+                    <p class="reg-error" data-error-for="phone" role="alert"></p>
+                </div>
+
+                <div id="mb-bank" hidden>
+                    <p class="reg-hint reg-hint-lead">報酬將於各拍攝日當天匯入下列帳戶，僅供支付報酬使用。</p>
+                    <div class="reg-field">
+                        <label for="f-bankCode">銀行代碼</label>
+                        <input id="f-bankCode" name="bankCode" type="text" inputmode="numeric" autocomplete="off" maxlength="7" placeholder="例如 004">
+                        <p class="reg-error" data-error-for="bankCode" role="alert"></p>
+                    </div>
+                    <div class="reg-field">
+                        <label for="f-account">匯款帳號</label>
+                        <input id="f-account" name="account" type="text" inputmode="numeric" autocomplete="off" maxlength="20">
+                        <p class="reg-error" data-error-for="account" role="alert"></p>
+                    </div>
+                    <div class="reg-field">
+                        <label for="f-accountName">戶名</label>
+                        <input id="f-accountName" name="accountName" type="text" autocomplete="off" maxlength="40">
+                        <p class="reg-error" data-error-for="accountName" role="alert"></p>
+                    </div>
+                </div>
+
+                <div class="reg-field">
+                    <span class="ms-label" id="mb-tag-label">公開作品時的標註方式</span>
+                    <div class="ms-radios" role="radiogroup" aria-labelledby="mb-tag-label">
+                        <div class="reg-check">
+                            <input id="f-tag-1" name="tag" type="radio" value="標註IG">
+                            <label for="f-tag-1" id="mb-tag-ig-label">標註我的 Instagram 帳號</label>
+                        </div>
+                        <div class="reg-check">
+                            <input id="f-tag-2" name="tag" type="radio" value="僅暱稱">
+                            <label for="f-tag-2" id="mb-tag-nick-label">僅標註我的暱稱</label>
+                        </div>
+                        <div class="reg-check">
+                            <input id="f-tag-3" name="tag" type="radio" value="不標註">
+                            <label for="f-tag-3">不標註</label>
+                        </div>
+                    </div>
+                    <p class="reg-error" data-error-for="tag" role="alert"></p>
+                </div>
+            </fieldset>
+
+            <fieldset class="reg-fieldset">
+                <legend>
+                    <span class="reg-step">5</span>
+                    同意與簽名
+                </legend>
+
+                <div class="reg-check">
+                    <input id="f-agreed" name="agreed" type="checkbox">
+                    <label for="f-agreed">我已閱讀並同意上方《拍攝合作授權書》，並聲明我年滿 18 歲、所填資料屬實</label>
+                </div>
+                <p class="reg-error" data-error-for="agreed" role="alert"></p>
+
+                <div id="mb-sensitive" hidden>
+                    <div class="reg-check">
+                        <input id="f-sensitiveOk" name="sensitiveOk" type="checkbox">
+                        <label for="f-sensitiveOk" id="mb-sensitive-label"></label>
+                    </div>
+                    <p class="reg-error" data-error-for="sensitiveOk" role="alert"></p>
+                </div>
+
+                <div class="ms-sign">
+                    <span class="ms-label">請在下方框內手寫簽名</span>
+                    <canvas id="ms-canvas" width="720" height="240" aria-label="簽名欄"></canvas>
+                    <button type="button" class="reg-linkbtn" id="ms-clear">清除重簽</button>
+                    <p class="reg-error" data-error-for="signature" role="alert"></p>
+                </div>
+            </fieldset>
+
+            <div class="reg-hp" aria-hidden="true">
+                <input id="f-hp" name="hp_contact" type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore aria-hidden="true">
+            </div>
+
+            <p class="reg-error reg-error-form" id="mb-form-error" role="alert"></p>
+
+            <button class="reg-submit" id="mb-submit" type="submit">
+                簽署並送出
+            </button>
+            <button class="reg-submit cx-ghost" id="mb-back" type="button">
+                回上一步重選
+            </button>
+        </form>
+
+
+        <!-- 完成 -->
+        <section id="mb-done" hidden>
+            <p class="lp-eyebrow">已完成</p>
+            <h2 class="reg-result-title" id="mb-done-title" tabindex="-1">檔期已確認</h2>
+            <ul class="reg-result-notes" id="mb-done-notes"></ul>
+            <button class="reg-submit" id="mb-again" type="button">回到檔期頁</button>
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer
+    class="site-footer"
+>
+
+    <div class="footer-inner">
+
+        <a
+            class="footer-logo"
+            href="index.html"
+            aria-label="返回首頁"
+        >
+
+            <span class="footer-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="footer-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <nav
+            class="footer-navigation"
+            aria-label="Footer 社群連結"
+        >
+            <ul>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="mailto:jamesgaze.tw@gmail.com"
+                        aria-label="Email"
+                    >
+                        <span
+                            class="footer-mail-icon"
+                            aria-hidden="true"
+                        >✉</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <p class="footer-copyright">
+
+            © James Gaze. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/model-book.js"></script>
+
+</body>
+
+</html>

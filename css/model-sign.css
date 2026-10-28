@@ -1,0 +1,82 @@
+/* =====================================================
+JAMES GAZE
+model-sign.css — Model 簽署與出席確認頁
+
+沿用 register.css；這裡只補簽名欄、單選群組與出席狀態。
+===================================================== */
+
+.ms-label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .06em;
+}
+
+.ms-radios .reg-check{
+    margin-top: 12px;
+}
+
+.ms-radios .reg-check:first-child{
+    margin-top: 0;
+}
+
+.ms-radios .reg-check input[type="radio"]{
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin: 3px 0 0;
+    accent-color: #111;
+    cursor: pointer;
+}
+
+.ms-sign{
+    margin-top: 28px;
+}
+
+.ms-sign canvas{
+    display: block;
+    width: 100%;
+    height: 180px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background: #f7f7f7;
+    touch-action: none;           /* 手指簽名時不要捲動頁面 */
+    cursor: crosshair;
+}
+
+.ms-sign.is-invalid canvas{
+    border: 3px solid #ff0d00;
+    background: #fff;
+}
+
+.ms-sign .reg-linkbtn{
+    margin-top: 8px;
+}
+
+.ms-attend{
+    margin: 0 0 24px;
+    padding: 14px 16px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    background: #f7f7f7;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.ms-attend.is-ok{
+    border-color: #1f7a3d;
+}
+
+#ms-signed .cx-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#ms-signed[hidden],
+#ms-bank[hidden],
+#ms-sensitive[hidden],
+#ms-summary[hidden]{
+    display: none;
+}

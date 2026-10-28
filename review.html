@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex"
+    >
+
+    <meta
+        name="referrer"
+        content="no-referrer"
+    >
+
+    <title>
+        課程回饋｜凝視潛像 JAMES GAZE
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400&family=Noto+Sans+TC:wght@100;300;400&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/LP.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
+
+    <style>
+        .rv-q{display:block;margin:0 0 8px;font-size:15px;}
+        .reg-field textarea{display:block;width:100%;padding:12px;font:inherit;font-size:16px;line-height:1.7;color:inherit;background:#fff;border:1px solid #bdbdbd;border-radius:3px;resize:vertical;}
+        .reg-field textarea:focus{outline:2px solid #111;outline-offset:1px;}
+        .reg-field textarea[aria-invalid="true"]{border-color:#ff0d00;}
+    </style>
+
+</head>
+
+
+<body class="reg-page">
+
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="header-inner">
+
+        <a
+            class="site-logo"
+            href="index.html"
+            aria-label="凝視潛像 James Gaze 首頁"
+        >
+
+            <span class="site-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="site-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="開啟網站選單"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a
+            class="header-course-cta"
+            href="index.html#learning-path"
+        >
+            探索課程
+        </a>
+
+    </div>
+
+</header>
+
+
+<nav
+    class="primary-navigation"
+    id="primary-navigation"
+    aria-label="主要網站導覽"
+>
+
+    <ul>
+
+        <li>
+            <a href="index.html#selected-works">
+                SELECTED WORKS
+            </a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#learning-path"
+                class="nav-item-link"
+            >
+                LEARNING PATH
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="LP1.html">
+                    人像創作體驗課
+                </a>
+
+                <a href="LP2.html">
+                    棚內肖像打光工作坊
+                </a>
+
+                <a href="LP3.html">
+                    人像風格美學工作坊
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#case-study"
+                class="nav-item-link"
+            >
+                CASE STUDY
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="Case01.html">
+                    人像創作規劃案例
+                </a>
+
+                <a href="Case02.html">
+                    光線逆向拆解案例
+                </a>
+
+                <a href="Case03.html">
+                    視覺元素分析案例
+                </a>
+
+            </div>
+
+        </li>
+
+        <li>
+            <a href="about.html">
+                ABOUT JAMES
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="reg-main">
+
+    <div class="reg-inner">
+
+        <p class="lp-eyebrow">
+            評價
+        </p>
+
+        <h1
+            class="reg-title"
+            id="rv-title"
+        >
+            課程回饋
+        </h1>
+
+        <p
+            class="reg-lead"
+            id="rv-lead"
+        >
+            謝謝您參加這堂課。花 2 分鐘留下回饋，<br class="cx-br">
+            會直接幫助我調整下一梯的內容。
+        </p>
+
+        <a
+            class="reg-back"
+            href="index.html#learning-path"
+        >
+            ← 返回課程頁
+        </a>
+
+        <p class="reg-status" id="rv-loading" role="status" hidden>
+            讀取中…
+        </p>
+
+        <div class="reg-fallback" id="rv-invalid" hidden>
+            <p id="rv-invalid-text"></p>
+            <p>
+                <a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a>
+            </p>
+        </div>
+
+
+        <!-- 第一步：輸入報名 Email（現場 QR 進來時）-->
+        <form id="rv-email-form" class="reg-form" novalidate hidden>
+
+            <fieldset class="reg-fieldset">
+                <legend>
+                    <span class="reg-step">1</span>
+                    確認您的身份
+                </legend>
+
+                <div class="reg-field">
+                    <label for="rv-email">報名時使用的電子郵件</label>
+                    <input
+                        id="rv-email"
+                        name="email"
+                        type="email"
+                        inputmode="email"
+                        autocomplete="email"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <p class="reg-hint">
+                    只有這一梯已付款的學員可以填寫，每人限填一次。
+                </p>
+            </fieldset>
+
+            <p class="reg-error reg-error-form" id="rv-email-error" role="alert"></p>
+
+            <button class="reg-submit" id="rv-email-btn" type="submit">
+                下一步
+            </button>
+        </form>
+
+
+        <!-- 第二步：回饋表單 -->
+        <form id="rv-form" class="reg-form" novalidate hidden>
+
+            <dl class="reg-summary" id="rv-summary"></dl>
+
+            <fieldset class="reg-fieldset">
+                <legend>
+                    <span class="reg-step">2</span>
+                    您的回饋
+                </legend>
+
+                <div class="reg-field">
+                    <span class="rv-q">整體來說，您會給這堂課幾顆星？（5 是最滿意）</span>
+                    <div class="rv-stars" role="radiogroup" aria-label="整體星等">
+                        <div class="reg-check"><input id="rv-star-5" name="stars" type="radio" value="5"><label for="rv-star-5">5　非常滿意</label></div>
+                        <div class="reg-check"><input id="rv-star-4" name="stars" type="radio" value="4"><label for="rv-star-4">4　滿意</label></div>
+                        <div class="reg-check"><input id="rv-star-3" name="stars" type="radio" value="3"><label for="rv-star-3">3　普通</label></div>
+                        <div class="reg-check"><input id="rv-star-2" name="stars" type="radio" value="2"><label for="rv-star-2">2　不太滿意</label></div>
+                        <div class="reg-check"><input id="rv-star-1" name="stars" type="radio" value="1"><label for="rv-star-1">1　很不滿意</label></div>
+                    </div>
+                    <p class="reg-error" data-error-for="stars" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="rv-helpful">這堂課對您最有幫助的是什麼？</label>
+                    <textarea id="rv-helpful" name="helpful" rows="4" maxlength="500"></textarea>
+                    <p class="reg-error" data-error-for="helpful" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="rv-recommend">您會把這堂課推薦給什麼樣的人？</label>
+                    <textarea id="rv-recommend" name="recommend" rows="3" maxlength="500"></textarea>
+                    <p class="reg-error" data-error-for="recommend" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="rv-improve">（選填）有什麼可以改進，或您還想學什麼？</label>
+                    <textarea id="rv-improve" name="improve" rows="3" maxlength="500"></textarea>
+                </div>
+
+                <div class="reg-field">
+                    <label for="rv-name">顯示的姓名或暱稱</label>
+                    <input id="rv-name" name="name" type="text" maxlength="20" autocomplete="off" required>
+                    <p class="reg-hint">
+                        這個名字會公開顯示在網站上。可使用暱稱；不想具名請填『匿名學員』。
+                    </p>
+                    <p class="reg-error" data-error-for="name" role="alert"></p>
+                </div>
+
+                <p class="reg-note reg-note-plain" id="rv-notice">
+                    第 2、3 題的回答，我可能會在不變更原意的範圍內編修、節錄，連同您在本頁填寫的姓名或暱稱、您給的整體星等，以及評價的年月，公開顯示於官方網站與課程介紹。第 4 題不會公開，只用來改進課程。您可以隨時來信要求停止使用。
+                </p>
+            </fieldset>
+
+            <div class="reg-hp" aria-hidden="true">
+                <input id="rv-hp" name="hp_contact" type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore aria-hidden="true">
+            </div>
+
+            <p class="reg-error reg-error-form" id="rv-form-error" role="alert"></p>
+
+            <button class="reg-submit" id="rv-submit" type="submit">
+                送出回饋
+            </button>
+        </form>
+
+
+        <!-- 完成 -->
+        <section class="reg-result" id="rv-done" aria-labelledby="rv-done-title" hidden>
+            <p class="lp-eyebrow">已送出</p>
+            <h2 class="reg-result-title" id="rv-done-title" tabindex="-1">謝謝您的回饋</h2>
+            <ul class="reg-result-notes" id="rv-done-notes"></ul>
+            <a class="reg-back" href="index.html#learning-path">返回課程頁</a>
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer
+    class="site-footer"
+>
+
+    <div class="footer-inner">
+
+        <a
+            class="footer-logo"
+            href="index.html"
+            aria-label="返回首頁"
+        >
+
+            <span class="footer-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="footer-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <nav
+            class="footer-navigation"
+            aria-label="Footer 社群連結"
+        >
+            <ul>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="mailto:jamesgaze.tw@gmail.com"
+                        aria-label="Email"
+                    >
+                        <span
+                            class="footer-mail-icon"
+                            aria-hidden="true"
+                        >✉</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <p class="footer-copyright">
+
+            © James Gaze. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/review.js"></script>
+
+</body>
+
+</html>

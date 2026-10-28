@@ -1,0 +1,964 @@
+/* =====================================================
+JAMES GAZE
+register.css — 報名頁
+
+沿用 css/style.css 的 :root 變數（--page-padding、--ease），
+變數不存在時使用後面的備用值。
+===================================================== */
+
+
+.reg-page{
+    background: #eeeeee;
+    color: #111;
+}
+
+.reg-main{
+    background: #eeeeee;
+    padding: clamp(112px, 12vw, 168px) 0 clamp(72px, 9vw, 128px);
+}
+
+.reg-inner{
+    width: min(calc(100% - var(--page-padding, 5vw) * 2), 720px);
+    margin: 0 auto;
+}
+
+
+/* ---------- 標題區 ---------- */
+
+.reg-title{
+    margin: 0 0 16px;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: .06em;
+}
+
+.reg-lead{
+    margin: 0 0 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    opacity: .8;
+}
+
+.reg-back{
+    display: inline-block;
+    margin-bottom: 40px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    letter-spacing: .1em;
+    opacity: .6;
+    transition: opacity .4s var(--ease, ease);
+}
+
+.reg-back:hover{
+    opacity: 1;
+}
+
+.reg-status{
+    margin: 0;
+    padding: 24px 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    opacity: .6;
+}
+
+.reg-fallback{
+    padding: 24px 0;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.reg-fallback p{
+    margin: 0 0 8px;
+}
+
+.reg-fallback a{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+/* ---------- 表單結構 ---------- */
+
+.reg-form{
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.reg-fieldset{
+    margin: 0 0 48px;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.reg-fieldset legend{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 0 0 14px;
+    border-bottom: 1px solid #bfbfbf;
+    font-family: "Noto Serif TC", serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: .08em;
+}
+
+.reg-step{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #111;
+    border-radius: 50%;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.reg-field{
+    margin-bottom: 22px;
+}
+
+.reg-field label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .06em;
+}
+
+.reg-optional{
+    font-weight: 300;
+    opacity: .6;
+}
+
+.reg-field input[type="text"],
+.reg-field input[type="email"],
+.reg-field input[type="tel"]{
+    display: block;
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background: #f7f7f7;
+    color: #111;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 16px;            /* 16px 以上，iPhone 不會自動放大頁面 */
+    font-weight: 300;
+    line-height: 1.4;
+    transition: border-color .4s var(--ease, ease), background .4s var(--ease, ease);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.reg-field input:focus-visible,
+.reg-contract:focus-visible,
+.reg-check input:focus-visible + label,
+.reg-submit:focus-visible,
+.reg-copy:focus-visible,
+.reg-sessions input:focus-visible + .reg-session-body{
+    outline: 2px solid #111;
+    outline-offset: 2px;
+}
+
+.reg-field input:focus{
+    border-color: #111;
+    background: #fff;
+}
+
+.reg-field input[aria-invalid="true"],
+.reg-field input[aria-invalid="true"]:focus{
+    padding: 11px 12px;          /* 邊框變粗，內距減 2px，版面不跳動 */
+    border: 3px solid #ff0d00;
+    background: #fff;
+}
+
+.reg-hint{
+    margin: 8px 0 0;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    opacity: .65;
+}
+
+.reg-hint-lead{
+    margin: 0 0 22px;
+    font-size: 14px;
+    opacity: .8;
+}
+
+.reg-hint-center{
+    text-align: center;
+    margin-top: 14px;
+}
+
+.reg-error{
+    margin: 8px 0 0;
+    padding: 9px 12px;
+    border-left: 4px solid #ff0d00;
+    background: #fbeceb;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #ff0d00;
+}
+
+.reg-error:empty{
+    display: none;
+}
+
+.reg-error-form{
+    margin: 0 0 18px;
+    padding: 14px 16px;
+    border: 3px solid #b3261e;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+
+/* ---------- 梯次選項 ---------- */
+
+.reg-sessions{
+    display: grid;
+    gap: 12px;
+}
+
+.reg-session{
+    position: relative;
+    display: block;
+}
+
+.reg-session input{
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.reg-session-body{
+    display: block;
+    padding: 16px 18px;
+    border: 1px solid #bfbfbf;
+    border-radius: 8px;
+    background: #f7f7f7;
+    transition: border-color .4s var(--ease, ease), background .4s var(--ease, ease);
+}
+
+.reg-session input:checked + .reg-session-body{
+    border-color: #111;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px #111;
+}
+
+.reg-session input:disabled{
+    cursor: not-allowed;
+}
+
+.reg-session input:disabled + .reg-session-body{
+    opacity: .5;
+    background: transparent;
+}
+
+.reg-session-title{
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .04em;
+}
+
+.reg-session-meta{
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    opacity: .7;
+}
+
+.reg-session-seats{
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* ---------- 說明框 ---------- */
+
+.reg-note{
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-left: 2px solid #111;
+    background: #e4e4e4;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+.reg-note p{
+    margin: 0;
+}
+
+.reg-note-title{
+    margin-bottom: 6px !important;
+    font-weight: 400;
+    letter-spacing: .08em;
+}
+
+.reg-note-plain{
+    font-size: 14px;
+}
+
+
+/* ---------- 契約 ---------- */
+
+.reg-contract{
+    max-height: 280px;
+    overflow-y: auto;
+    padding: 18px 20px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background: #f7f7f7;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.9;
+    -webkit-overflow-scrolling: touch;
+}
+
+.reg-contract h2{
+    margin: 18px 0 4px;
+    font-family: "Noto Serif TC", serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .06em;
+}
+
+.reg-contract h2:first-of-type{
+    margin-top: 0;
+}
+
+.reg-contract p{
+    margin: 0 0 8px;
+}
+
+.reg-contract a{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.reg-contract-tag{
+    display: inline-block;
+    margin: 0 0 12px !important;
+    padding: 2px 8px;
+    border: 1px solid #a33a2f;
+    color: #a33a2f;
+    font-size: 12px;
+}
+
+.reg-check{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.reg-check input{
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin: 3px 0 0;
+    accent-color: #111;
+    cursor: pointer;
+}
+
+.reg-check label{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    cursor: pointer;
+}
+
+
+/* ---------- 蜜罐 ---------- */
+
+.reg-hp{
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/* ---------- 送出按鈕 ---------- */
+
+.reg-submit{
+    display: block;
+    width: 100%;
+    padding: 15px 24px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    background: #111;
+    color: #eee;
+    font-family: "Noto Sans TC", "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .3em;
+    text-indent: .3em;
+    cursor: pointer;
+    transition: background .5s var(--ease, ease), color .5s var(--ease, ease);
+}
+
+.reg-submit:hover:not(:disabled){
+    background: transparent;
+    color: #111;
+}
+
+.reg-submit:disabled{
+    border-color: #bfbfbf;
+    background: #cfcfcf;
+    color: #808080;
+    cursor: not-allowed;
+}
+
+
+/* ---------- 送出成功 ---------- */
+
+.reg-result{
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.reg-result-title{
+    margin: 0 0 28px;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: .06em;
+    outline: none;
+}
+
+.reg-summary{
+    margin: 0 0 32px;
+    border-top: 1px solid #bfbfbf;
+}
+
+.reg-summary > div{
+    display: flex;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+.reg-summary dt{
+    flex: 0 0 96px;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: .65;
+}
+
+.reg-summary dd{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.reg-bank{
+    margin: 0 0 32px;
+    padding: 22px 22px 10px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    background: #f7f7f7;
+}
+
+.reg-bank-title{
+    margin: 0 0 14px;
+    font-family: "Noto Serif TC", serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .08em;
+}
+
+.reg-bank-row{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    border-top: 1px solid #d4d4d4;
+}
+
+.reg-bank-label{
+    flex: 0 0 72px;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: .65;
+}
+
+.reg-bank-value{
+    flex: 1 1 auto;
+    font-family: "Inter", "Noto Sans TC", sans-serif;
+    font-size: 17px;
+    letter-spacing: .06em;
+    word-break: break-all;
+}
+
+.reg-copy{
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background: transparent;
+    color: #111;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background .4s var(--ease, ease);
+}
+
+.reg-copy:hover{
+    background: #d8d8d8;
+}
+
+
+
+/* ---------- 手機 ---------- */
+
+@media (max-width: 767px){
+
+    .reg-main{
+        padding-top: 104px;
+    }
+
+    .reg-fieldset{
+        margin-bottom: 40px;
+    }
+
+    .reg-contract{
+        max-height: 240px;
+        padding: 16px;
+    }
+
+    .reg-bank{
+        padding: 18px 16px 6px;
+    }
+
+    .reg-bank-row{
+        flex-wrap: wrap;
+        gap: 6px 12px;
+    }
+
+    .reg-bank-label{
+        flex-basis: 100%;
+    }
+
+    .reg-summary dt{
+        flex-basis: 80px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce){
+
+    .reg-session-body,
+    .reg-submit,
+    .reg-copy,
+    .reg-field input{
+        transition: none;
+    }
+
+}
+
+
+
+/* =====================================================
+頁首（只作用在 body.reg-page）
+
+未滾動：頁首透明，底色是淺灰，所以文字改深色
+滾動後：style.css 會加上 .scrolled（深色底、白字），
+        這裡不覆蓋，直接沿用 style.css
+===================================================== */
+
+.reg-page .site-header:not(.scrolled) .site-logo-cn,
+.reg-page .site-header:not(.scrolled) .site-logo-en,
+.reg-page .site-header:not(.scrolled) .header-course-cta{
+    color: #111;
+}
+
+.reg-page .site-header:not(.scrolled) .header-course-cta{
+    border-color: rgba(17, 17, 17, .5);
+}
+
+.reg-page .site-header:not(.scrolled) .header-course-cta:hover{
+    background: #111;
+    color: #eee;
+}
+
+.reg-page .site-header:not(.scrolled) .mobile-menu-toggle span{
+    background: #111;
+}
+
+/* 桌機／平板：頁首中間的主選單（style.css 裡是獨立元素，緊接在 header 後面） */
+@media (min-width: 768px){
+
+    .reg-page .site-header:not(.scrolled) + .primary-navigation > ul > li > a{
+        color: #111;
+    }
+
+}
+
+/* 手機：選單打開時，畫面變成深色遮罩，頁首文字與 X 要變回白色 */
+.reg-page.mobile-menu-open .site-header:not(.scrolled) .site-logo-cn,
+.reg-page.mobile-menu-open .site-header:not(.scrolled) .site-logo-en,
+.reg-page.mobile-menu-open .site-header:not(.scrolled) .header-course-cta{
+    color: #fff;
+}
+
+.reg-page.mobile-menu-open .site-header:not(.scrolled) .header-course-cta{
+    border-color: rgba(255, 255, 255, .6);
+}
+
+.reg-page.mobile-menu-open .site-header:not(.scrolled) .mobile-menu-toggle span{
+    background: #fff;
+}
+
+
+/* =====================================================
+多堂課日程
+===================================================== */
+
+.reg-session-wrap{
+    display: block;
+}
+
+.reg-schedule{
+    margin: 4px 0 0;
+    padding: 0 4px;
+}
+
+.reg-schedule summary{
+    display: inline-block;
+    padding: 8px 0;
+    font-size: 14px;
+    letter-spacing: .04em;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.reg-schedule-list{
+    margin: 0 0 8px;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.reg-schedule-list li{
+    padding: 8px 0;
+    border-top: 1px solid #d4d4d4;
+}
+
+.reg-summary .reg-schedule-list{
+    margin: 0;
+}
+
+.reg-summary .reg-schedule-list li{
+    padding: 4px 0;
+    border-top: 0;
+    font-weight: 400;
+}
+
+
+/* 文字按鈕（重新填寫） */
+
+.reg-linkbtn{
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #111;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.reg-result-again{
+    margin-top: 32px;
+}
+
+
+
+/* =====================================================
+資訊區塊（梯次卡片、上課日程）
+
+桌機／平板：區塊同一行排列，用間距分隔
+手機：每個區塊獨立一行，不會從資訊中間斷開
+===================================================== */
+
+.reg-chunk{
+    display: inline-block;
+    margin-right: 1.1em;
+    white-space: nowrap;
+}
+
+.reg-chunk:last-child{
+    margin-right: 0;
+}
+
+/* 梯次卡片：課程名稱與開課日期 */
+.reg-session-title .reg-session-name{
+    font-weight: 400;
+}
+
+/* 梯次卡片：地點、報名截止、費用之間加分隔點 */
+.reg-session-meta .reg-chunk{
+    margin-right: 0;
+}
+
+.reg-session-meta .reg-chunk + .reg-chunk::before{
+    content: "・";
+    margin: 0 .55em;
+    opacity: .6;
+}
+
+/* 日程每一堂 */
+.reg-sch-head{
+    font-weight: 400;
+}
+
+
+@media (max-width: 767px){
+
+    /* 手機：每個資訊區塊獨立一行 */
+    .reg-session-title .reg-chunk,
+    .reg-session-meta .reg-chunk,
+    .reg-schedule-list li .reg-chunk{
+        display: block;
+        margin-right: 0;
+        white-space: normal;
+    }
+
+    .reg-session-meta .reg-chunk + .reg-chunk::before{
+        content: none;
+    }
+
+    .reg-session-title .reg-session-when{
+        margin-top: 2px;
+        font-size: 15px;
+    }
+
+    .reg-session-meta{
+        margin-top: 8px;
+    }
+
+    .reg-session-meta .reg-chunk + .reg-chunk{
+        margin-top: 2px;
+    }
+
+    /* 日程：日期那一行當標題，時間與地點縮排在下面 */
+    .reg-schedule-list li{
+        padding: 12px 0;
+    }
+
+    .reg-schedule-list li .reg-sch-time,
+    .reg-schedule-list li .reg-sch-venue{
+        margin-top: 2px;
+        padding-left: 4em;
+        opacity: .85;
+    }
+
+    /* 成功畫面：日程那一列改成上下排列，讓文字有完整寬度 */
+    .reg-summary > #res-schedule-row{
+        display: block;
+    }
+
+    .reg-summary > #res-schedule-row dt{
+        margin-bottom: 6px;
+    }
+
+}
+
+
+/* =====================================================
+成功畫面最下面的提醒清單：項目符號
+（style.css 可能把 ul/li 的符號拿掉了，這裡用自己畫的圓點，
+  不依賴瀏覽器預設）
+===================================================== */
+
+.reg-result-notes{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+.reg-result-notes li{
+    position: relative;
+    padding-left: 1.4em;
+}
+
+.reg-result-notes li + li{
+    margin-top: 10px;
+}
+
+.reg-result-notes li::before{
+    content: "•";
+    position: absolute;
+    left: .15em;
+    top: 0;
+    font-size: 1.1em;
+    line-height: inherit;
+}
+
+.reg-result-notes li[hidden]{
+    display: none;
+}
+
+
+
+/* =========================================================
+   取消頁（cancel.html）— 貼在 register.css 最後面
+   ========================================================= */
+
+.cx-amount{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.cx-actions{
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.reg-submit.cx-danger{
+    border-color: #ff0d00;
+    background: #ff0d00;
+    color: #fff;
+}
+
+.reg-submit.cx-danger:hover:not(:disabled){
+    background: transparent;
+    color: #ff0d00;
+}
+
+.reg-submit.cx-ghost{
+    background: transparent;
+    color: #111;
+}
+
+.reg-submit.cx-ghost:hover:not(:disabled){
+    background: #111;
+    color: #eee;
+}
+
+#cx-review{
+    margin-top: 8px;
+}
+
+#cx-review .reg-sessions{
+    margin-bottom: 24px;
+}
+
+#cx-review .reg-note{
+    margin-bottom: 20px;
+}
+
+/* 讓 hidden 屬性對按鈕與提示框生效（按鈕原本設了 display:block 會蓋掉 hidden） */
+.reg-submit[hidden],
+.reg-note[hidden]{
+    display: none;
+}
+
+/* 手機版：說明文字不手動斷行，自然換行（桌機維持原本斷行） */
+@media (max-width: 767px){
+    .cx-br{
+        display: none;
+    }
+
+    .reg-lead br{
+        display: none;
+    }
+
+}
+
+/* 「先不取消，離開」是連結，外觀比照按鈕 */
+.reg-submit.cx-link{
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+/* =========================================================
+   隱私權政策頁（privacy.html）— 貼在 register.css 最後面
+   如果之前已經貼過上一版，請整段刪除再貼這一段
+   ========================================================= */
+
+.pv-meta{
+    margin: 0 0 32px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    opacity: .6;
+}
+
+.pv-section{
+    margin-bottom: 36px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+.pv-section h2{
+    margin: 0 0 10px;
+    font-family: "Noto Serif TC", serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: .06em;
+}
+
+.pv-section h3{
+    margin: 18px 0 6px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .04em;
+}
+
+.pv-section p{
+    margin: 0 0 10px;
+}
+
+.pv-section ul,
+.pv-section ol{
+    margin: 0 0 12px;
+    padding-left: 1.6em;
+}
+
+.pv-section li{
+    margin-bottom: 6px;
+}
+
+.pv-section a{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

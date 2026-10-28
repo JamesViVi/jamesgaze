@@ -1,0 +1,1975 @@
+/* =====================================================
+JAMES GAZE
+LP.css — V9
+
+LP1 / LP2 / LP3 共用樣式
+與 css/style.css 使用同一套 CSS 變數 (:root)，
+不重複宣告字體 / 顏色 / 版寬變數。
+
+RWD 斷點與 style.css 一致：
+  Desktop  : 預設（約 1000px 以上，1578px 以上再加強）
+  Tablet   : 768px – 999px
+  Mobile   : 767px 以下
+
+===================================================== */
+
+
+
+/* =====================================================
+00. SHARED UTILITIES
+===================================================== */
+
+.lp-main{
+    overflow: hidden;
+    background: #eeeeee;
+}
+
+.lp-visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Section inner container — 對齊全站 content-width / page-padding */
+.lp-hero-copy,
+.lp-pain-inner,
+.lp-how-inner,
+.lp-ability-inner,
+.lp-lesson-title,  
+.lp-lesson-inner,
+.lp-faq-inner,
+.lp-final-cta-inner{
+    width: min(calc(100% - var(--page-padding) * 2), var(--content-width));
+    margin: 0 auto;
+}
+
+.lp-eyebrow{
+    display: block;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    opacity: .6;
+    margin-bottom: 8px;
+}
+
+.lp-eyebrow-center{
+    text-align: center;
+}
+
+.lp-btn{
+    display: inline-block;
+    padding: 8px 18px;
+    border:
+
+    1px solid #bfbfbf;
+
+    border-radius: 3px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .15em;
+    text-align: center;
+    background: #bfbfbf;
+    color:  #111;
+    transition: background .5s var(--ease), color .5s var(--ease), transform .5s var(--ease);
+}
+
+.lp-btn:hover{
+    background: transparent;
+    color:  #fff;
+    border:
+
+    1px solid rgba(
+        255,
+        255,
+        255,
+        .6
+    );
+}
+
+/* CTA 按鈕若放在深色背景上（Hero / Final CTA），反轉配色 */
+.lp-hero-cta,
+.lp-final-cta-link{
+    background:transparent;
+
+
+    backdrop-filter:
+    blur(5px);
+
+
+    -webkit-backdrop-filter:
+    blur(5px);
+
+    color: #fff;
+}
+
+.lp-hero-cta:hover,
+.lp-final-cta-link:hover{
+    background: #fff;
+    color: #111;
+
+}
+
+
+
+/* =====================================================
+01. HERO
+===================================================== */
+
+.lp-hero{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2.39 / 1;
+    overflow: hidden;
+    background: #111;
+}
+
+.lp-hero-media{
+    position: absolute;
+    inset: 0;
+}
+
+.lp-hero-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.lp-hero-media::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.65) 0%,
+        rgba(0,0,0,.15) 13%,
+        rgba(0,0,0,0) 20%
+    );
+}
+
+.lp-hero-overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+.lp-hero-copy{
+    position: relative;
+    color: #fff;
+    padding-top: 2vw;
+    max-width: 620px;
+   margin-left: max(
+        15vw,
+        calc((105% - var(--content-width)) / 2)
+    );
+}
+
+.lp-hero-title{
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(28px, 1.975vw + 12.83px, 44px);
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: .1em;
+}
+
+.lp-hero-subtitle{
+    margin-top: 0.5em;
+    font-size: clamp(17px, 0.37vw + 14.16px, 20px);
+    font-weight: 300;
+    line-height:1.8;
+    letter-spacing: .1em;
+    opacity: .9;
+    padding-left: 0.2em;
+}
+
+.lp-hero-subtitle br{
+    display: none;
+}
+
+.lp-hero-intro{
+    margin-top: 28px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    opacity: .7;
+    max-width: 460px;
+    padding-left: 0.2em;
+}
+
+/* Hero 標題/副標題預設靠左，Mobile 會改置中（見 13. MOBILE） */
+.lp-hero-title,
+.lp-hero-subtitle{
+    text-align: left;
+}
+
+.lp-hero-cta{
+    margin-top: 50px;
+    margin-left: 0.5em;
+    
+}
+
+
+
+/* =====================================================
+02. PAIN POINT
+===================================================== */
+
+.lp-pain{
+    padding: 110px 0;
+}
+
+.lp-pain-inner{
+    text-align: left;
+    max-width:
+    900px;
+
+    padding-left: 50px;
+    padding-right: 50px;
+
+    margin:0 auto;
+
+}
+
+.lp-pain-title{
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(33px, 3.333vw + 7.407px, 60px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.lp-pain-content{
+    margin-top: 25px;
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+
+}
+
+
+
+/* =====================================================
+03. HOW
+===================================================== */
+
+.lp-how{
+ 
+    margin-right:1vw;
+    margin-bottom: clamp(50px, 6.173vw + 2.593px, 100px);
+    
+}
+
+.lp-how-inner{
+    display: grid;
+    grid-template-columns: 46% 1fr;
+    gap: 4vw;
+    align-items: center;
+}
+
+/*
+    How 區塊圖片：image-1 固定不動當底圖。
+    image-2（可能是透明背景 PNG）跟 image-1 完全同比例、同位置疊在上面，
+    預設不顯示，由 LP.js 定時淡入/淡出（第0秒只有image-1、
+    第3秒image-2淡入、第6秒image-2淡出，每6秒循環）。
+*/
+
+.lp-how-media{
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-left: -35px;
+    border-radius:
+    0px 4px 4px 0px;
+
+}
+
+
+
+.lp-how-image{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.lp-how-image-2{
+    opacity: 0;
+    transition: opacity 1.4s var(--ease);
+}
+
+.lp-how-image-2.is-active{
+    opacity: 1;
+}
+
+.lp-how-title{
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(33px, 3.333vw + 7.407px, 60px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.lp-how-content{
+    margin-top: 25px;
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+
+}
+
+
+
+/* =====================================================
+04. ABILITY
+===================================================== */
+
+.lp-ability{
+    padding: 50px 0;
+    background: #cdcdcd;
+}
+
+.lp-ability-title br{
+
+    display: none;
+}
+
+.lp-ability-title{
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(45px, 3.086vw + 21.296px, 70px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.lp-ability-scroller{
+    margin-top: 30px;
+    overflow: hidden;
+
+}
+
+.lp-ability-track{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.lp-ability-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.lp-ability-number{
+    align-self: flex-end;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    opacity: .5;
+    margin-bottom: 3px;
+}
+
+.lp-ability-image-wrap{
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+      border-radius:
+    4px;
+}
+
+.lp-ability-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lp-ability-subtitle{
+    margin-top: 22px;
+    font-family: "Noto Serif TC", serif;
+        font-size: 
+    clamp(
+        22px,
+        calc(8.36px + 1.364vw),
+        25px
+    );
+    font-weight: 500;
+}
+
+.lp-ability-content{
+    margin-top: 10px;
+
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+}
+
+.lp-ability-sublist{
+    margin-top: 0.2em;
+}
+
+.lp-ability-sublist li{
+    font-size:
+    clamp(
+        17px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    text-align:
+    justify;
+
+    padding-left: 1em;
+    position: relative;
+}
+
+.lp-ability-sublist li::before{
+    content: "•";
+    position: absolute;
+    left: 0;
+    opacity: .6;
+}
+
+.lp-ability-dots{
+    display: none;
+}
+
+    .lp-ability-number{
+
+        padding-right: 8px;
+    }
+
+    .lp-ability-subtitle{
+        padding-left: 5px;
+    }
+
+    .lp-ability-content{
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .lp-ability-sublist{
+        padding-left: 8px;
+    }
+
+/* =====================================================
+05. ACCORDION（共用元件：Lesson / FAQ / 巢狀 Chapter-Lesson）
+===================================================== */
+
+.lp-accordion-item{
+    border-bottom: 1px solid rgba(17,17,17,.12);
+}
+
+
+/* 折疊題目 */
+.lp-accordion-trigger{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 15px 5px;
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font-size: clamp(16px, 0.494vw + 12.207px, 20px);
+    font-weight: 400;
+    color: inherit;
+}
+
+.lp-accordion-label{
+    flex: 1;
+}
+
+/*
+    Hover 時整條區域變純白，當作滑鼠靠近的提示。
+    只在「真的支援 hover 的裝置」(滑鼠/觸控板) 才套用，
+    避免手機點擊後 hover 樣式卡住不消失的問題。
+*/
+@media (hover: hover) and (pointer: fine){
+ 
+    .lp-accordion-trigger:hover{
+        background-color: rgba(255,255,255,.4);
+        border-radius: 8px;
+    }
+ 
+}
+ 
+.lp-accordion-label{
+    flex: 1;
+}
+ 
+
+/* +/X 符號 */
+
+.lp-accordion-icon{
+    position: relative;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    transition: transform .35s var(--ease);
+}
+
+.lp-accordion-icon::before,
+.lp-accordion-icon::after{
+    content: "";
+    position: absolute;
+    background: currentColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lp-accordion-icon::before{
+    width: 100%;
+    height: 1px;
+}
+
+.lp-accordion-icon::after{
+    width: 1px;
+    height: 100%;
+}
+
+.lp-accordion-item.is-open .lp-accordion-icon{
+    transform: rotate(45deg);
+}
+
+.lp-accordion-panel{
+    overflow: hidden;
+}
+
+.lp-accordion-panel[hidden]{
+    display: none;
+}
+
+.lp-accordion-panel-inner{
+    padding: 0 4px 26px;
+}
+
+
+/* Lesson 內文*/
+
+.lp-accordion-list li{
+    font-size:
+    clamp(
+        14px,
+        1vw,
+        17px
+    );
+
+    line-height:
+    1.8;
+
+    color:#555;
+
+    font-weight: 300;
+
+    padding-left: 4em;
+    position: relative;
+}
+
+
+/* Lesson 內文前的點 */
+
+.lp-accordion-list li::before{
+    content: "•";
+    position: absolute;
+    left: 0;
+    opacity: .5;
+    padding-left: 2.5em;
+}
+
+/* Lesson PL1 沒點內文 */
+
+.lp-accordion-note{
+    margin-top: 16px;
+    font-size:
+    clamp(
+        14px,
+        1vw,
+        17px
+    );
+    font-weight: 400;
+    opacity: .9;
+    padding-left: 2.5em;
+}
+
+.lp-accordion-list-note{
+    margin-top: 6px;
+}
+
+/* FAQ內文 */
+.lp-accordion-text{
+    font-size:
+    clamp(
+        14px,
+        1vw,
+        17px
+    );
+    
+    font-weight: 300;
+    line-height:1.8;
+    color:#555;
+}
+
+
+.lp-accordion-placeholder{
+    font-size: 13px;
+    font-style: italic;
+    opacity: .55;
+}
+
+/*
+    LP3：Chapter 內的 Lesson。
+*/
+
+.lp-lesson-subitem + .lp-lesson-subitem{
+    margin-top: 22px;
+}
+
+.lp-lesson-subitem-title{
+    font-size:
+    clamp(
+        14px,
+        1vw,
+        17px
+    );
+    font-weight: 500;
+    opacity: .9;
+    margin-bottom: 6px;
+    padding-left: 2em;
+}
+
+
+
+/* =====================================================
+06. LESSON
+===================================================== */
+
+.lp-lesson{
+    padding: 100px 0;
+}
+
+/*
+    lp-lesson-title 是 section 標題，獨立在 .lp-lesson-inner 這個
+    2 欄 grid 之外（之前把它放進 grid 裡，變成 3 個 grid item 造成
+    自動排版跑掉——文字跑右上、圖片跑左下——這裡修正）。
+*/
+
+.lp-lesson-title{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(45px, 3.086vw + 21.296px, 70px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.lp-lesson-title::after{
+    content: "";
+    flex: 1;
+    height: 2px;
+    background:#111;
+}
+
+.lp-lesson-inner{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    gap: 30px;
+    align-items: stretch;
+    padding-left: 1vw;
+}
+
+.lp-lesson-body{
+    grid-column: 1;
+}
+
+.lp-lesson-media{
+    grid-column: 2;
+    position: relative;
+}
+
+.lp-lesson-link{
+    display: inline-block;
+    margin-top: 35px;
+    font-size: 14px;
+    letter-spacing: .1em;
+    transition: color .5s var(--ease);
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    color: #555;
+
+    position: relative;
+    text-decoration: none;
+}
+
+
+
+.lp-lesson-link::after {
+    content: "";
+    position: absolute;
+
+    left: 10px;
+    bottom: -2px;
+
+    width: 120px;
+    height: 1px;
+
+
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition: transform .45s var(--ease);
+}
+
+
+
+    .lp-lesson-link:hover{
+    color:#808080;
+
+    }
+
+
+    /* 滑入：左 → 右 */
+    .lp-lesson-link:hover::after{
+    transform: scaleX(1);
+
+    }
+
+
+/*
+    Desktop/Tablet：圖片改成用 JS 手動模擬「跟隨捲動、
+    碰到底部就停下」的效果（模仿 lindsayadlerphotography.com
+    What's Included 區塊那種效果），不是 CSS sticky——
+    因為手風琴用 JS 動態改變左側文字高度，
+    CSS sticky 在這種動態高度情境下曾經對不準、留白，
+    改成 JS 每次都重新量測目前的真實高度，永遠不會算錯。
+
+    .lp-lesson-media 現在會撐滿整個 grid row 的高度
+    （align-items:stretch），圖片在裡面用 position:absolute
+    上下移動，可移動的範圍 = wrapper 高度 - 圖片自身高度，
+    由 LP.js 的 initLessonSticky() 控制 top 值。
+    Mobile 會整個重設回一般文檔流（見 Mobile 區塊）。
+
+    overflow:hidden 是安全網——手風琴全部收合時左側欄位會變矮，
+    矮欄位裝不下圖片本身的高度（寬度換算出來的固定比例），
+    沒有這行的話圖片會往下溢出、蓋到下面的 Info Card。
+    真正的修正是 LP.js 會同步把 min-height 頂到至少跟圖片一樣高，
+    這裡只是預防 JS 還沒跑到那一刻的畫面閃爍。
+*/
+
+.lp-lesson-media{
+    overflow: hidden;
+    margin-right: -2vw;
+}
+
+.lp-lesson-image{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: calc(var(--page-padding) * -1);   /* 往右出血 page-padding 的量 */
+    width: auto;                              /* 讓 left/right 一起決定寬度 */
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius:
+    4px 0px 0px 4px;
+}
+
+
+
+/* =====================================================
+07. INFO CARD
+===================================================== */
+
+.lp-info{
+    position: relative;
+    padding: 90px 0;
+    overflow: hidden;   /* 裁掉 .lp-info-bg 因視差位移超出邊界的部分 */
+}
+
+.lp-info-bg{
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    bottom: -60px;      /* 上下各多留 60px，讓視差位移不會露出邊界 */
+    background-image: url("../images/infobg.jpg");
+    background-size: cover;
+    background-position: 10% center;
+
+}
+
+.lp-info-card{
+    position: relative;
+    width: min(calc(100% - var(--page-padding) * 2), 1100px);
+    margin: 0 auto;
+    padding: 50px 55px;
+
+    background: rgba(17,17,17,.5);           /* 透明度調低一點，毛玻璃效果才看得出來 */
+    -webkit-backdrop-filter: blur(20px);       /* Safari 需要加 -webkit- 前綴 */
+    backdrop-filter: blur(16px);
+
+    color: #fff;
+    border: 1.3px solid rgba(255,255,255,.2);
+    border-radius: 18px;
+}
+
+.lp-info-group{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px 35px;
+}
+
+.lp-info-item{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: clamp(0em, 27.586vw - 211.862px, 4em);
+    gap: 10px;
+}
+
+.lp-info-icon{
+    width: clamp(35px, 1.852vw + 20.778px, 50px);
+    height: clamp(35px, 1.852vw + 20.778px, 50px);
+    object-fit: contain;
+    filter: invert(1);
+    flex: 0 0 auto;
+}
+
+.lp-info-text{
+    font-size:
+    clamp(14px, 1vw, 17px);
+    font-weight: 300;
+    line-height: 1.4;
+    opacity: .9;
+}
+
+.lp-info-divider{
+    display: block;
+    height: 1px;
+    background: rgba(255,255,255,.18);
+    margin: 25px 0;
+}
+
+.lp-info-footer{
+    text-align: center;
+}
+
+.lp-info-price{
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(28px, 2.6vw, 38px);
+    font-weight: 500;
+}
+
+.lp-info-time{
+    margin-top: -2px;
+    font-size: clamp(14px, 1vw, 17px);
+    opacity: .75;
+}
+
+.lp-info-cta{
+    margin-top: 30px;
+}
+
+
+
+/* =====================================================
+08. EVALUATE（學員評價：白底卡片輪播）
+   - 桌機 ≥1000px 顯示 3 則、平板 768–999px 顯示 2 則、手機 ≤767px 顯示 1 則
+   - 卡片寬度、間距、內距全部用百分比與 clamp()，跟著視窗平滑縮放；長寬比固定 1:1
+   - 兩側露出相鄰卡片，箭頭放在兩側留白處
+===================================================== */
+
+.lp-evaluate{
+    padding: 100px 0 0;
+
+}
+
+.lp-evaluate[hidden]{
+    display: none;
+}
+
+.lp-evaluate-sr{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.lp-evaluate-stage{
+    --ev-edge: max(var(--page-padding), calc((100% - var(--content-width)) / 2));
+    --ev-pad: var(--ev-edge);
+    --ev-per: 1;
+    --ev-gap: clamp(8px, 0.8vw, 12px);
+    position: relative;
+}
+
+.lp-evaluate-list{
+    list-style: none;
+    margin: 0;
+    padding: 0 var(--ev-pad);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--ev-gap);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--ev-pad);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+
+.lp-evaluate-list::-webkit-scrollbar{
+    display: none;
+}
+
+.lp-evaluate-list:focus-visible{
+    outline: 2px solid #111;
+    outline-offset: 4px;
+}
+
+.lp-evaluate-item{
+    flex: 0 0 calc((100% - (var(--ev-per) - 1) * var(--ev-gap)) / var(--ev-per));
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    scroll-snap-align: start;
+    background-color: #fff;
+    border-radius: 4px;
+    padding:20px;
+}
+
+.lp-evaluate-card{
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(18px, 2.4vw, 30px) clamp(18px, 2.4vw, 30px) clamp(12px, 1.4vw, 18px);
+}
+
+.lp-evaluate-head{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 clamp(12px, 1.5vw, 20px);
+    padding-bottom: 20px;
+    
+}
+
+.lp-evaluate-name{
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: clamp(16px, 0.3vw + 14.8px, 18px);
+    font-weight: 400;
+    line-height: 1.4;
+    color: #111;
+}
+
+.lp-evaluate-stars{
+    flex: none;
+    margin: 0;
+    font-size: clamp(14px, 0.6vw + 10px, 17px);
+    letter-spacing: .06em;
+    line-height: 1.4;
+    color: #f2c230;
+    white-space: nowrap;
+}
+
+.lp-evaluate-body{
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.lp-evaluate-text{
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: clamp(14px, 0.2vw + 12.6px, 15px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: #444;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.lp-evaluate-text.is-clamped{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.lp-evaluate-foot{
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 30px;
+    margin-top: 8px;
+}
+
+.lp-evaluate-date{
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    letter-spacing: .04em;
+    color: #777;
+}
+
+.lp-evaluate-more{
+    margin: 0 0 0 auto;
+    padding: 4px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 0;
+    background: none;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    color: #222;
+    cursor: pointer;
+}
+
+.lp-evaluate-more[hidden]{
+    display: none;
+}
+
+.lp-evaluate-chev{
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+}
+
+.lp-evaluate-arrow{
+    position: absolute;
+    top: 50%;
+    left: calc(var(--ev-pad) / 2);
+    z-index: 2;
+    width: 32px;
+    height: 56px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: none;
+    color: #9b9b9b;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: color .3s var(--ease), opacity .3s var(--ease);
+}
+
+.lp-evaluate-arrow.is-next{
+    left: auto;
+    right: calc(var(--ev-pad) / 2);
+    transform: translate(50%, -50%);
+}
+
+.lp-evaluate-arrow[hidden]{
+    display: none;
+}
+
+.lp-evaluate-arrow:disabled{
+    opacity: .25;
+    cursor: default;
+}
+
+.lp-evaluate-arrow:focus-visible{
+    outline: 2px solid #111;
+    outline-offset: -2px;
+}
+
+@media (hover: hover) and (pointer: fine){
+
+    .lp-evaluate-arrow:not(:disabled):hover{
+        color: #111;
+    }
+
+}
+
+@media (min-width: 768px){
+
+    .lp-evaluate-stage{
+        --ev-per: 2;
+    }
+
+}
+
+@media (min-width: 1000px){
+
+    .lp-evaluate-stage{
+        --ev-per: 3;
+    }
+
+}
+
+@media (max-width: 767px){
+
+    .lp-evaluate{
+        padding: 60px 0 0;
+    }
+
+    .lp-evaluate-stage{
+        --ev-pad: calc(var(--ev-edge) + 4.5vw);
+    }
+
+}
+
+
+/* ---------- 浮動視窗（完整評價）---------- */
+
+.lp-evaluate-lock{
+    overflow: hidden;
+}
+
+.lp-evaluate-modal{
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .55);
+}
+
+.lp-evaluate-modal[hidden]{
+    display: none;
+}
+
+.lp-evaluate-modal:not([hidden]){
+    animation: lp-evaluate-fade .25s var(--ease);
+}
+
+@keyframes lp-evaluate-fade{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
+}
+
+.lp-evaluate-modal-panel{
+    position: relative;
+    width: min(100%, 560px);
+    max-height: min(80vh, 680px);
+    display: flex;
+    flex-direction: column;
+    padding: clamp(24px, 4vw, 36px);
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.lp-evaluate-modal-close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: none;
+    color: #222;
+    cursor: pointer;
+}
+
+.lp-evaluate-modal-close:focus-visible{
+    outline: 2px solid #111;
+    outline-offset: -2px;
+}
+
+.lp-evaluate-modal-content{
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.lp-evaluate-modal-content .lp-evaluate-head{
+    padding-right: 36px;
+}
+
+.lp-evaluate-modal-text{
+    margin: 16px 0 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #333;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .lp-evaluate-modal:not([hidden]){
+        animation: none;
+    }
+
+}
+
+
+
+/* =====================================================
+09. FAQ
+===================================================== */
+
+.lp-faq{
+    padding: 100px 0;
+}
+
+.lp-faq-heading{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.lp-faq-heading-line{
+    flex: 1;
+    height: 2px;
+    background:#111;
+}
+
+.lp-faq-title{
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(45px, 3.086vw + 21.296px, 70px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-right: 2vw;
+}
+
+.lp-faq-columns{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+
+}
+
+.lp-faq-chapter{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: .1em;
+    opacity: .6;
+    margin-top: 50px;
+
+}
+
+.lp-faq-trigger{
+    align-items: flex-start;
+}
+
+.lp-faq-qnum{
+    flex: 0 0 auto;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    opacity: .55;
+    margin-right: 0px;
+}
+
+
+
+/* =====================================================
+10. FINAL CTA
+===================================================== */
+
+.lp-final-cta{
+    padding: 70px 0;
+    background: #555555;
+    color:#eeeeee;
+
+    text-align: center;
+}
+
+.lp-final-cta-title{
+    font-family: "Noto Serif TC", serif;
+    font-size:40px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    opacity: .8;
+}
+
+.lp-final-cta-content{
+    margin-top:
+    20px;
+
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(17px, 0.37vw + 14.16px, 20px);
+
+    letter-spacing:
+    .1em;
+
+    opacity:
+    .7;
+
+    margin-bottom: 40px;
+}
+
+/* =====================================================
+10-1. 滾動淡入（Scroll Reveal）
+ 
+跟首頁 script.js 裡的 .jg-text-reveal / .jg-image-reveal
+是同一套視覺語言（淡入 + 輕微位移 / 縮放），
+只是這裡是獨立給 LP 頁用的 class，
+由 LP.js 用 IntersectionObserver 進場時加上 .jg-reveal-visible。
+===================================================== */
+ 
+.lp-reveal-text{
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    transition:
+        opacity 550ms cubic-bezier(.22,.61,.36,1),
+        transform 620ms cubic-bezier(.22,.61,.36,1);
+    transition-delay: var(--lp-reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+ 
+.lp-reveal-text.jg-reveal-visible{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+ 
+.lp-reveal-image{
+    opacity: 0;
+    transform: scale(1.04);
+    transition:
+        opacity 850ms cubic-bezier(.22,.61,.36,1),
+        transform 1100ms cubic-bezier(.22,.61,.36,1);
+    will-change: opacity, transform;
+}
+ 
+.lp-reveal-image.jg-reveal-visible{
+    opacity: 1;
+    transform: scale(1);
+}
+ 
+/*
+    Info Card：進場只做「透明度淡入」，不再用 transform 做滑入位移
+    ——因為 transform 現在整個交給 LP.js 的 initInfoParallax()
+    連續控制（背景跟卡片持續隨捲動做不同速度/方向的位移），
+    如果這裡還留著「滑入用」的 transform，
+    會被 JS 每個 scroll frame 寫入的 transform 蓋掉、互相打架。
+    「先看到背景、卡片延遲出現」的節奏改用 transition-delay 做。
+*/
+
+.lp-info-card{
+    opacity: 0;
+    transition: opacity 900ms cubic-bezier(.22,.61,.36,1) 320ms;
+    will-change: opacity, transform;
+}
+
+.lp-info-card.jg-reveal-visible{
+    opacity: 1;
+}
+
+/*
+    背景與卡片的持續視差效果本身（進場後、捲動過程中的位移），
+    由 LP.js 用 transform: translate3d(0, npx, 0) 直接寫在 inline style，
+    這裡不用另外寫 CSS transition——視差要跟手捲動即時反應，
+    加 transition 反而會讓它delay、變得黏黏的。
+*/
+ 
+/*
+    Lesson 圖片：進場時用跟其他圖片一致的淡入效果，
+    掛在 .lp-lesson-media（外層容器）而不是 .lp-lesson-image 本身。
+    現在 .lp-lesson-image 的捲動效果是動態改 top（不是 transform），
+    跟這裡的 scale 進場動畫本來就不會互相干擾。
+*/
+ 
+.lp-lesson-media.lp-reveal-image{
+    transform-origin: center top;
+}
+ 
+@media (prefers-reduced-motion: reduce){
+ 
+    .lp-reveal-text,
+    .lp-reveal-image,
+    .lp-info-card{
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+ 
+}
+ 
+ 
+ 
+/* =====================================================
+10-2. LESSON 圖片「跟隨捲動、碰底就停」效果（僅 Desktop / Tablet）
+
+實作方式見上面 .lp-lesson-image 的說明註解。
+這裡只保留效能提示（改動的是 top，不是 transform，
+所以 will-change 指定 top）。
+===================================================== */
+
+@media (min-width: 768px){
+
+    .lp-lesson-image{
+        will-change: top;
+    }
+
+}
+
+ 
+ 
+
+/* =====================================================
+11. DESKTOP ENHANCEMENT（1578px 以上，與 style.css 一致）
+===================================================== */
+
+@media (min-width: 1578px){
+
+    .lp-hero{
+        min-height: 680px;
+    }
+
+    .lp-info-card{
+        padding: 60px 90px;
+    }
+
+    .lp-lesson-image,
+    .lp-how-media{
+        border-radius:
+        4px 4px 4px 4px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+12. TABLET（768px – 999px）
+===================================================== */
+
+@media (min-width: 768px) and (max-width: 999px){
+
+    .lp-btn{
+        padding: 7px 14px;
+
+        font-size: 12px;
+    }
+
+    .lp-hero{
+        aspect-ratio: 1.6 / 1;
+    }
+
+    .lp1-hero-image{
+        object-fit: cover;
+        object-position:
+        90% -90px;
+        height:125%;
+    }
+
+
+    .lp3-hero-image{
+
+        object-position:
+        95% -60px;
+        height:117%;
+    
+    }
+
+    .lp-hero-copy{
+        max-width: 70%;
+        margin-left: 14vw;
+    }
+
+    .lp-ability-track{
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+
+
+
+    .lp-lesson-media{
+
+        margin-right: -3.5vw;
+
+    }
+
+    .lp-info-group{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lp-faq-columns{
+        grid-template-columns: 1fr;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+
+/* =====================================================
+13. MOBILE（767px 以下）
+===================================================== */
+
+@media (max-width: 767px){
+
+    .lp-pain,
+    .lp-how,
+    .lp-ability,
+    .lp-lesson,
+    .lp-info,
+    .lp-faq{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .lp-hero{
+        aspect-ratio: 2/3;
+    }
+
+    .lp1-hero-image{
+        object-fit: cover;
+        object-position:
+        90% -90px;
+        height:125%;
+    }
+
+    .lp2-hero-image{
+
+        object-position:
+        70% -35px;
+        height:111%;
+    }
+
+    .lp3-hero-image{
+
+        object-position:
+        95% -60px;
+        height:117%;
+    
+    }
+
+    .lp-hero-copy{
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    /* Mobile：intro 不顯示，title/subtitle 置中（CTA 按鈕維持靠左） */
+
+    .lp-hero-intro{
+        display: none;
+    }
+
+    .lp-hero-title,
+    .lp-hero-subtitle,
+    .lp-hero-cta{
+        text-align: center;
+    }
+
+    .lp-hero-title{
+        margin-top: 5em;
+        font-size: clamp(24px, 4.348vw + 11.654px, 45px);
+        letter-spacing: .05em;
+        text-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    .lp-hero-subtitle{
+        margin-top: 2em;
+
+        font-size: clamp(15px, 0.458vw + 13.49px, 17px);
+        line-height: 1.6;
+        text-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    .lp-hero-subtitle br{
+        display:block;
+    }
+
+    .lp-btn{
+        padding: 7px 14px;
+
+        font-size: 12px;
+    }
+
+    .lp-hero-cta{
+        margin-top: 30vw;
+
+    }
+
+    /* ---------- Pain ---------- */
+
+
+
+    .lp-pain-content{
+        margin-top: 20px;
+    }
+
+    .lp-pain-inner{
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .lp-pain-title{
+        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+
+    }
+
+    /* ---------- How ---------- */
+
+
+    .lp-how{
+        padding: 0;
+        margin: 0;
+        padding-bottom: 50px;
+
+    }
+
+    .lp-how-inner{
+        width: calc(100% - 10vw);   /* 左右各 5vw，文字的間距就是從這裡來 */
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .lp-how-media{
+        width: calc(102% + 10vw);
+        margin-left: -5vw;
+        border-radius:
+        0px;
+    }
+
+
+    .lp-how-title{
+        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+    }
+
+
+    /* ---------- Ability：橫向滑動 + dots，比照 case-study-scroller ---------- */
+
+
+    .lp-ability{
+        padding: clamp(30px, 4.577vw + 14.897px, 50px) 0;
+    }
+
+    .lp-ability-title br{
+
+        display:block;
+    }
+
+    .lp-ability-title{
+        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+        padding: 0 5vw;
+    }
+
+    .lp-ability-scroller{
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+        margin-top: clamp(10px, 4.58vw - 5.1px, 30px);
+    }
+
+
+
+    .lp-ability-scroller::-webkit-scrollbar{
+        display: none;
+    }
+
+    .lp-ability-track{
+        display: flex;
+        gap: 6px;
+        width: max-content;
+    }
+
+    .lp-ability-track::before,
+    .lp-ability-track::after{
+        content: "";
+        flex: 0 0 20px;
+    }
+
+    .lp-ability-item{
+        flex: 0 0 calc(100vw - 55px);
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .lp-ability-dots{
+        display: flex;
+        justify-content: center;
+        align-items:flex-start;
+        gap: 7px;
+        margin-top: 12px;
+    }
+
+    .lp-ability-dot{
+        width: 6px;
+        height: 6px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #999;
+        opacity: .45;
+        cursor: pointer;
+        transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .lp-ability-dot.is-active{
+        opacity: 1;
+        transform: scale(1.25);
+    }
+
+    .lp-ability-dots + .lp-ability-subtitle{
+        margin-top: 12px;
+    }
+
+
+
+
+
+
+    /* ---------- Lesson ---------- */
+
+    .lp-lesson-title{
+        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+    }
+
+    .lp-lesson-inner{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    /*
+        桌機/平板為了修正排版，給 body/media 各自指定了
+        grid-column:1 / grid-column:2。
+        Mobile 是單欄 grid，只有一個欄位軌道，
+        media 的 grid-column:2 沒有欄位可用，
+        瀏覽器會自動生出一個隱形的第二欄，
+        結果又變回左文右圖——這裡把兩個都重設回欄位1，
+        讓 DOM 順序（body → media）決定上下順序。
+    */
+
+    .lp-lesson-body,
+    .lp-lesson-media{
+        grid-column: 1;
+        margin-right: 2vw;
+    }
+
+    .lp-lesson-media{
+        margin-left: 20vw;
+        margin-right: calc(var(--page-padding) * -1);   /* 靠右出血到視窗邊緣 */
+        position: static;   /* 取消 Desktop/Tablet 的 stretch + relative wrapper */
+        overflow: visible;  /* 取消 Desktop/Tablet 的溢出保護，Mobile 不需要 */
+    }
+
+    .lp-lesson-image{
+        position: static;   /* 取消 JS 控制的 top，回到一般文檔流 */
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 100%;         /* base rule 在 Desktop/Tablet 用 width:auto 配合 left/right，
+                                 Mobile 是 position:static，要改回 100% 才不會變成圖片原始尺寸 */
+        margin-right: 0;
+    }
+
+    /*
+        LP3：Chapter 內的 Lesson。
+    */
+
+    .lp-lesson-subitem-title{
+        padding-left: 1em;
+    }
+
+
+    /* ---------- Info Card ---------- */
+
+    .lp-info{
+        position: relative;
+        padding: 30px 0;
+    }
+
+    .lp-info-bg{
+        background-image: url("../images/infobg-2.jpg");
+        
+    }
+
+    .lp-info-card{
+        padding: clamp(30px, 4.577vw + 14.897px, 50px);
+
+    }
+
+    /* 上方 6 項（1-6）：Mobile 2欄x3列 */
+    .lp-info-group-primary{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 20px;
+        padding-left: clamp(0em, 18.307vw - 60.412px, 5em);
+        margin-left: -12px;
+    }
+
+    /* 下方 3 項（7-9，自備器材）：Mobile 改成 1欄垂直排列 */
+    .lp-info-group-secondary{
+        grid-template-columns: 1fr;
+        gap: 27px;
+        padding-left: clamp(0em, 18.307vw - 60.412px, 5em);
+        margin-left: -12px;
+    }
+
+    .lp-info-item{
+        align-items: center;
+        gap: clamp(5px, 3.432vw - 6.327px, 20px);
+        max-width: clamp(200px, 16.018vw + 147.144px, 270px);
+        min-width: 123px;
+    }
+
+    .lp-info-icon{
+        width: clamp(30px, 1.144vw + 26.224px, 35px);
+        height: clamp(30px, 1.144vw + 26.224px, 35px);
+    }
+
+    .lp-info-text{
+        font-size: clamp(13px, 0.915vw + 9.98px, 17px);
+    }
+
+    .lp-info-text2 br{
+        display: none;
+    }
+
+    /* ---------- FAQ ---------- */
+
+    .lp-faq{
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .lp-faq-title{
+        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+    }
+
+    .lp-faq-heading{
+        justify-content: flex-start;
+    }
+
+    .lp-faq-columns{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* 折疊題目 */
+    .lp-accordion-trigger{
+        font-size: clamp(15px, 0.229vw + 14.245px, 16px);
+
+    }
+
+    .lp-faq-qnum{
+        font-size: 25px;
+        margin-right: -5px;
+    }
+
+    /* =======  FINAL CTA  ======== */
+
+    .lp-final-cta{
+        padding: 50px 0;
+    }
+
+    .lp-final-cta-title{
+        font-size: clamp(22px, 4.119vw + 8.407px, 40px);
+        margin-bottom: 20px;
+    }
+
+    .lp-final-cta-content{
+        font-size: clamp(12px, 0.686vw + 9.734px, 15px);
+        max-width:90%;
+        margin:0 auto;
+        margin-bottom: 40px;
+    }
+
+
+}
+
+
+.lp-cta-link.is-disabled{
+    opacity: .45;
+    pointer-events: none;
+    cursor: not-allowed;
+}

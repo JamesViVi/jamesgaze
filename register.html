@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex"
+    >
+
+    <title>
+        課程報名｜凝視潛像 JAMES GAZE
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400&family=Noto+Sans+TC:wght@100;300;400&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/LP.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
+
+</head>
+
+
+<body class="reg-page">
+
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="header-inner">
+
+        <a
+            class="site-logo"
+            href="index.html"
+            aria-label="凝視潛像 James Gaze 首頁"
+        >
+
+            <span class="site-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="site-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="開啟網站選單"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a
+            class="header-course-cta"
+            href="index.html#learning-path"
+        >
+            探索課程
+        </a>
+
+    </div>
+
+</header>
+
+
+<nav
+    class="primary-navigation"
+    id="primary-navigation"
+    aria-label="主要網站導覽"
+>
+
+    <ul>
+
+        <li>
+            <a href="index.html#selected-works">
+                SELECTED WORKS
+            </a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#learning-path"
+                class="nav-item-link"
+            >
+                LEARNING PATH
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="LP1.html">
+                    人像創作體驗課
+                </a>
+
+                <a href="LP2.html">
+                    棚內肖像打光工作坊
+                </a>
+
+                <a href="LP3.html">
+                    人像風格美學工作坊
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="nav-item has-dropdown">
+
+            <a
+                href="index.html#case-study"
+                class="nav-item-link"
+            >
+                CASE STUDY
+            </a>
+
+            <div class="nav-dropdown">
+
+                <a href="Case01.html">
+                    人像創作規劃案例
+                </a>
+
+                <a href="Case02.html">
+                    光線逆向拆解案例
+                </a>
+
+                <a href="Case03.html">
+                    視覺元素分析案例
+                </a>
+
+            </div>
+
+        </li>
+
+        <li>
+            <a href="about.html">
+                ABOUT JAMES
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="reg-main">
+
+    <div class="reg-inner">
+
+        <p class="lp-eyebrow">
+            報名
+        </p>
+
+        <h1
+            class="reg-title"
+            id="reg-title"
+        >
+            課程報名
+        </h1>
+
+        <p class="reg-lead">
+            填寫資料後，系統會寄出匯款資訊到您的信箱。<br>
+            款項經我確認入帳後才保留名額。
+        </p>
+
+        <a
+            class="reg-back"
+            id="reg-back"
+            href="index.html#learning-path"
+        >
+            ← 返回課程頁
+        </a>
+
+
+        <!-- 載入中 -->
+
+        <p
+            class="reg-status"
+            id="reg-loading"
+            role="status"
+        >
+            名額載入中…
+        </p>
+
+
+        <!-- 系統無法使用時的備援 -->
+
+        <div
+            class="reg-fallback"
+            id="reg-fallback"
+            hidden
+        >
+
+            <p>
+                系統暫時無法使用。<br>
+                請以 IG 或 email 私訊報名，我會手動為您登記。
+            </p>
+
+            <p>
+                <a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a>
+            </p>
+
+        </div>
+
+
+        <!-- 報名表 -->
+
+        <form
+            id="reg-form"
+            class="reg-form"
+            novalidate
+            hidden
+        >
+
+            <!-- 1. 梯次 -->
+
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">1</span>
+                    選擇梯次
+                </legend>
+
+                <div
+                    id="session-list"
+                    class="reg-sessions"
+                ></div>
+
+                <p
+                    class="reg-error"
+                    data-error-for="session"
+                    role="alert"
+                ></p>
+
+                <div
+                    class="reg-note"
+                    id="waitlist-note"
+                    hidden
+                >
+                    <p class="reg-note-title">
+                        關於候補
+                    </p>
+                    <p id="waitlist-note-text"></p>
+                </div>
+
+                <p
+                    class="reg-note reg-note-plain"
+                    id="lp3-note"
+                    hidden
+                >
+                    本課程金額較高，部分銀行或 ATM 單日轉帳有上限。若需分次匯款，請於 2 日內全額匯齊；名額以全額到齊並經我確認的時間為準。
+                </p>
+
+            </fieldset>
+
+
+            <!-- 2. 基本資料 -->
+
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">2</span>
+                    基本資料
+                </legend>
+
+                <div class="reg-field">
+                    <label for="f-name">姓名</label>
+                    <input
+                        id="f-name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        maxlength="40"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="name" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-email">Email</label>
+                    <input
+                        id="f-email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        inputmode="email"
+                        maxlength="100"
+                        required
+                    >
+                    <p class="reg-hint">所有通知都會寄到這個信箱，請確認填寫正確。</p>
+                    <p class="reg-error" data-error-for="email" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-phone">手機號碼</label>
+                    <input
+                        id="f-phone"
+                        name="phone"
+                        type="tel"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        maxlength="14"
+                        placeholder="0912345678"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="phone" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-line">LINE ID <span class="reg-optional">（選填）</span></label>
+                    <input
+                        id="f-line"
+                        name="line"
+                        type="text"
+                        autocomplete="off"
+                        maxlength="50"
+                    >
+                </div>
+
+            </fieldset>
+
+
+            <!-- 3. 匯款帳戶 -->
+
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">3</span>
+                    您的匯款帳戶
+                </legend>
+
+                <p class="reg-hint reg-hint-lead">
+                    請填寫您用來匯款的帳戶，也就是日後退款時我會匯回的帳戶。
+                </p>
+
+                <div class="reg-field">
+                    <label for="f-bankCode">銀行代碼</label>
+                    <input
+                        id="f-bankCode"
+                        name="bankCode"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        maxlength="7"
+                        placeholder="例如 822"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="bankCode" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-account">匯款帳號</label>
+                    <input
+                        id="f-account"
+                        name="account"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        maxlength="20"
+                        required
+                    >
+                    <p class="reg-hint">僅供付款後對帳與退款使用</p>
+                    <p class="reg-error" data-error-for="account" role="alert"></p>
+                </div>
+
+                <div class="reg-field">
+                    <label for="f-accountName">戶名</label>
+                    <input
+                        id="f-accountName"
+                        name="accountName"
+                        type="text"
+                        autocomplete="off"
+                        maxlength="40"
+                        required
+                    >
+                    <p class="reg-error" data-error-for="accountName" role="alert"></p>
+                </div>
+
+            </fieldset>
+
+
+            <!-- 4. 契約 -->
+
+            <fieldset class="reg-fieldset">
+
+                <legend>
+                    <span class="reg-step">4</span>
+                    課程服務契約
+                </legend>
+
+                <div
+                    class="reg-contract"
+                    id="contract-text"
+                    tabindex="0"
+                    role="region"
+                    aria-label="課程服務契約全文，可捲動閱讀"
+                >
+
+                    <!-- ▼▼▼ 契約全文放這裡（v1.0 草稿，待律師審閱；定稿後只改標籤與版本號）▼▼▼ -->
+
+                    <p class="reg-contract-tag">
+                        版本 v1.0（草稿，待律師審閱）
+                    </p>
+
+                    <p>
+                        立約人：甲方：王書駿（以「凝視潛像 JAMES GAZE」名義）；乙方：完成報名之人。
+                    </p>
+
+                    <p>
+                        茲就乙方參加甲方開設之課程事宜，雙方同意訂立本契約，條款如下：
+                    </p>
+
+                    <h2>第一條　名詞</h2>
+                    <p>
+                        一、梯次：同一課程於同一期間開設之一班。
+                    </p>
+                    <p>
+                        二、開課日：該梯次第一堂課之日期。
+                    </p>
+                    <p>
+                        三、報名截止時間：開課日前第 <span data-term="deadlineDayN">11</span> 日 23:59。
+                    </p>
+                    <p>
+                        四、下一梯次：同一課程、開課日較晚、尚在報名期間且有名額之最近一梯次。
+                    </p>
+                    <p>
+                        五、已進行堂數：以各堂課的開始時間計算，已經開始的堂數；乙方是否出席，不影響計算。
+                    </p>
+
+                    <h2>第二條　報名、付款與名單</h2>
+                    <p>
+                        一、乙方報名前，應閱讀本契約及隱私權政策並勾選同意，並聲明年滿十八歲。
+                    </p>
+                    <p>
+                        二、報名採先付款。款項全額匯入甲方指定帳戶，並經甲方確認收款後，才算報名成功並列入名單；名單與順位，以甲方確認收款的時間為準。人像風格美學工作坊可分次匯款，仍以全額匯齊並經確認的時間為準。
+                    </p>
+                    <p>
+                        三、匯款期限為填表日起第 <span data-term="abandonDays">7</span> 日，或報名截止前，以較早者為準；逾期未匯齊者，報名取消，名額不保留，已收款項全額退還。
+                    </p>
+                    <p>
+                        四、款項逾期匯入，或匯款金額超過應付金額者，甲方全額退還或退還差額。
+                    </p>
+                    <p>
+                        五、乙方參加泳裝內衣、人體等敏感場次前，須出示身分證件供甲方核對年滿十八歲（僅核對一次；甲方只查看證件，不複印、不記錄）；未能出示者，不得參加該場次。
+                    </p>
+
+                    <h2>第三條　人數與開課</h2>
+                    <p>
+                        一、每梯次正取上限 <span data-term="mainCap">6</span> 人、候補上限 <span data-term="waitCap">6</span> 人。額滿，或報名截止後，停止報名。
+                    </p>
+                    <p>
+                        二、已付款的正取乙方達最低人數，該梯次才開課。最低人數以報名頁所載為準：人像創作體驗課 <span data-term="minPeople:LP1">3</span> 人、棚內肖像打光工作坊 <span data-term="minPeople:LP2">3</span> 人、人像風格美學工作坊 <span data-term="minPeople:LP3">3</span> 人。
+                    </p>
+                    <p>
+                        三、報名截止後，甲方依已付款的正取人數判定是否開課。未達最低人數、不開課時，甲方以電子郵件通知乙方（含候補）。乙方可選擇全額退費，或免費改報下一梯次；自通知日起 <span data-term="replyDays">7</span> 日內未選擇者，視為申請全額退費。因甲方未開課而改期，與第五條第二款之改期合併計算，合計以 <span data-term="rescheduleMax">2</span> 次為限；已達上限者，再次未開課時，直接全額退費。
+                    </p>
+                    <p>
+                        四、梯次確定開課後，不因乙方人數減少而停課。
+                    </p>
+
+                    <h2>第四條　候補</h2>
+                    <p>
+                        一、正取額滿後可登記候補，同樣須先付款；款項全額匯齊並經確認後，才列入候補名單。
+                    </p>
+                    <p>
+                        二、候補依確認收款的時間排序；因甲方未開課或候補未遞補而改期轉入者，排在其他候補之前。
+                    </p>
+                    <p>
+                        三、正取名額釋出時，依序遞補，甲方以電子郵件通知；遞補成功者，適用與正取相同的規定。
+                    </p>
+                    <p>
+                        四、候補乙方於開課前，可隨時申請全額退費，或改報下一梯次。
+                    </p>
+                    <p>
+                        五、開課前仍未遞補者，由甲方於開課日當天以電子郵件通知，乙方可選擇全額退費，或免費改報下一梯次；自通知日起 <span data-term="replyDays">7</span> 日內未選擇者，視為申請全額退費。前述改期併計第五條第二款之次數；已達上限者，直接全額退費。
+                    </p>
+
+                    <h2>第五條　取消、改期與退費</h2>
+                    <p>
+                        一、報名截止前，乙方取消報名者，甲方全額退費；乙方也可改報下一梯次，不須重新付款。
+                    </p>
+                    <p>
+                        二、乙方主動改期（含候補改期），與因甲方未開課或候補未遞補而改期，合計以 <span data-term="rescheduleMax">2</span> 次為限。正取乙方主動改期，限報名截止前；候補乙方主動改期，於開課前均可。因甲方未開課或候補未遞補所致之改期，不受前句時間限制。
+                    </p>
+                    <p>
+                        三、報名截止後至課程已進行堂數滿三分之一前，乙方取消報名者，甲方依下列比例退還學費：人像創作體驗課 <span data-term="refundPct:LP1">0%</span>、棚內肖像打光工作坊 <span data-term="refundPct:LP2">50%</span>、人像風格美學工作坊 <span data-term="refundPct:LP3">50%</span>（比例為 0% 者，不退費）。部分退費的原因：報名截止後，甲方已依本梯次人數完成場地、器材、模特兒（如有）及行政安排，這些安排不因個別乙方退出而減少。乙方轉讓名額者，依第六條辦理，甲方不另退費。
+                    </p>
+                    <p>
+                        四、課程已進行堂數滿三分之一後（棚內肖像打光工作坊為第 <span data-term="refundStartSeq:LP2">3</span> 堂開始起，人像風格美學工作坊為第 <span data-term="refundStartSeq:LP3">6</span> 堂開始起），乙方取消報名者，甲方不退費，也不接受改期或轉讓。人像創作體驗課開課後，不予退費。
+                    </p>
+                    <p>
+                        五、乙方未到場且未事前請假者，視為甲方已提供課程；乙方未申請取消者，視為繼續保有學籍。乙方取消後，已進行的堂次不再補課，也不再參加後續課程。
+                    </p>
+                    <p>
+                        六、課程全部結束後，不受理取消及退費申請。
+                    </p>
+                    <p>
+                        七、乙方取消後，不影響其他乙方的權利，課程照常進行。
+                    </p>
+                    <p>
+                        八、取消請使用甲方寄給乙方的專屬取消連結，或以電子郵件通知甲方；取消時間，以乙方送出申請的時間為準。
+                    </p>
+                    <p>
+                        九、退費匯回乙方報名時所填的帳戶，甲方於 <span data-term="refundDays">3</span> 日內匯出；匯款手續費由甲方負擔，不從退費扣除。
+                    </p>
+
+                    <h2>第六條　名額轉讓</h2>
+                    <p>
+                        一、報名截止後至開課前，乙方可將名額轉讓給第三人（以下稱「受讓人」），以一次為限；受讓人不得再轉讓。轉讓是第三條第一款「報名截止後停止報名」的例外。轉讓成立時，該座位由受讓人承接，不屬於第四條第三款所稱之名額釋出，不適用候補遞補。
+                    </p>
+                    <p>
+                        二、轉讓須在開課前 <span data-term="transferDays">1</span> 日 23:59 前完成。乙方在甲方提供的取消頁面發起轉讓，並填寫受讓人的電子郵件；受讓人收到專屬連結後，須在前述期限內完成填寫並勾選同意。未完成者，轉讓作廢，名額仍屬於原乙方。
+                    </p>
+                    <p>
+                        三、受讓人須年滿十八歲，並同意本契約及隱私權政策，自行決定是否勾選肖像使用同意。同一梯次已報名者，不得受讓。
+                    </p>
+                    <p>
+                        四、轉讓成立後，受讓人取代原乙方，繼承原報名的學籍、已付款金額，以及本契約規定的權利與義務，包含轉讓後的取消與退費規定；改期次數重新計算，合計以 <span data-term="rescheduleMax">2</span> 次為限。原乙方不再享有該梯次的任何權利。
+                    </p>
+                    <p>
+                        五、轉讓人與受讓人之間的款項，由雙方自行結算；甲方不經手、不保證，也不因雙方的結算負任何責任。受讓人須聲明已知悉並同意自行與轉讓人結算，及甲方不負責。
+                    </p>
+                    <p>
+                        六、轉讓成立後，甲方不退費給轉讓人，並以電子郵件通知雙方。受讓人日後取消者，退費匯入受讓人所填的帳戶。
+                    </p>
+
+                    <h2>第七條　課程進行、補課與錄影</h2>
+                    <p>
+                        一、乙方事前請假者，甲方提供該堂課的全程錄影，於課後三十日內供乙方本人觀看，不得轉傳或公開。事前請假，指在該堂課前一日以前，以電子郵件或班級群組通知甲方。請假次數不設上限。
+                    </p>
+                    <p>
+                        二、甲方更動上課時間，或某堂課無法如期進行者，甲方改期補課，並以電子郵件通知乙方；補課日期由甲方指定。乙方無法現場補課時，須向甲方請假，甲方提供錄影補課。
+                    </p>
+                    <p>
+                        三、因天災、疫情、政府命令等無法預期的情況致課程無法進行者，適用前款。
+                    </p>
+                    <p>
+                        四、乙方未事前請假而缺席，甲方不提供錄影，缺席堂次不補課。
+                    </p>
+                    <p>
+                        五、甲方全程錄影課程（含乙方的影像與聲音），僅供事前請假的乙方補課觀看；乙方參加課程，即同意被錄影。乙方不得自行錄影、錄音，也不得將課程內容（含甲方提供的錄影）轉售、轉傳或公開。
+                    </p>
+
+                    <h2>第八條　個人資料</h2>
+                    <p>
+                        甲方蒐集、處理及利用乙方個人資料的方式，依《隱私權政策》辦理；乙方勾選同意本契約，視為已閱讀該政策。
+                    </p>
+
+                    <h2>第九條　作品、肖像與評價</h2>
+                    <p>
+                        一、作品：乙方同意甲方於教學成果展示、課程介紹、宣傳及教材製作的範圍內，於官方網站、社群媒體及教材中，使用乙方在課程中完成的作品（不含乙方肖像），並以「學員作品」標示，不另標示作者。作品的著作權仍歸乙方；乙方授權甲方非專屬、無償使用，不限地區，至乙方依第五款通知停止為止。
+                    </p>
+                    <p>
+                        二、肖像：乙方於報名時另行勾選「肖像使用同意」者，同意甲方於宣傳及教材製作的範圍內，於官方網站、社群媒體及教材中，使用其肖像，包括課程幕後花絮，以及棚內肖像打光工作坊中以該乙方為被攝者的作品。未勾選者，甲方不使用其肖像，不影響報名及課程權益。
+                    </p>
+                    <p>
+                        三、評價：乙方提交的課程評價，甲方可在不變更原意的範圍內編修、節錄，並以匿名或不直接識別個人的方式，用於官方網站、課程介紹及宣傳。
+                    </p>
+                    <p>
+                        四、乙方拍攝成果的公開：一般場次，乙方可為非商業目的公開自己的拍攝成果；泳裝內衣、人體等敏感場次的成果，未經甲方及相關模特兒書面同意，不得公開發布。乙方不得為足以貶損模特兒人格或名譽的使用或修改。
+                    </p>
+                    <p>
+                        五、停止使用：乙方可隨時以電子郵件通知甲方，停止後續使用前述內容；甲方收到通知後，就其所控制的公開內容，於合理期間內下架。已被第三人轉載、引用，或已印製發行的內容，不在此限。
+                    </p>
+
+                    <h2>第十條　聯絡</h2>
+                    <p>
+                        乙方有任何問題或申訴，可以電子郵件聯絡甲方（<a href="mailto:jamesgaze.tw@gmail.com">jamesgaze.tw@gmail.com</a>）。本契約版本為 v1.0；乙方同意的版本，為報名時有效的版本。
+                    </p>
+
+                    <p>
+                        完整《隱私權政策》請見
+                        <a href="privacy.html" target="_blank" rel="noopener noreferrer">隱私權政策</a>。
+                    </p>
+
+                    <!-- ▲▲▲ 契約全文結束 ▲▲▲ -->
+
+
+
+                </div>
+
+
+                <div class="reg-check">
+                    <input
+                        id="f-ageOk"
+                        name="ageOk"
+                        type="checkbox"
+                    >
+                    <label for="f-ageOk">
+                        我已年滿 18 歲
+                    </label>
+                </div>
+                <p class="reg-error" data-error-for="ageOk" role="alert"></p>
+
+                <div class="reg-check">
+                    <input
+                        id="f-portraitOk"
+                        name="portraitOk"
+                        type="checkbox"
+                    >
+                    <label for="f-portraitOk">
+                        同意本人肖像用於的課程幕後花絮宣傳及教材製作
+                    </label>
+                </div>
+
+                <div class="reg-check">
+                    <input
+                        id="f-optIn"
+                        name="optIn"
+                        type="checkbox"
+                    >
+                    <label for="f-optIn">
+                        願意收到新梯次開課通知
+                    </label>
+                </div>
+
+                <div class="reg-check">
+                    <input
+                        id="f-agreed"
+                        name="agreed"
+                        type="checkbox"
+                    >
+                    <label for="f-agreed">
+                        我已閱讀並同意上方《課程服務契約》與《隱私權政策》
+                    </label>
+                </div>
+                <p class="reg-error" data-error-for="agreed" role="alert"></p>
+
+
+            </fieldset>
+
+
+            <!-- 蜜罐：真人看不到，請勿填寫 -->
+
+            <div
+                class="reg-hp"
+                aria-hidden="true"
+            >
+                <input
+                    id="f-hp"
+                    name="hp_contact"
+                    type="text"
+                    tabindex="-1"
+                    autocomplete="off"
+                    data-lpignore="true"
+                    data-1p-ignore
+                    aria-hidden="true"
+                >
+            </div>
+
+
+            <p
+                class="reg-error reg-error-form"
+                id="form-error"
+                role="alert"
+            ></p>
+
+            <button
+                class="reg-submit"
+                id="submit-btn"
+                type="submit"
+                disabled
+            >
+                送出報名
+            </button>
+
+            <p class="reg-hint reg-hint-center">
+                勾選同意契約並聲明年滿 18 歲後，才能送出報名。
+            </p>
+
+        </form>
+
+
+        <!-- 送出成功 -->
+
+        <section
+            class="reg-result"
+            id="reg-result"
+            aria-labelledby="result-title"
+            hidden
+        >
+
+            <p class="lp-eyebrow">
+                報名已送出
+            </p>
+
+            <h2
+                class="reg-result-title"
+                id="result-title"
+                tabindex="-1"
+            >
+                下一步：請完成匯款
+            </h2>
+
+            <dl class="reg-summary">
+
+                <div>
+                    <dt>報名編號</dt>
+                    <dd id="res-regId"></dd>
+                </div>
+
+                <div>
+                    <dt>課程</dt>
+                    <dd id="res-course"></dd>
+                </div>
+
+                <div>
+                    <dt>開課日</dt>
+                    <dd id="res-date"></dd>
+                </div>
+
+                <div id="res-schedule-row" hidden>
+                    <dt>上課日程</dt>
+                    <dd>
+                        <ul
+                            class="reg-schedule-list"
+                            id="res-schedule"
+                        ></ul>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>應付金額</dt>
+                    <dd id="res-price"></dd>
+                </div>
+
+                <div>
+                    <dt>報名截止</dt>
+                    <dd id="res-deadline"></dd>
+                </div>
+
+            </dl>
+
+            <div class="reg-bank">
+
+                <p class="reg-bank-title">
+                    請匯款至
+                </p>
+
+                <div class="reg-bank-row">
+                    <span class="reg-bank-label">銀行代碼</span>
+                    <span class="reg-bank-value" id="res-bankCode"></span>
+                    <button type="button" class="reg-copy" data-copy="res-bankCode">複製</button>
+                </div>
+
+                <div class="reg-bank-row">
+                    <span class="reg-bank-label">帳號</span>
+                    <span class="reg-bank-value" id="res-bankAccount"></span>
+                    <button type="button" class="reg-copy" data-copy="res-bankAccount">複製</button>
+                </div>
+
+                <div class="reg-bank-row">
+                    <span class="reg-bank-label">戶名</span>
+                    <span class="reg-bank-value" id="res-bankName"></span>
+                </div>
+
+            </div>
+
+            <ul class="reg-result-notes">
+
+                <li id="res-resumed" hidden>
+                    這是您先前已送出的報名資料，系統沒有重複建立報名，也不會重複寄信。
+                </li>
+
+                <li id="res-waitlist" hidden>
+                    這一梯目前正取名額已滿，確認收款後您將列為候補，我會寄信說明後續選擇。
+                </li>
+
+                <li>
+                    款項經確認入帳後才保留名額，名單與順位以確認收款的時間為準。
+                </li>
+
+                <li>
+                    請於 <span id="res-payDue"></span> 前完成匯款，逾期未匯齊，報名將自動取消。匯款後不需要回覆。
+                </li>
+
+                <li id="res-mailok">
+                    匯款資訊也已寄到您填寫的信箱。若沒收到，請查看垃圾信件匣，並把 <span id="res-sender"></span> 加入通訊錄。
+                </li>
+
+                <li id="res-mailfail" hidden>
+                    確認信暫時沒有寄出。請截圖保存這一頁，我會盡快與您聯繫。
+                </li>
+
+            </ul>
+
+            <p class="reg-hint reg-hint-lead reg-result-again">
+                這些資訊重新整理頁面後仍會保留。要再填寫另一筆報名，請
+                <button
+                    type="button"
+                    class="reg-linkbtn"
+                    id="res-new"
+                >重新填寫</button>。
+            </p>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer
+    class="site-footer"
+>
+
+    <div class="footer-inner">
+
+        <a
+            class="footer-logo"
+            href="index.html"
+            aria-label="返回首頁"
+        >
+
+            <span class="footer-logo-cn">
+                凝視潛像
+            </span>
+
+            <span class="footer-logo-en">
+                JAMES GAZE
+            </span>
+
+        </a>
+
+        <nav
+            class="footer-navigation"
+            aria-label="Footer 社群連結"
+        >
+            <ul>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="footer-social-icon"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="footer-social-link"
+                        href="mailto:jamesgaze.tw@gmail.com"
+                        aria-label="Email"
+                    >
+                        <span
+                            class="footer-mail-icon"
+                            aria-hidden="true"
+                        >✉</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <p class="footer-copyright">
+
+            © James Gaze. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/register.js"></script>
+
+</body>
+
+</html>
