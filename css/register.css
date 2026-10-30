@@ -962,3 +962,14 @@ register.css — 報名頁
     text-decoration: underline;
     text-underline-offset: 3px;
 }
+
+/* =====================================================
+   欄位標題下方直接接「資訊列表」時，只保留一條橫線
+   （標題底線＋列表頂線會疊成兩條：轉讓頁「轉讓內容」、
+     Model 檔期頁「您選的檔期與授權書」）
+===================================================== */
+
+.reg-fieldset legend + .reg-summary{
+    margin-top: -20px;
+    border-top: 0;
+}
