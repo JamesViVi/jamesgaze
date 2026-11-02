@@ -4397,7 +4397,7 @@ CTA right
         "Inter",
         sans-serif;
 
-    font-size: 17px;
+    font-size: 18px;
 
     font-weight: 400;
 
@@ -4443,7 +4443,7 @@ CTA right
 }
 
 .nav-dropdown a {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     letter-spacing: .12em;
 
@@ -4591,7 +4591,7 @@ Vertical image
 
     aspect-ratio:
 
-    2 / 3;
+    2 / 3.3;
 
 
 }

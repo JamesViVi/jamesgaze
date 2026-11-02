@@ -1169,14 +1169,14 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
     .about-hero{
 
         aspect-ratio:
-        2 / 3;
+        2 / 3.3;
 
     }
 
     .about-hero-image{
 
         object-position:
-        73% 50%;
+        75% 50%;
 
     }
 
@@ -1184,7 +1184,7 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
 
         padding: 0;
 
-        top: 62vw;
+        top: 70vw;
         
         text-align: center;
         
@@ -1194,7 +1194,7 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
     .about-hero-title{
 
         font-size: clamp(20px, calc(5.0343vw + 1.3877px), 40px);
-
+        
     }
 
 
@@ -1263,6 +1263,26 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
 
 
     }
+
+
+
+
+
+
+.about-section--intro p{
+
+    font-size:
+    17px;
+    
+    color:#555;
+
+    font-weight: 300;
+}
+
+
+
+
+
 
 
     /* -----------------

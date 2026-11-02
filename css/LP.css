@@ -1602,27 +1602,27 @@ RWD 斷點與 style.css 一致：
     /* ---------- Hero ---------- */
 
     .lp-hero{
-        aspect-ratio: 2/3;
+        aspect-ratio: 2/3.3;
     }
 
     .lp1-hero-image{
         object-fit: cover;
         object-position:
-        90% -90px;
+        85% -120px;
         height:125%;
     }
 
     .lp2-hero-image{
 
         object-position:
-        70% -35px;
+        72% -35px;
         height:111%;
     }
 
     .lp3-hero-image{
 
         object-position:
-        95% -60px;
+        87% -60px;
         height:117%;
     
     }
