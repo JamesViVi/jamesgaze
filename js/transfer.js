@@ -466,7 +466,7 @@
         }
 
         if (!v.ageOk) {
-            errs.ageOk = "請勾選聲明年滿 18 歲。";
+            errs.ageOk = "請勾選已年滿 18 歲。";
         }
 
         if (!v.settleOk) {
