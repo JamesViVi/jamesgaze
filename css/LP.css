@@ -1648,7 +1648,7 @@ RWD 斷點與 style.css 一致：
 
     .lp-hero-title{
         margin-top: 5em;
-        font-size: clamp(24px, 4.348vw + 11.654px, 45px);
+        font-size: 30px;
         letter-spacing: .05em;
         text-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
     }
@@ -1656,7 +1656,8 @@ RWD 斷點與 style.css 一致：
     .lp-hero-subtitle{
         margin-top: 2em;
 
-        font-size: clamp(15px, 0.458vw + 13.49px, 17px);
+        font-size: 18px;
+        font-weight: 400;
         line-height: 1.6;
         text-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
     }
@@ -2031,12 +2032,12 @@ RWD 斷點與 style.css 一致：
     }
 
     .lp-final-cta-title{
-        font-size: clamp(22px, 4.119vw + 8.407px, 40px);
+        font-size: 22px;
         margin-bottom: 20px;
     }
 
     .lp-final-cta-content{
-        font-size: clamp(12px, 0.686vw + 9.734px, 15px);
+        font-size: 16px;
         max-width:90%;
         margin:0 auto;
         margin-bottom: 40px;

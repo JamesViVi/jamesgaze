@@ -859,40 +859,26 @@ Hero Title
 
 
 .hero-title{
-
-
     position:relative;
-
-
     display:inline-block;
-
-
     font-size:
-
     clamp(
         25px,
         2.5vw,
         42px
     );
-
-
-    line-height:
-
-    1.6;
-
-
-    letter-spacing:
-
-    .05em;
-
-
-    font-weight:
-
-    500;
-
-
+    line-height: 1.6;
+    letter-spacing: .05em;
+    font-weight: 500;
 }
 
+.hero-title br:nth-of-type(1){
+    display:none;
+}
+
+.hero-title br:nth-of-type(3){
+    display:none;
+}
 
 .hero-title-bracket{
     position:absolute !important;
@@ -955,36 +941,20 @@ Hero Title
 
 .hero-subtitle br{
 
-display: none
+    display: none
 
 }
 
 
 
 .hero-subtitle{
-
-    margin-top:
-    3em;
-
-
+    margin-top: 3em;
     font-size: clamp(17px, 0.37vw + 14.16px, 20px);
-
-
-    font-weight:
-    300;
-
-
-    line-height:
-    1.8;
-
-
-    letter-spacing:
-    0.18em;
-
-
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.18em;
     opacity:
     .9;
-
 }
 
 
@@ -3117,14 +3087,10 @@ Content
 
 }
 
-
-
-.quote-mark{
-    display:inline-block;
-    font-size:70px;
-    opacity:.7;
-    transform:translateY(30px);
+.final-cta-quote br{
+    display:none;
 }
+
 
 
 .final-cta-link {
@@ -3662,11 +3628,7 @@ clamp(
 
 }
 
-.hero-subtitle br{
 
-display:inline-block
-
-}
 
 
 .hero-subtitle{
@@ -4627,55 +4589,41 @@ Vertical image
 
 
 .hero-title{
-
-
-    font-size:
-       clamp(
-        17px,
-        calc(-1.11px + 4.317vw),
-        32px
-    );
-
-    line-height:
-
-    1.8;
-
-
+    font-size: 22px;
+    line-height: 1.8;
 }
 
+.hero-title br:nth-of-type(1){
+    display:block;
+}
 
+.hero-title br:nth-of-type(3){
+    display:block;
+}
 
 
 
 .hero-title-bracket-left{
-
-
-    left:
-
-    -1.5em;
-
-
+    left:-30px !important;
+    top:-20px !important;
 }
 
 
+/* =========================
+   右下角 L
+   ========================= */
 
 .hero-title-bracket-right{
-
-
-    right:
-
-    -1.5em;
-
-
+    right:-45px !important;
+    bottom:-30px !important;
 }
+
 
 .hero-subtitle br{
 
-display:unset
+    display:block;
 
 }
-
-
 
 
 .hero-subtitle{
@@ -4684,7 +4632,9 @@ display:unset
     margin-top:
     3em;
 
-    font-size: clamp(15px, 0.458vw + 13.49px, 17px);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
 
 }
 
@@ -5559,21 +5509,13 @@ FINAL CTA MOBILE
 
 .final-cta-quote{
 
-
     font-size: 
-    clamp(14px, calc(6.45px + 2.288vw), 24px);
+    22px;
 
 }
 
-
-
-.quote-mark{
-
-    font-size: 
-    clamp(20px, calc(-2.65px + 6.865vw), 50px);
-
-    transform: 
-    translateY(clamp(5px, calc(-6.33px + 3.432vw), 20px));
+.final-cta-quote br{
+    display:block;
 }
 
 
