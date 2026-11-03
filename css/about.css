@@ -1212,11 +1212,11 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
     單欄／雙欄／三欄 一律改為單欄堆疊 MOBILE
     ----------------- */
 
-.about-section--intro .about-section-inner{
+    .about-section--intro .about-section-inner{
 
-    padding: 0 3vw;
+        padding: 0 3vw;
 
-}
+    }
 
 
 
@@ -1272,7 +1272,7 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
 .about-section--intro p{
 
     font-size:
-    17px;
+    18px;
     
     color:#555;
 
