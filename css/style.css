@@ -4740,6 +4740,8 @@ title right
 
     50px;
 
+    font-weight: 600;
+
     margin-top: 10px;
 
 }
@@ -5013,7 +5015,7 @@ LEARNING PATH MOBILE
 
     margin-top:-100px;
 
-    font-weight: 500;
+    font-weight: 600;
 
 }
 
@@ -5224,6 +5226,8 @@ IG style
 .case-study-title{
 
    font-size: 50px;
+
+   font-weight: 600;
    
     white-space:nowrap;
 
@@ -5429,6 +5433,8 @@ Heading
     font-size:
 
     50px;
+
+    font-weight: 600;
 
     white-space:nowrap;
 

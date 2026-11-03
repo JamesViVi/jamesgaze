@@ -1148,7 +1148,9 @@ V10 MOBILE
     .cs-btn{
         padding: 7px 14px;
 
-        font-size: 12px;
+        font-size: 18px;
+        font-weight: 400;
+
     }
 
     .cs-hero-cta{
@@ -1220,7 +1222,7 @@ V10 MOBILE
     }
 
     .cs-items-title{
-        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+        font-size: 40px;
         padding: 0 5vw;
         margin-bottom: 30px;
     }

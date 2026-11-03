@@ -1668,7 +1668,8 @@ RWD 斷點與 style.css 一致：
     .lp-btn{
         padding: 7px 14px;
 
-        font-size: 12px;
+        font-size: 18px;
+        font-weight: 400;
     }
 
     .lp-hero-cta{
@@ -1678,7 +1679,10 @@ RWD 斷點與 style.css 一致：
 
     /* ---------- Pain ---------- */
 
+    .lp-pain-title{
+        font-size: clamp(28px, 4.805vw + 8.142px, 45px);
 
+    }
 
     .lp-pain-content{
         margin-top: 20px;
@@ -1691,10 +1695,6 @@ RWD 斷點與 style.css 一致：
         padding-right: 5vw;
     }
 
-    .lp-pain-title{
-        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
-
-    }
 
     /* ---------- How ---------- */
 
@@ -1720,10 +1720,11 @@ RWD 斷點與 style.css 一致：
         0px;
     }
 
-
     .lp-how-title{
-        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+        font-size:  clamp(28px, 4.805vw + 8.142px, 45px);
     }
+
+
 
     .lp-how-content{
         font-size:18px;
@@ -1851,7 +1852,8 @@ RWD 斷點與 style.css 一致：
 
 
     .lp-lesson-title{
-        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+        font-size: 35px;
+        margin-left: 20px;
     }
 
     .lp-lesson-inner{
@@ -2000,7 +2002,7 @@ RWD 斷點與 style.css 一致：
     }
 
     .lp-faq-title{
-        font-size: clamp(24px, 4.805vw + 8.142px, 45px);
+        font-size: 35px;
     }
 
     .lp-faq-heading{
