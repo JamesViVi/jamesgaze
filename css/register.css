@@ -973,3 +973,154 @@ register.css — 報名頁
     margin-top: -20px;
     border-top: 0;
 }
+
+/* =====================================================
+   手機字體加大（≤767px）
+   主要閱讀文字 18px／400；說明性小字 15–16px；次標 25px；標題 45px
+   桌機與平板（≥768px）完全不受影響
+===================================================== */
+
+@media (max-width: 767px){
+
+    /* ---- 標題 ---- */
+    .reg-title{
+        font-size: 45px;
+        line-height: 1.3;
+    }
+
+    .reg-result-title{
+        font-size: 45px;
+        line-height: 1.3;
+    }
+
+    .reg-fieldset legend{
+        font-size: 25px;
+        line-height: 1.4;
+    }
+
+    .reg-step{
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+
+    .cx-amount{
+        font-size: 25px;
+    }
+
+    /* ---- 主要閱讀文字：18px／400 ---- */
+    .reg-lead,
+    .reg-fallback,
+    .reg-field label,
+    .reg-check label,
+    .reg-note,
+    .reg-note-plain,
+    .reg-contract,
+    .reg-hint-lead,
+    .reg-summary dd,
+    .reg-result-notes,
+    .pv-section,
+    .reg-field .rv-q{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.8;
+    }
+
+    .reg-lead{
+        opacity: 1;
+    }
+
+    .reg-optional{
+        font-weight: 400;
+    }
+
+    .reg-session-title{
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .reg-status{
+        font-size: 18px;
+    }
+
+    .reg-form .reg-field input[type="text"],
+    .reg-form .reg-field input[type="email"],
+    .reg-form .reg-field input[type="tel"],
+    .reg-form .reg-field textarea{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .reg-error{
+        font-size: 18px;
+    }
+
+    .reg-error-form{
+        font-size: 18px;
+    }
+
+    .reg-submit{
+        font-size: 18px;
+        letter-spacing: .2em;
+        text-indent: .2em;
+    }
+
+    .reg-contract{
+        max-height: 360px;      /* 字變大，框高跟著加高，才不會一次只看到幾行 */
+    }
+
+    .reg-contract h2{
+        font-size: 20px;
+    }
+
+    .reg-bank-value{
+        font-size: 20px;
+    }
+
+    /* ---- 資訊與說明性文字：15–16px ---- */
+    .reg-back,
+    .reg-hint,
+    .reg-summary dt,
+    .reg-bank-label,
+    .reg-copy,
+    .reg-contract-tag{
+        font-size: 15px;
+    }
+
+    .reg-hint{
+        font-weight: 400;
+        opacity: .75;
+    }
+
+    .reg-summary dt{
+        flex-basis: 100px;
+        font-weight: 400;
+    }
+
+    .reg-session-meta,
+    .reg-session-seats,
+    .reg-schedule-list,
+    .reg-schedule summary,
+    .reg-session-title .reg-session-when{
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .reg-bank-title{
+        font-size: 20px;
+    }
+
+    /* ---- 隱私權政策頁 ---- */
+    .pv-meta{
+        font-size: 15px;
+    }
+
+    .pv-section h2{
+        font-size: 25px;
+        line-height: 1.4;
+    }
+
+    .pv-section h3{
+        font-size: 20px;
+    }
+}

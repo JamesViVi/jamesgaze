@@ -114,3 +114,37 @@ model-book.css — Model 檔期頁
 #mb-done[hidden]{
     display: none;
 }
+
+/* =====================================================
+   手機字體加大（≤767px）
+   主要閱讀文字 18px／400；說明性小字 15–16px；次標 25px；標題 45px
+   桌機與平板（≥768px）完全不受影響
+===================================================== */
+
+@media (max-width: 767px){
+
+    .mb-h{
+        font-size: 25px;
+        line-height: 1.4;
+    }
+
+    .mb-notice,
+    .mb-mine li,
+    .mb-slot-body,
+    .mb-group{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.8;
+    }
+
+    .mb-slot-title{
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .mb-slot-meta,
+    .mb-slot-note{
+        font-size: 16px;
+        line-height: 1.7;
+    }
+}
