@@ -1098,40 +1098,6 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
         transform-origin: right top;
     }
 
-.final-cta-quote br{
-
-    display: block;
-}
-
-.final-cta-quote{
-
-    margin: 0;
-
-    margin-top: 70px;
-
-    font-family:"Noto Serif TC",serif;
-
-    font-size: clamp(25px, 0.617vw + 20.26px, 30px);
-
-    font-weight: 500;
-
-    letter-spacing: .08em;
-
-    opacity: .8;
-
-    line-height: 1;
-
-    text-align: center;
-
-
-}
-
-.about-cta-attribution{
-
-    margin-top:
-    30px;
-
-}
 
 
 }
