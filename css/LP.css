@@ -423,12 +423,7 @@ RWD 斷點與 style.css 一致：
 .lp-ability-subtitle{
     margin-top: 22px;
     font-family: "Noto Serif TC", serif;
-        font-size: 
-    clamp(
-        22px,
-        calc(8.36px + 1.364vw),
-        25px
-    );
+    font-size: 25px;
     font-weight: 500;
 }
 
@@ -1599,6 +1594,11 @@ RWD 斷點與 style.css 一致：
         padding-bottom: 60px;
     }
 
+    .lp-eyebrow{
+        font-size: 14px;
+    }
+
+
     /* ---------- Hero ---------- */
 
     .lp-hero{
@@ -1682,6 +1682,8 @@ RWD 斷點與 style.css 一致：
 
     .lp-pain-content{
         margin-top: 20px;
+        font-size:18px;
+        font-weight: 400;
     }
 
     .lp-pain-inner{
@@ -1723,6 +1725,10 @@ RWD 斷點與 style.css 一致：
         font-size: clamp(24px, 4.805vw + 8.142px, 45px);
     }
 
+    .lp-how-content{
+        font-size:18px;
+        font-weight: 400;
+    }
 
     /* ---------- Ability：橫向滑動 + dots，比照 case-study-scroller ---------- */
 
@@ -1804,12 +1810,45 @@ RWD 斷點與 style.css 一致：
         margin-top: 12px;
     }
 
+    .lp-ability-content{
+        font-size: 18px;
+        font-weight: 400;
+    }
 
-
-
+    .lp-ability-sublist li{
+        font-size: 18px;
+        font-weight: 400;
+    }
 
 
     /* ---------- Lesson ---------- */
+
+    /* 折疊題目 */
+    .lp-accordion-trigger{
+        font-size: 19px;
+        font-weight: 500;
+    }
+    
+    /* Lesson 內文*/
+    .lp-accordion-list li{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    /* Lesson PL1 沒點內文 */
+    .lp-accordion-note{
+        font-size: 18px;
+    }
+
+    /* FAQ內文 */
+    .lp-accordion-text{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+
+
+
 
     .lp-lesson-title{
         font-size: clamp(24px, 4.805vw + 8.142px, 45px);
@@ -1853,12 +1892,20 @@ RWD 斷點與 style.css 一致：
         margin-right: 0;
     }
 
-    /*
-        LP3：Chapter 內的 Lesson。
-    */
 
+    /* LP3：Chapter 內的 Lesson。 */
     .lp-lesson-subitem-title{
         padding-left: 1em;
+        font-size: 18px;
+    }
+
+
+    .lp-lesson-link{
+        font-size: 18px;
+    }
+
+    .lp-lesson-link::after {
+        width: 150px;
     }
 
 
@@ -1898,8 +1945,8 @@ RWD 斷點與 style.css 一致：
     .lp-info-item{
         align-items: center;
         gap: clamp(5px, 3.432vw - 6.327px, 20px);
-        max-width: clamp(200px, 16.018vw + 147.144px, 270px);
-        min-width: 123px;
+        max-width: 300px;
+        min-width: 150px;
     }
 
     .lp-info-icon{
@@ -1908,12 +1955,42 @@ RWD 斷點與 style.css 一致：
     }
 
     .lp-info-text{
-        font-size: clamp(13px, 0.915vw + 9.98px, 17px);
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .lp-info-price{
+        font-size: 38px;
+    }
+
+    .lp-info-time{
+    font-size: 18px;
     }
 
     .lp-info-text2 br{
         display: none;
     }
+
+    /* ---------- Evaluate ---------- */
+
+
+    .lp-evaluate-name{
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .lp-evaluate-text{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .lp-evaluate-modal-text{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+
+
 
     /* ---------- FAQ ---------- */
 
@@ -1935,15 +2012,14 @@ RWD 斷點與 style.css 一致：
         gap: 40px;
     }
 
-    /* 折疊題目 */
-    .lp-accordion-trigger{
-        font-size: clamp(15px, 0.229vw + 14.245px, 16px);
-
-    }
-
     .lp-faq-qnum{
         font-size: 25px;
         margin-right: -5px;
+    }
+
+    .lp-faq-chapter{
+        font-size: 18px;
+        font-weight: 300;
     }
 
     /* =======  FINAL CTA  ======== */

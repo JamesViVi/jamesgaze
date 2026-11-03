@@ -2132,10 +2132,7 @@ Content
         calc(8.36px + 1.364vw),
         25px
     );
-
-
     font-weight:
-
     400;
 
 
@@ -2997,6 +2994,8 @@ Content
     #555;
 
     font-weight: 300;
+
+    text-align: justify;
 
 }
 
@@ -5121,12 +5120,27 @@ LEARNING PATH MOBILE
 }
 
 .course-title{
-
-    font-size: 
-        25px
- 
+    font-size: 25px;
+    font-weight: 500;
 }
 
+.course-description{
+
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.course-price{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+/* 了解課程按鈕 */
+.course-cta{
+    font-size: 18px;
+    font-weight: 400;
+}
 
 
 #learning-path {
@@ -5327,10 +5341,29 @@ IG style
 
 
 
-.case-title{
+.case-number{
+    font-size: 14px;
+}
 
-    font-size: 
-    25px
+.case-title{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.case-description{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.case-cta{
+    font-size:14px;
+}
+
+.case-cta::after{
+
+    right:12px;
+
+    width:65px;
 
 }
 
@@ -5441,17 +5474,17 @@ Content
 
     font-size:
     18px;
+    font-weight: 600;
 
 }
 
 
 .about-james-copy p{
-
-    font-size:
-
-    16px;
-
+    font-size: 18px;
+    font-weight: 400;
+    text-align:justify;
 }
+
 
 
 .about-james-cta{
