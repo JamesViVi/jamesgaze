@@ -98,7 +98,7 @@ RWD 斷點與 style.css 一致：
 /* CTA 按鈕若放在深色背景上（Hero / Final CTA），反轉配色 */
 .lp-hero-cta,
 .lp-final-cta-link{
-    background:transparent;
+    background:rgba(0, 0, 0, .3);
 
 
     backdrop-filter:
@@ -110,6 +110,11 @@ RWD 斷點與 style.css 一致：
 
     color: #fff;
 }
+
+.lp-final-cta-link{
+    background:transparent;
+}
+
 
 .lp-hero-cta:hover,
 .lp-final-cta-link:hover{

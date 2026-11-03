@@ -3566,7 +3566,12 @@ HEADER TABLET
 
 }
 
+.nav-dropdown a{
 
+    padding:4px 15px;
+
+    font-size:12px;
+}
 
 .header-course-cta{
 
