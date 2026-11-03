@@ -1269,19 +1269,24 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
 
 
 
-.about-section--intro p{
+    .about-section--intro p{
+        
+        font-size: 18px;
+        font-weight: 400;
+    }
 
-    font-size:
-    18px;
-    
-    color:#555;
+    .about-section--split p{
 
-    font-weight: 400;
-}
+        font-size: 18px;
+        font-weight: 400;
 
+    }
 
+    .method-item p{
 
-
+        font-size: 18px;
+        font-weight: 400;
+    }
 
 
 
@@ -1329,6 +1334,11 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
     
     }
 
+    .story-block p{
+
+        font-size: 18px;
+        font-weight: 400;
+    }
 
     /* -----------------
     Portrait MOBILE
@@ -1342,10 +1352,7 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
         gap:50px;
 
         padding:0;
-        margin:0;
-
-
-    
+        margin:0;    
     }
 
 
@@ -1359,15 +1366,13 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
 
         margin-right: -4vw;
 
-
-
     }
 
-.about-portrait-image{
+    .about-portrait-image{
 
-    border-radius: 0px;
+        border-radius: 0px;
 
-}
+    }
 
     .about-portrait-text p{
 
@@ -1376,6 +1381,8 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
         margin-left: 7vw;
         margin-right: 3vw;
 
+        font-size: 18px;
+        font-weight: 400;
     }
 
     .about-portrait-text .story-block{
@@ -1388,10 +1395,10 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
     }
 
 
-.about-section--intro2{
+    .about-section--intro2{
 
-    margin-top: 70px;
-}
+        margin-top: 70px;
+    }
 
     /* -----------------
     credential MOBILE
@@ -1439,8 +1446,9 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
 
         margin-top: 0px;
 
+        font-size: 18px;
+        font-weight: 400;
     }
-
 
     /* -----------------
     Gaze MOBILE
@@ -1465,8 +1473,9 @@ Desktop 雙欄左文右圖／Mobile 上圖下文
         margin-left: 3vw;
         margin-right: 4vw;
 
+        font-size: 18px;
+        font-weight: 400;
     }
-
 
     .about-gaze-image{
 
