@@ -4658,34 +4658,19 @@ title right
 
 .selected-works-title-wrap{
 
-
-    left:
-
-    auto;
-
+    left: auto;
     right: 0;
-
-    top:
-
-    0;
-
+    top: 0;
     display: flex;                /* 讓內部文字與線條成為彈性盒子，防止 iOS 散開 */
     flex-direction: column;       /* 保持直排或上下排列流向 */
     align-items: flex-end;        /* 全部向右側靠齊 */
-
-
 }
 
 
 .section-title-line{
 
-
-    margin-left:
-
-    auto;
-
+    margin-left: auto;
     margin-right: 30px;
-
     margin-top: 10px;
 
     height: 
