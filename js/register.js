@@ -26,7 +26,7 @@
         "https://script.google.com/macros/s/AKfycbwC-LG0gskNwglEwla2FloU5rr2MiMkKCq9srZz92iKzOHgFOsVSNzVvh8DANPHbwbxMw/exec";
 
     // 必須和 Sheet「設定」分頁的「契約版本」一模一樣
-    const CONTRACT_VERSION = "v0-草稿";
+    const CONTRACT_VERSION = "v1.0";
 
     const GET_TIMEOUT_MS = 20000;
     const POST_TIMEOUT_MS = 45000;
