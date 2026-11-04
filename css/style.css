@@ -3684,6 +3684,7 @@ SELECTED WORKS TABLET
 
 
 
+/* 請取代這段平板的 Selected Works 標題與線條設定 */
 .selected-works-title-wrap{
 
 
@@ -3696,6 +3697,10 @@ SELECTED WORKS TABLET
 
 
     top:5px;
+    
+    display: flex; /* 改用 Flex 確保 iOS 上排版一致 */
+    flex-direction: column;
+    align-items: flex-end; /* 靠右對齊 */
 
 
 }
@@ -3735,8 +3740,12 @@ SELECTED WORKS TABLET
     margin-top: 10px;
 
     height: 130px;
+    
+    position: relative; /* 建立 iOS 座標參考點 */
+    top: 0px; /* 如果在 iPad 上線條還是有偏差，可微調此數值 */
 
 }
+
 
 
 
@@ -4699,6 +4708,7 @@ title right
     display:none;
 }
 
+/* 請取代這段手機的 Selected Works 線條設定 */
 .section-title-line{
 
 
@@ -4713,8 +4723,11 @@ title right
     height: 
     clamp(130px, calc(-451.6px + 176.2vw), 900px);
 
+    position: relative; /* 建立 iOS 座標參考點，防止在 iPhone/iPad 偏移 */
+    top: 0px;           /* 可在此微調上下位置（例如 2px 或 -2px） */
 
 }
+
 
 .works-grid{
 
