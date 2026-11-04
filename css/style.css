@@ -1313,8 +1313,6 @@ Magazine layout
             50% - 300px
         );
 
-        transform:none;
-
     width:900px;
 
     height:630px;
@@ -1369,21 +1367,7 @@ Magazine layout
 
     object-fit:cover;
 
-    transition:
-        transform .6s var(--ease);
-
 }
-
-
-
-/* hover scale */
-
-.work-link .work-image{
-
-    transform:scale(1);
-
-}
-
 
 
 
@@ -1584,108 +1568,6 @@ Desktop Image Position
 
 }
 
-
-
-
-
-/* =====================================================
-Hover Viewing Text
-
-是觀看方式文字
-
-===================================================== */
-
-
-.work-hover{
-
-
-    position:
-
-    absolute;
-
-
-    inset:
-
-    0;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    padding:
-
-    24px;
-
-
-    opacity:
-
-    0;
-
-
-    transition:
-
-    opacity .8s var(--ease);
-
-
-}
-
-
-
-
-
-.work-hover-text{
-
-
-    color:
-
-    #fff;
-
-
-
-    font-size:
-
-    14px;
-
-
-    line-height:
-
-    1.5;
-
-    font-weight: 300;
-
-    text-align:center;
-
-
-    letter-spacing:
-
-    .1em;
-
-    width: 90%;
-
-
-    text-shadow:
-        0 1px 1px rgba(0,0,0,.9),
-        0 0 6px rgba(0,0,0,.65);
-
-}
-
-
-
-.work-link:hover .work-hover{
-
-
-    opacity:
-
-    1;
-
-
-}
 
 
 

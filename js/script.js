@@ -9,14 +9,12 @@
    04. Hero
    05. Hero Responsive
    06. Selected Works Config
-   07. Selected Works Data
-   08. Selected Works Rotation
-   09. Selected Works Brightness Detection
-   10. Selected Works Loader
-   11. Case Study Mobile Dots
-   12. Mobile Menu
-   13. Section Scroll Effects
-   14. Initialization
+   07. Selected Works Rotation
+   08. Selected Works Loader
+   09. Case Study Mobile Dots
+   10. Mobile Menu
+   11. Section Scroll Effects
+   12. Initialization
    ========================================================= */
 
 
@@ -364,154 +362,13 @@ document.addEventListener("DOMContentLoaded", () => {
             = 啟用正式日期輪播
         */
 
-        testSet: "null"
+        testSet: null
 
     };
 
 
     /* =====================================================
-       07. SELECTED WORKS DATA
-       ===================================================== */
-
-    const WORK_DATA = {
-
-        A: {
-
-            quotes: [
-
-                "光與人物之間留下的關係",
-
-                "光線在人物身上留下的，不只是明暗",
-
-                "被選擇留下的，才成為畫面",
-
-                "有些情緒，是在快門之後才開始發生",
-
-                "看見一個人之前，先決定如何靠近他",
-
-                "光與人物之間，總有一段沒有被說出的距離"
-
-            ]
-
-        },
-
-
-        B: {
-
-            quotes: [
-
-                "B 組金句 01",
-                "B 組金句 02",
-                "B 組金句 03",
-                "B 組金句 04",
-                "B 組金句 05",
-                "B 組金句 06"
-
-            ]
-
-        },
-
-
-        C: {
-
-            quotes: [
-
-                "C 組金句 01",
-                "C 組金句 02",
-                "C 組金句 03",
-                "C 組金句 04",
-                "C 組金句 05",
-                "C 組金句 06"
-
-            ]
-
-        },
-
-
-        D: {
-
-            quotes: [
-
-                "D 組金句 01",
-                "D 組金句 02",
-                "D 組金句 03",
-                "D 組金句 04",
-                "D 組金句 05",
-                "D 組金句 06"
-
-            ]
-
-        },
-
-
-        E: {
-
-            quotes: [
-
-                "E 組金句 01",
-                "E 組金句 02",
-                "E 組金句 03",
-                "E 組金句 04",
-                "E 組金句 05",
-                "E 組金句 06"
-
-            ]
-
-        },
-
-
-        F: {
-
-            quotes: [
-
-                "F 組金句 01",
-                "F 組金句 02",
-                "F 組金句 03",
-                "F 組金句 04",
-                "F 組金句 05",
-                "F 組金句 06"
-
-            ]
-
-        },
-
-
-        G: {
-
-            quotes: [
-
-                "G 組金句 01",
-                "G 組金句 02",
-                "G 組金句 03",
-                "G 組金句 04",
-                "G 組金句 05",
-                "G 組金句 06"
-
-            ]
-
-        },
-
-
-        H: {
-
-            quotes: [
-
-                "H 組金句 01",
-                "H 組金句 02",
-                "H 組金句 03",
-                "H 組金句 04",
-                "H 組金句 05",
-                "H 組金句 06"
-
-            ]
-
-        }
-
-    };
-
-    
-    /* =====================================================
-       08. SELECTED WORKS ROTATION
+       07. SELECTED WORKS ROTATION
        ===================================================== */
 
     function getCurrentWorkSet() {
@@ -524,9 +381,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (
             WORK_ROTATION_CONFIG.testSet &&
-            WORK_DATA[
+            WORK_ROTATION_CONFIG.sets.includes(
                 WORK_ROTATION_CONFIG.testSet
-            ]
+            )
         ) {
 
             return WORK_ROTATION_CONFIG.testSet;
@@ -700,232 +557,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       09. SELECTED WORKS
-           BRIGHTNESS DETECTION
-       ===================================================== */
-
-    function detectWorkBrightness(
-        img,
-        hoverElement
-    ) {
-
-        if (
-            !img ||
-            !hoverElement ||
-            !img.complete ||
-            !img.naturalWidth
-        ) {
-
-            return;
-
-        }
-
-
-        /*
-            每次建立 40 × 40 canvas
-            進行快速平均亮度分析。
-        */
-
-        const canvas =
-            document.createElement(
-                "canvas"
-            );
-
-
-        const ctx =
-            canvas.getContext(
-                "2d",
-                {
-                    willReadFrequently: true
-                }
-            );
-
-
-        if (!ctx) {
-
-            return;
-
-        }
-
-
-        canvas.width = 40;
-        canvas.height = 40;
-
-
-        try {
-
-            ctx.drawImage(
-                img,
-                0,
-                0,
-                40,
-                40
-            );
-
-
-            const data =
-                ctx.getImageData(
-                    0,
-                    0,
-                    40,
-                    40
-                ).data;
-
-
-            let brightness = 0;
-
-
-            for (
-                let i = 0;
-                i < data.length;
-                i += 4
-            ) {
-
-                brightness +=
-                    (
-                        data[i] *
-                        0.299
-                    )
-                    +
-                    (
-                        data[i + 1] *
-                        0.587
-                    )
-                    +
-                    (
-                        data[i + 2] *
-                        0.114
-                    );
-
-            }
-
-
-            brightness =
-                brightness /
-                (
-                    data.length / 4
-                );
-
-
-            /*
-                亮圖：
-                .light-image
-
-                暗圖：
-                移除 .light-image
-            */
-
-            hoverElement.classList.toggle(
-                "light-image",
-                brightness > 150
-            );
-
-        } catch (error) {
-
-            /*
-                如果圖片來自不同來源，
-                canvas 可能發生 SecurityError。
-
-                不讓這個錯誤中斷整支 JS。
-            */
-
-            console.warn(
-                "Selected Works brightness detection failed:",
-                error
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       10. SELECTED WORKS
+       08. SELECTED WORKS
            LOAD WORK SET
+
+       圖片檔名規則：
+       images/{組別}-work{01~06}.jpg
        ===================================================== */
-
-    function updateWorkBrightness(
-        img,
-        hoverElement
-    ) {
-
-        if (
-            !img ||
-            !hoverElement
-        ) {
-
-            return;
-
-        }
-
-
-        /*
-            如果圖片尚未載入，
-            綁定一次 load。
-
-            使用 onload 不累積多個 listener。
-        */
-
-        const runDetection =
-            () => {
-
-                detectWorkBrightness(
-                    img,
-                    hoverElement
-                );
-
-            };
-
-
-        if (
-            img.complete &&
-            img.naturalWidth
-        ) {
-
-            runDetection();
-
-        } else {
-
-            img.addEventListener(
-                "load",
-                runDetection,
-                {
-                    once: true
-                }
-            );
-
-        }
-
-    }
-
 
     function loadWorkSet(set) {
-
-        const data =
-            WORK_DATA[set];
-
-
-        if (!data) {
-
-            console.warn(
-                `Selected Works: 找不到 ${set} 組資料`
-            );
-
-            return;
-
-        }
-
 
         const workItems =
             document.querySelectorAll(
                 ".work-item"
             );
 
-
-        /*
-            HTML 沒有 Selected Works
-            直接結束。
-        */
 
         if (!workItems.length) {
 
@@ -943,32 +588,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     );
 
 
-                const hoverText =
-                    item.querySelector(
-                        ".work-hover-text"
-                    );
-
-
-                const hoverElement =
-                    item.querySelector(
-                        ".work-hover"
-                    );
-
-
-                if (
-                    !img ||
-                    !hoverText ||
-                    !hoverElement
-                ) {
+                if (!img) {
 
                     return;
 
                 }
 
-
-                /*
-                    01 ～ 06
-                */
 
                 const number =
                     String(
@@ -979,19 +604,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     );
 
 
-                /*
-                    -------------------------
-                    更新圖片
-                    -------------------------
-                */
-
                 const newSrc =
                     `images/${set}-work${number}.jpg`;
 
 
                 /*
-                    如果圖片已經是相同來源，
-                    不重新設定。
+                    已經是相同來源就不重新設定。
                 */
 
                 if (
@@ -1005,47 +623,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }
 
-
-                /*
-                    -------------------------
-                    更新 ALT
-                    -------------------------
-                */
-
-                img.alt =
-                    `Selected Work ${number}`;
-
-
-                /*
-                    -------------------------
-                    更新金句
-                    -------------------------
-                */
-
-                hoverText.textContent =
-                    data.quotes[index] || "";
-
-
-                /*
-                    -------------------------
-                    重新偵測明暗
-                    -------------------------
-                */
-
-                updateWorkBrightness(
-                    img,
-                    hoverElement
-                );
-
             }
         );
 
-
-        /*
-            -------------------------
-            更新 data-work-set
-            -------------------------
-        */
 
         const grid =
             document.querySelector(
@@ -1078,25 +658,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        const currentSet =
-            getCurrentWorkSet();
-
-
         loadWorkSet(
-            currentSet
+            getCurrentWorkSet()
         );
 
     }
 
-    /*當滑鼠點圖片不作用*/
-    document.querySelectorAll(".work-link").forEach((link) => {
-    link.addEventListener("click", (event) => {
-        event.preventDefault();
-    });
-});
 
     /* =====================================================
-       11. CASE STUDY
+       09. CASE STUDY
            MOBILE 3 DOTS
 
        原本功能完整保留。
@@ -1344,7 +914,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-   12 MOBILE MENU V7.2
+   10. MOBILE MENU
     -----------------------------------------------------
    功能：
    1. 點擊漢堡按鈕 → 開啟選單
@@ -1355,129 +925,151 @@ document.addEventListener("DOMContentLoaded", () => {
    6. aria-expanded 同步更新
    7. body 鎖定，避免背景跟著滾動
     ===================================================== */
-function initMobileMenu() {
+    function initMobileMenu() {
 
-    const mobileMenuToggle = document.querySelector(
-    ".mobile-menu-toggle"
-    );
-
-    const primaryNavigation = document.querySelector(
-    ".primary-navigation"
-    );
-
-    const primaryNavigationLinks = document.querySelectorAll(
-    ".primary-navigation a"
-    );
-
-    const headerCourseCTA = document.querySelector(
-    ".header-course-cta"
-    );
-
-
-    if (
-    mobileMenuToggle &&
-    primaryNavigation
-    ) {
-
-    /* =================================================
-       OPEN
-       ================================================= */
-
-    function openMobileMenu() {
-
-        primaryNavigation.classList.add("active");
-
-        mobileMenuToggle.classList.add("is-active");
-
-        mobileMenuToggle.setAttribute(
-            "aria-expanded",
-            "true"
+        const mobileMenuToggle = document.querySelector(
+        ".mobile-menu-toggle"
         );
 
-        mobileMenuToggle.setAttribute(
-            "aria-label",
-            "關閉網站選單"
+        const primaryNavigation = document.querySelector(
+        ".primary-navigation"
         );
 
-        document.body.classList.add(
-            "mobile-menu-open"
+        const primaryNavigationLinks = document.querySelectorAll(
+        ".primary-navigation a"
         );
 
-    }
-
-
-    /* =================================================
-       CLOSE
-       ================================================= */
-
-    function closeMobileMenu() {
-
-        primaryNavigation.classList.remove("active");
-
-        mobileMenuToggle.classList.remove("is-active");
-
-        mobileMenuToggle.setAttribute(
-            "aria-expanded",
-            "false"
+        const headerCourseCTA = document.querySelector(
+        ".header-course-cta"
         );
 
-        mobileMenuToggle.setAttribute(
-            "aria-label",
-            "開啟網站選單"
-        );
-
-        document.body.classList.remove(
-            "mobile-menu-open"
-        );
-
-    }
-
-
-    /* =================================================
-       TOGGLE
-       ================================================= */
-
-    function toggleMobileMenu() {
 
         if (
-            primaryNavigation.classList.contains(
-                "active"
-            )
+        mobileMenuToggle &&
+        primaryNavigation
         ) {
 
-            closeMobileMenu();
+        /* =================================================
+           OPEN
+           ================================================= */
 
-        } else {
+        function openMobileMenu() {
 
-            openMobileMenu();
+            primaryNavigation.classList.add("active");
+
+            mobileMenuToggle.classList.add("is-active");
+
+            mobileMenuToggle.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            mobileMenuToggle.setAttribute(
+                "aria-label",
+                "關閉網站選單"
+            );
+
+            document.body.classList.add(
+                "mobile-menu-open"
+            );
 
         }
 
-    }
+
+        /* =================================================
+           CLOSE
+           ================================================= */
+
+        function closeMobileMenu() {
+
+            primaryNavigation.classList.remove("active");
+
+            mobileMenuToggle.classList.remove("is-active");
+
+            mobileMenuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenuToggle.setAttribute(
+                "aria-label",
+                "開啟網站選單"
+            );
+
+            document.body.classList.remove(
+                "mobile-menu-open"
+            );
+
+        }
 
 
-    /* =================================================
-       HAMBURGER / X BUTTON
-       ================================================= */
+        /* =================================================
+           TOGGLE
+           ================================================= */
 
-    mobileMenuToggle.addEventListener(
-        "click",
-        toggleMobileMenu
-    );
+        function toggleMobileMenu() {
+
+            if (
+                primaryNavigation.classList.contains(
+                    "active"
+                )
+            ) {
+
+                closeMobileMenu();
+
+            } else {
+
+                openMobileMenu();
+
+            }
+
+        }
 
 
-    /* =================================================
-       MENU NAVIGATION
-       -------------------------------------------------
-       所有選單連結點擊後：
-       1. 關閉 Menu
-       2. 讓原本 anchor 正常跳轉
-       ================================================= */
+        /* =================================================
+           HAMBURGER / X BUTTON
+           ================================================= */
 
-    primaryNavigationLinks.forEach(
-        (link) => {
+        mobileMenuToggle.addEventListener(
+            "click",
+            toggleMobileMenu
+        );
 
-            link.addEventListener(
+
+        /* =================================================
+           MENU NAVIGATION
+           -------------------------------------------------
+           所有選單連結點擊後：
+           1. 關閉 Menu
+           2. 讓原本 anchor 正常跳轉
+           ================================================= */
+
+        primaryNavigationLinks.forEach(
+            (link) => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        closeMobileMenu();
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           HEADER「探索課程」
+           -------------------------------------------------
+           它不在 primary-navigation 裡，
+           所以獨立處理。
+           ================================================= */
+
+        if (headerCourseCTA) {
+
+            headerCourseCTA.addEventListener(
                 "click",
                 () => {
 
@@ -1487,68 +1079,66 @@ function initMobileMenu() {
             );
 
         }
-    );
 
 
-    /* =================================================
-       HEADER「探索課程」
-       -------------------------------------------------
-       它不在 primary-navigation 裡，
-       所以獨立處理。
-       ================================================= */
+        /* =================================================
+           ESC
+           ================================================= */
 
-    if (headerCourseCTA) {
+        document.addEventListener(
+            "keydown",
+            (event) => {
 
-        headerCourseCTA.addEventListener(
-            "click",
-            () => {
+                if (
+                    event.key === "Escape" &&
+                    primaryNavigation.classList.contains(
+                        "active"
+                    )
+                ) {
 
-                closeMobileMenu();
+                    closeMobileMenu();
+
+                    mobileMenuToggle.focus();
+
+                }
 
             }
         );
 
-    }
 
+        /* =================================================
+           點擊 MENU 背景
+           -------------------------------------------------
+           點黑色背景本身可以關閉。
+           點文字 / link 不會觸發這裡。
+           ================================================= */
 
-    /* =================================================
-       ESC
-       ================================================= */
+        primaryNavigation.addEventListener(
+            "click",
+            (event) => {
 
-    document.addEventListener(
-        "keydown",
-        (event) => {
+                if (
+                    event.target === primaryNavigation
+                ) {
 
-            if (
-                event.key === "Escape" &&
-                primaryNavigation.classList.contains(
-                    "active"
-                )
-            ) {
+                    closeMobileMenu();
 
-                closeMobileMenu();
-
-                mobileMenuToggle.focus();
+                }
 
             }
-
-        }
-    );
+        );
 
 
-    /* =================================================
-       點擊 MENU 背景
-       -------------------------------------------------
-       點黑色背景本身可以關閉。
-       點文字 / link 不會觸發這裡。
-       ================================================= */
+        /* =================================================
+           RESPONSIVE
+           -------------------------------------------------
+           回到 Desktop 時自動關閉 Menu
+           ================================================= */
 
-    primaryNavigation.addEventListener(
-        "click",
-        (event) => {
+        function handleMenuResize() {
 
             if (
-                event.target === primaryNavigation
+                window.innerWidth > 767
             ) {
 
                 closeMobileMenu();
@@ -1556,47 +1146,27 @@ function initMobileMenu() {
             }
 
         }
-    );
 
 
-    /* =================================================
-       RESPONSIVE
-       -------------------------------------------------
-       回到 Desktop 時自動關閉 Menu
-       ================================================= */
+        window.addEventListener(
+            "resize",
+            handleMenuResize
+        );
 
-    function handleMenuResize() {
 
-        if (
-            window.innerWidth > 767
-        ) {
+        /* =================================================
+           INITIAL STATE
+           ================================================= */
 
-            closeMobileMenu();
-
-        }
+        closeMobileMenu();
 
     }
 
-
-    window.addEventListener(
-        "resize",
-        handleMenuResize
-    );
-
-
-    /* =================================================
-       INITIAL STATE
-       ================================================= */
-
-    closeMobileMenu();
-
-}
-
-}
+    }
 
 
 /* =====================================================
-   13. SECTION MOTION
+   11. SECTION MOTION
    Selected Works、Final CTA、Footer 不動畫
 
    Learning Path：
@@ -1741,19 +1311,64 @@ function initSectionReveal() {
             }
         }
 
-        /* Mobile：
-           卡片與圖片維持較快節奏；
-           Title 與線不覆蓋，因此使用 Tablet 速度 */
+        /* Learning Path Mobile：
+           與 Case Study Mobile 相同節奏。
+           用 !important 覆蓋上方 Learning 的 Tablet 設定與 inline delay。 */
         @media (max-width: 767px) {
-            .jg-card-soft {
+
+            /* Title：與 Case Study Title 相同速度 */
+            .learning-path-title.jg-learning-title {
                 transition:
-                    opacity 350ms cubic-bezier(.22, .61, .36, 1);
+                    opacity 650ms cubic-bezier(.22, .61, .36, 1) !important,
+                    transform 760ms cubic-bezier(.22, .61, .36, 1) !important;
+                transition-delay: 110ms !important;
             }
 
+            /* Title 旁線：跟在標題後面慢慢延伸 */
+            .learning-path-title.jg-learning-title::after {
+                transition:
+                    transform 760ms cubic-bezier(.22, .61, .36, 1) !important;
+                transition-delay: 230ms !important;
+            }
+
+            /* 三張 Card：維持 0.5 → 1，但節奏放慢 */
+            .learning-path-courses .jg-card-soft {
+                transition:
+                    opacity 650ms cubic-bezier(.22, .61, .36, 1) !important;
+            }
+
+            .learning-path-courses .course-card:nth-child(1) {
+                transition-delay: 200ms !important;
+            }
+
+            .learning-path-courses .course-card:nth-child(2) {
+                transition-delay: 330ms !important;
+            }
+
+            .learning-path-courses .course-card:nth-child(3) {
+                transition-delay: 460ms !important;
+            }
+
+            /* 三張圖：完全比照 Case Study 圖片的速度與節奏 */
             .learning-path-courses .jg-image-reveal {
                 transition:
-                    opacity 480ms cubic-bezier(.22, .61, .36, 1),
-                    transform 650ms cubic-bezier(.22, .61, .36, 1);
+                    opacity 850ms cubic-bezier(.22, .61, .36, 1) !important,
+                    transform 1200ms cubic-bezier(.22, .61, .36, 1) !important;
+            }
+
+            .learning-path-courses .course-card:nth-child(1)
+            .jg-image-reveal {
+                transition-delay: 290ms !important;
+            }
+
+            .learning-path-courses .course-card:nth-child(2)
+            .jg-image-reveal {
+                transition-delay: 440ms !important;
+            }
+
+            .learning-path-courses .course-card:nth-child(3)
+            .jg-image-reveal {
+                transition-delay: 590ms !important;
             }
         }
     `;
@@ -2009,7 +1624,7 @@ function initSectionReveal() {
 
 
 /* =====================================================
-   14. INITIALIZATION
+   12. INITIALIZATION
    ===================================================== */
 
 initHeader();
@@ -2027,80 +1642,6 @@ initSectionReveal();
 initMobileMenu();
 
 updateScrollEffects();
-
-
-/* =====================================================
-   Learning Path Mobile
-   改用與 Case Study Mobile 相同節奏
-   ===================================================== */
-
-const learningMobilePacingStyle =
-    document.createElement("style");
-
-learningMobilePacingStyle.textContent = `
-    @media (max-width: 767px) {
-
-        /* Title：與 Case Study Title 相同速度 */
-        .learning-path-title.jg-learning-title {
-            transition:
-                opacity 650ms cubic-bezier(.22, .61, .36, 1) !important,
-                transform 760ms cubic-bezier(.22, .61, .36, 1) !important;
-            transition-delay: 110ms !important;
-        }
-
-        /* Title 旁線：跟在標題後面慢慢延伸 */
-        .learning-path-title.jg-learning-title::after {
-            transition:
-                transform 760ms cubic-bezier(.22, .61, .36, 1) !important;
-            transition-delay: 230ms !important;
-        }
-
-        /* 三張 Card：維持 0.5 → 1，但節奏放慢 */
-        .learning-path-courses .jg-card-soft {
-            transition:
-                opacity 650ms cubic-bezier(.22, .61, .36, 1) !important;
-        }
-
-        .learning-path-courses .course-card:nth-child(1) {
-            transition-delay: 200ms !important;
-        }
-
-        .learning-path-courses .course-card:nth-child(2) {
-            transition-delay: 330ms !important;
-        }
-
-        .learning-path-courses .course-card:nth-child(3) {
-            transition-delay: 460ms !important;
-        }
-
-        /* 三張圖：完全比照 Case Study 圖片的速度與節奏 */
-        .learning-path-courses .jg-image-reveal {
-            transition:
-                opacity 850ms cubic-bezier(.22, .61, .36, 1) !important,
-                transform 1200ms cubic-bezier(.22, .61, .36, 1) !important;
-        }
-
-        .learning-path-courses .course-card:nth-child(1)
-        .jg-image-reveal {
-            transition-delay: 290ms !important;
-        }
-
-        .learning-path-courses .course-card:nth-child(2)
-        .jg-image-reveal {
-            transition-delay: 440ms !important;
-        }
-
-        .learning-path-courses .course-card:nth-child(3)
-        .jg-image-reveal {
-            transition-delay: 590ms !important;
-        }
-    }
-`;
-
-document.head.appendChild(
-    learningMobilePacingStyle
-);
-
 
 
 });

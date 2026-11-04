@@ -364,28 +364,10 @@ SELECTED WORKS
         <!-- =================================================
         WORK GRID
 
-        固定 6 張 DOM。
-
-        Desktop / Tablet：
-
-        01  02  03
-        04  05  06
-
-        Mobile：
-
-        01  02
-        03  04
-        05  06
-
-        每一輪只更換：
-        - 圖片來源
-        - hover viewing text
-
-        不複製 DOM。
-        RWD 由 CSS 控制。
-
-        JS 未來可依固定週期更換：
-        A → B → C → D → E → F → G → H
+        固定 6 張 DOM，RWD 由 CSS 控制。
+        JS 依日期輪播 A → B → C … → H 組，
+        只替換每張 <img> 的 src。
+        此處 src 為 A 組預設值。
         ================================================= -->
 
         <div
@@ -395,277 +377,127 @@ SELECTED WORKS
 
 
 
-            <!-- =================================================
-            WORK 01
-            ================================================= -->
+            <!-- WORK 01 -->
 
             <article
                 class="work-item work-item-01"
                 data-work-index="1"
             >
 
-                <a
-                    class="work-link"
-                    href="#"
-                    aria-label="Selected Work 01"
-                >
+                <div class="work-image-wrap">
 
-                    <div class="work-image-wrap">
+                    <img
+                        src="images/A-work01.jpg"
+                        alt="Selected Work 01"
+                        class="work-image"
+                    >
 
-                        <img
-                            src="images/A-work01.jpg"
-                            alt="Selected Work 01"
-                            class="work-image"
-                        >
-
-
-                        <!--
-                        Hover Viewing Text
-
-                        這裡不是作品名稱。
-                        不是 WORK 編號。
-                        而是「觀看方式」文字。
-
-                        JS 未來可以直接替換
-                        .work-hover-text 的文字內容。
-
-                        例如：
-
-                        光與人物之間留下的關係
-
-                        光線不是照亮人物，
-                        而是在人物與空間之間留下距離
-
-                        被看見的，
-                        往往不是人物本身
-
-                        每一張圖片可以有不同文字。
-                        -->
-
-                        <div
-                            class="work-hover"
-                            aria-hidden="true"
-                        >
-
-                            <span class="work-hover-text">
-                                光與人物之間留下的關係
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
+                </div>
 
             </article>
 
 
 
-            <!-- =================================================
-            WORK 02
-            ================================================= -->
+            <!-- WORK 02 -->
 
             <article
                 class="work-item work-item-02"
                 data-work-index="2"
             >
 
-                <a
-                    class="work-link"
-                    href="#"
-                    aria-label="Selected Work 02"
-                >
+                <div class="work-image-wrap">
 
-                    <div class="work-image-wrap">
+                    <img
+                        src="images/A-work02.jpg"
+                        alt="Selected Work 02"
+                        class="work-image"
+                    >
 
-                        <img
-                            src="images/A-work02.jpg"
-                            alt="Selected Work 02"
-                            class="work-image"
-                        >
-
-                        <div
-                            class="work-hover"
-                            aria-hidden="true"
-                        >
-
-                            <span class="work-hover-text">
-                                光線在人物身上留下的，不只是明暗
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
+                </div>
 
             </article>
 
 
 
-            <!-- =================================================
-            WORK 03
-            ================================================= -->
+            <!-- WORK 03 -->
 
             <article
                 class="work-item work-item-03"
                 data-work-index="3"
             >
 
-                <a
-                    class="work-link"
-                    href="#"
-                    aria-label="Selected Work 03"
-                >
+                <div class="work-image-wrap">
 
-                    <div class="work-image-wrap">
+                    <img
+                        src="images/A-work03.jpg"
+                        alt="Selected Work 03"
+                        class="work-image"
+                    >
 
-                        <img
-                            src="images/A-work03.jpg"
-                            alt="Selected Work 03"
-                            class="work-image"
-                        >
-
-                        <div
-                            class="work-hover"
-                            aria-hidden="true"
-                        >
-
-                            <span class="work-hover-text">
-                                被選擇留下的，才成為畫面
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
+                </div>
 
             </article>
 
 
 
-            <!-- =================================================
-            WORK 04
-            ================================================= -->
+            <!-- WORK 04 -->
 
             <article
                 class="work-item work-item-04"
                 data-work-index="4"
             >
 
-                <a
-                    class="work-link"
-                    href="#"
-                    aria-label="Selected Work 04"
-                >
+                <div class="work-image-wrap">
 
-                    <div class="work-image-wrap">
+                    <img
+                        src="images/A-work04.jpg"
+                        alt="Selected Work 04"
+                        class="work-image"
+                    >
 
-                        <img
-                            src="images/A-work04.jpg"
-                            alt="Selected Work 04"
-                            class="work-image"
-                        >
-
-                        <div
-                            class="work-hover"
-                            aria-hidden="true"
-                        >
-
-                            <span class="work-hover-text">
-                                有些情緒，是在快門之後才開始發生
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
+                </div>
 
             </article>
 
 
 
-            <!-- =================================================
-            WORK 05
-            ================================================= -->
+            <!-- WORK 05 -->
 
             <article
                 class="work-item work-item-05"
                 data-work-index="5"
             >
 
-                <a
-                    class="work-link"
-                    href="#"
-                    aria-label="Selected Work 05"
-                >
+                <div class="work-image-wrap">
 
-                    <div class="work-image-wrap">
+                    <img
+                        src="images/A-work05.jpg"
+                        alt="Selected Work 05"
+                        class="work-image"
+                    >
 
-                        <img
-                            src="images/A-work05.jpg"
-                            alt="Selected Work 05"
-                            class="work-image"
-                        >
-
-                        <div
-                            class="work-hover"
-                            aria-hidden="true"
-                        >
-
-                            <span class="work-hover-text">
-                                看見一個人之前，先決定如何靠近他
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
+                </div>
 
             </article>
 
 
 
-            <!-- =================================================
-            WORK 06
-            ================================================= -->
+            <!-- WORK 06 -->
 
             <article
                 class="work-item work-item-06"
                 data-work-index="6"
             >
 
-                <a
-                    class="work-link"
-                    href="#"
-                    aria-label="Selected Work 06"
-                >
+                <div class="work-image-wrap">
 
-                    <div class="work-image-wrap">
+                    <img
+                        src="images/A-work06.jpg"
+                        alt="Selected Work 06"
+                        class="work-image"
+                    >
 
-                        <img
-                            src="images/A-work06.jpg"
-                            alt="Selected Work 06"
-                            class="work-image"
-                        >
-
-                        <div
-                            class="work-hover"
-                            aria-hidden="true"
-                        >
-
-                            <span class="work-hover-text">
-                                光與人物之間，總有一段沒有被說出的距離
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
+                </div>
 
             </article>
 
@@ -1628,7 +1460,7 @@ FOOTER
 
 
 <!-- =====================================================
-V7 JAVASCRIPT
+JAVASCRIPT
 ===================================================== -->
 
 <script src="js/script.js"></script>
