@@ -4654,6 +4654,8 @@ title right
 }
 
 
+/* 請直接取代手機版原本的 .selected-works-title-wrap 與 .section-title-line */
+
 .selected-works-title-wrap{
 
 
@@ -4667,6 +4669,30 @@ title right
 
     0;
 
+    display: flex;                /* 讓內部文字與線條成為彈性盒子，防止 iOS 散開 */
+    flex-direction: column;       /* 保持直排或上下排列流向 */
+    align-items: flex-end;        /* 全部向右側靠齊 */
+
+
+}
+
+
+.section-title-line{
+
+
+    margin-left:
+
+    auto;
+
+    margin-right: 30px;
+
+    margin-top: 10px;
+
+    height: 
+    clamp(130px, calc(-451.6px + 176.2vw), 900px);
+
+    position: relative;           /* 鎖定 iOS 座標基準 */
+    flex-shrink: 0;               /* 防止在 iPhone 螢幕縮放時被強制壓縮變形 */
 
 }
 
@@ -4706,26 +4732,6 @@ title right
 
 .section-title-vertical br{
     display:none;
-}
-
-/* 請取代這段手機的 Selected Works 線條設定 */
-.section-title-line{
-
-
-    margin-left:
-
-    auto;
-
-    margin-right: 30px;
-
-    margin-top: 10px;
-
-    height: 
-    clamp(130px, calc(-451.6px + 176.2vw), 900px);
-
-    position: relative; /* 建立 iOS 座標參考點，防止在 iPhone/iPad 偏移 */
-    top: 0px;           /* 可在此微調上下位置（例如 2px 或 -2px） */
-
 }
 
 
