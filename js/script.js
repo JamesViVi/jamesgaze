@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "monthly"
         */
 
-        mode: "monthly",
+        mode: "daily",
 
 
         /*
